@@ -6,7 +6,6 @@ import store from './redux/store';
 import { Provider } from 'react-redux';
 
 test('App matches his snapshot', () => {
-  // 1. initial data
   const component = create(<Provider store={store}>
     <App />
   </Provider>);

@@ -11,9 +11,7 @@ class App extends React.Component {
   }
 
   render () {
-    console.log(this.props.initialized)
     return (
-      // <div className="App">HEldlo World 1</div>
       <div className='app-wrapper'>
         <OrderList />
         <div className='app-wrapper-content'> 
