@@ -3,6 +3,7 @@ import './App.css';
 import { setInitializeApp } from './redux/app-reducer';
 import { connect } from 'react-redux';
 import OrderList from './components/OrderList/OrderList';
+import Routes from "./routes";
 
 class App extends React.Component {
 
@@ -13,7 +14,7 @@ class App extends React.Component {
   render () {
     return (
       <div className='app-wrapper'>
-        <OrderList />
+        <Routes />
         <div className='app-wrapper-content'> 
         </div>
       </div>
