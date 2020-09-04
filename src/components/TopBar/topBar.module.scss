@@ -1,0 +1,19 @@
+@import '../../theme.module.scss';
+
+.navigation{
+    background-color: $violet;
+    width: 100%;
+    height: 57px;
+}
+
+.wrapper{
+    height: 47px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px 0px;
+}
+
+.logo{
+    width: 120px;
+    height: auto;
+}

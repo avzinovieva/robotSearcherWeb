@@ -1,5 +1,5 @@
 import React from 'react';
-import s from '../OrderList/OrderList.module.css';
+import s from './OrderList.module.scss';
 
 const OrderList = () => {
     return (
