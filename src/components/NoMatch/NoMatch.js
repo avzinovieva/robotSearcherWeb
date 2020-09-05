@@ -1,8 +1,9 @@
 import React from "react";
+import t from  '../../translations/i18n'
 
 const NoMatch = () =>{
     return(
-        <h1>Page is not exist</h1>
+        <h1>{`${t('noMatch.header')}`}</h1>
     )
 }
 

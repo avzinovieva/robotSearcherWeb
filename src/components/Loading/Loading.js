@@ -1,10 +1,11 @@
 import React from 'react';
 import Corgi from "../Corgi/Corgi";
+import t from  '../../translations/i18n'
 
 const  Loading = () =>{
     return(
-        <div className={styles.wrapper}>
-            <h1>Loading</h1>
+        <div>
+            <h1>{`${t('loading.header')}`}</h1>
             <Corgi/>
         </div>
     );
