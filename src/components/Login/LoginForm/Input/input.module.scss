@@ -1,0 +1,34 @@
+@import "../../../../theme.module.scss";
+
+.inputBlock{
+    position: relative;
+}
+
+.input{
+    background: $white;
+    border: 1px solid $grey;
+    box-sizing: border-box;
+    border-radius: 20px;
+
+    width: 100%;
+    padding: 16px 15px;
+    margin-bottom: 20px;
+
+    font-family: $main_font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: $input_text_size;
+    line-height: 21px;
+    outline: none;
+    color: $grey;
+
+}
+
+.showPass{
+    position: absolute;
+    width: auto;
+    height: 35px;
+    right: 5%;
+    top: 15%;
+    z-index: 2;
+}

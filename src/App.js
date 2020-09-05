@@ -1,8 +1,7 @@
 import React from 'react';
-import './App.css';
+import './App.module.scss';
 import { setInitializeApp } from './redux/app-reducer';
 import { connect } from 'react-redux';
-import OrderList from './components/OrderList/OrderList';
 import Routes from "./routes";
 
 class App extends React.Component {

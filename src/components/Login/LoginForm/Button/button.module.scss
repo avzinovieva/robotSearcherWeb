@@ -1,0 +1,17 @@
+@import "../../../../theme.module.scss";
+
+.button{
+    width: 100%;
+
+    margin-top: 27px;
+    padding: 17px;
+
+    background-color: $violet;
+    border-radius: 20px;
+    border: none;
+    outline:none;
+
+    color: $white;
+    font-size: $button_text_size;
+    font-family: $main_font;
+}
