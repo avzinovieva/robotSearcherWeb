@@ -26,8 +26,9 @@
 
 .showPass{
     position: absolute;
-    width: auto;
+    width: 35px;
     height: 35px;
+    object-fit: contain;
     right: 5%;
     top: 15%;
     z-index: 2;

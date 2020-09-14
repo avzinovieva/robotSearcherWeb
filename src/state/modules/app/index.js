@@ -1,19 +1,19 @@
 const SET_INITIALIZE_APP = 'SET_INITIALIZE_APP';
 
 let initialState = {
-       initialized: false
+    initialized: false
 };
 
-const appReducer = (state = initialState, action) => { 
+const appReducer = (state = initialState, action) => {
 
-    switch(action.type) {    
-        case SET_INITIALIZE_APP: 
+    switch(action.type) {
+        case SET_INITIALIZE_APP:
             return {
                 ...state,
                 initialized: !state.initialized
             }
         default:
-            return state;    
+            return state;
     }
 }
 
