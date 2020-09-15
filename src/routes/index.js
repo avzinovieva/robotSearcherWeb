@@ -5,7 +5,6 @@ import Loading from "../components/Loading/Loading";
 import Login from "../components/Login/Login";
 import NoMatch from "../components/NoMatch/NoMatch";
 
-
 const Routes = () => {
     return(
         <Switch>

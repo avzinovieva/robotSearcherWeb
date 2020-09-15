@@ -1,14 +1,8 @@
 import React from 'react';
 import './App.module.scss';
-import { setInitializeApp } from './redux/app-reducer';
-import { connect } from 'react-redux';
 import Routes from "./routes";
 
 class App extends React.Component {
-
-  componentDidMount() {
-    this.props.setInitializeApp(true)
-  }
 
   render () {
     return (
@@ -21,10 +15,5 @@ class App extends React.Component {
   }
 }
 
-let mapStateToProps = (state) => {
-  return {
-    initialized: state.app.initialized
-  }
-}
+export default App;
 
-export default connect(mapStateToProps, {setInitializeApp})(App);
