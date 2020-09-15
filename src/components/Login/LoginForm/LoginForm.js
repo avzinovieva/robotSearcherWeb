@@ -5,7 +5,6 @@ import t from  '../../../translations/i18n'
 import PropTypes from 'prop-types';
 import { login } from '../../../state/modules/login/action';
 import { connect } from 'react-redux';
-import { USER_LOGIN, USER_PASS, USER_TOKEN } from '../../../storageKeys';
 
 import styles from "./loginForm.module.scss";
 
