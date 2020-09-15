@@ -48,7 +48,6 @@ export default function createStore(preloadedState) {
                                     const newToken = await localStorage.getItem(USER_TOKEN);
                                     const { config } = error;
                                     config.headers.Authorization = `Bearer ${newToken}`;
-                                    //config.headers.ACC
                                     await dispatch(config.reduxSourceAction);
 
                                     return Promise.reject(error);
@@ -69,9 +68,6 @@ export default function createStore(preloadedState) {
     );
 
     const store = _createStore(reducer, preloadedState, composedEnhancers);
-    /*if (process.env.NODE_ENV !== 'production' && module.hot) {
-        module.hot.accept('./modules/reducer', () => index.replaceReducer(reducer));
-    }*/
 
     return store;
 }

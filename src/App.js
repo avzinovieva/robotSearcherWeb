@@ -15,6 +15,5 @@ class App extends React.Component {
   }
 }
 
-/*export default connect(null, null)(App);*/
 export default App;
 
