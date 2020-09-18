@@ -12,7 +12,7 @@ describe('login reducer', () => {
         });
     });
 
-    describe('LOGIN action', () => {
+    describe('LOGIN_SUCCESS action', () => {
         it('sets loading to false and login success', () => {
             const user = { name: 'name' };
             const actual = reducer(null, { type: LOGIN_SUCCESS, payload: {data : user} });
@@ -20,7 +20,7 @@ describe('login reducer', () => {
         });
     });
 
-    describe('LOGIN action', () => {
+    describe('LOGIN_FAIL action', () => {
         it('sets loading to false and login error', () => {
             const error = {error: 'some error'}
             const actual = reducer(null, { type: LOGIN_FAIL, error });
