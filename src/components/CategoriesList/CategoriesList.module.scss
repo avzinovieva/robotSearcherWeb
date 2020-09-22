@@ -1,0 +1,53 @@
+@import "../../theme.module.scss";
+
+.categoriesListTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2% 0 2% 0;
+}
+.block{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+}
+.title{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+
+    font-family: $main_font;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32pt;
+    color: $title_color;
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-items: flex-end;
+    width: 40px;
+    height: 40px;
+
+    margin-left: 10px;
+
+    background-color: $violet;
+    border-radius: 50%;
+    border: none;
+    outline:none;
+
+    color: $white;
+    font-size: 36pt;
+    font-family: $main_font;
+}
+.Pagination {
+    position: absolute;
+    z-index: 1;
+    right: 5%;
+}
+.FooterBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
