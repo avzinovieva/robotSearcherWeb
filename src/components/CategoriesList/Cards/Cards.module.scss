@@ -1,0 +1,11 @@
+@import "../../../theme.module.scss";
+
+.cardsBlock{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    column-gap: 2%;
+    row-gap: 2%;
+    
+    margin: 0 10% 0 10%;
+}

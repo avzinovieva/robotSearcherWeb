@@ -4,6 +4,7 @@ import OrderList from "../components/OrderList/OrderList";
 import Loading from "../components/Loading/Loading";
 import Login from "../components/Login/Login";
 import NoMatch from "../components/NoMatch/NoMatch";
+import CategoriesList from "../components/CategoriesList/CategoriesList";
 
 const Routes = () => {
     return(
@@ -11,6 +12,7 @@ const Routes = () => {
             <Route exact path='/' render={() => <Loading/>} />
             <Route path='/login' render={() => <Login/>} />
             <Route path='/orderList' render={() => <OrderList/>} />
+            <Route path='/categories' render={() => <CategoriesList/>} />
             <Route render={() => <NoMatch/>} />
         </Switch>
     )
