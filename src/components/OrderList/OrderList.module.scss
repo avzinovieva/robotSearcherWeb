@@ -1,4 +1,15 @@
-.title {
+@import "../../theme.module.scss";
+
+.title{
+    font-family: $main_font;
+    font-style: normal;
+    font-weight: bold;
+    font-size: $h1;
+    line-height: 28px;
+    color: $title_color;
+    padding: 0;
+}
+
+.orderListWrapper{
     text-align: center;
-    font-size: 40px;
 }
