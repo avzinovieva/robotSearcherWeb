@@ -8,10 +8,10 @@
     align-self: center;
     
     color:$violet;
-    font-family: Roboto;
+    font-family: $main_font;
     font-style: normal;
     font-weight: normal;
-    font-size: 12pt;
+    font-size: $h2;
 }
 .button{
     width: 30px;
