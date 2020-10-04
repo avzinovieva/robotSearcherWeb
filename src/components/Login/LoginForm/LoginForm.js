@@ -1,12 +1,12 @@
-import React, {useState} from "react";
-import Input from "./Input/Input";
-import Button from "./Button/Button";
+import React, {useState} from 'react';
+import Input from './Input/Input';
+import Button from './Button/Button';
 import t from  '../../../translations/i18n'
 import PropTypes from 'prop-types';
 import { login } from '../../../state/modules/login/action';
 import { connect } from 'react-redux';
 
-import styles from "./loginForm.module.scss";
+import styles from './loginForm.module.scss';
 
 const LoginForm = ({loading, loginFunc}) => {
     const [login, setLogin] = useState('');

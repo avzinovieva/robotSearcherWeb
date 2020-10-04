@@ -1,8 +1,9 @@
-import React, {useState} from "react";
-import styles from "./button.module.scss";
-import {USER_LOGIN, USER_PASS, USER_TOKEN} from "../../../../storageKeys";
-import PropTypes from "prop-types";
+import React, {useState} from 'react';
+import {USER_LOGIN, USER_PASS, USER_TOKEN} from '../../../../storageKeys';
+import PropTypes from 'prop-types';
 import {Redirect} from 'react-router-dom';
+
+import styles from './button.module.scss';
 
 const loginClick = (state, loginFunc, setLoggedUser) =>{
     loginFunc(state).then(async () => {
@@ -25,7 +26,7 @@ const Button = ({str, state, onclickFunc}) => {
                 >
                 {str}
             </button>
-            {isLogged && <Redirect to="/orderList"/> }
+            {isLogged && <Redirect to='/orderList'/> }
         </div>
     );
 }

@@ -1,8 +1,9 @@
-import React from "react";
-import styles from "./input.module.scss";
-import eyeOff from "../../../../img/eye-off.png";
+import React from 'react';
+import eyeOff from '../../../../img/eye-off.png';
 import eyeOn from '../../../../img/eye-on.png';
 import PropTypes from 'prop-types';
+
+import styles from './input.module.scss';
 
 function showHidePass(e) {
     const icon = e.target;
@@ -23,7 +24,7 @@ const Input = ({type, placeholder, onChangeFunc}) => {
                 onChange={el => onChangeFunc(el.target.value)}
             />
 
-            {(type === 'password') && <img src={eyeOff} className={styles.showPass} alt="eye" onClick={showHidePass}/>}
+            {(type === 'password') && <img src={eyeOff} className={styles.showPass} alt='eye' onClick={showHidePass}/>}
         </div>
     );
 }

@@ -1,11 +1,12 @@
-import React from "react";
-import styles from "./corgi.module.scss";
-import corgi from "../../img/corgiWithCloud.png"
+import React from 'react';
+import corgi from '../../img/corgiWithCloud.png'
+
+import styles from './corgi.module.scss';
 
 const  Corgi = () => {
     return (
         <div className={styles.corgi}>
-            <img src={corgi} alt="corgi" />
+            <img src={corgi} alt='corgi' />
         </div>
     );
 }

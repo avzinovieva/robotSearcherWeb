@@ -1,9 +1,10 @@
-import React from "react";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 import styles from './NavBar.module.scss';
-import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
-    if (window.location.pathname == '/login') return null; //TODO: add checking for user to be authenticated
+    if (window.location.pathname === '/login') return null; //TODO: add checking for user to be authenticated
 
     return (
         <div className={styles.navigation}>

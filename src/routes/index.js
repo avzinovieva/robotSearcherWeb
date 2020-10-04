@@ -1,10 +1,10 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
-import OrderList from "../components/OrderList/OrderList";
-import Loading from "../components/Loading/Loading";
-import Login from "../components/Login/Login";
-import NoMatch from "../components/NoMatch/NoMatch";
-import CategoriesList from "../components/CategoriesList/CategoriesList";
+import OrderList from '../components/OrderList/OrderList';
+import Loading from '../components/Loading/Loading';
+import Login from '../components/Login/Login';
+import NoMatch from '../components/NoMatch/NoMatch';
+import CategoriesList from '../components/CategoriesList/CategoriesList';
 
 const Routes = () => {
     return(

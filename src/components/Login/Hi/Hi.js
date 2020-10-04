@@ -1,11 +1,12 @@
-import React from "react";
-import styles from "./hi.module.scss";
-import hi from "../../../img/hiCloud.png"
+import React from 'react';
+import hi from '../../../img/hiCloud.png'
+
+import styles from './hi.module.scss';
 
 const  Hi = () => {
     return (
         <div className={styles.hi}>
-            <img src={hi} alt="hello" />
+            <img src={hi} alt='hello' />
         </div>
     );
 }
