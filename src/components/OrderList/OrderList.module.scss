@@ -1,4 +1,25 @@
-.title {
+@import "../../theme.module.scss";
+
+.title{
+    font-family: $main_font;
+    font-style: normal;
+    font-weight: bold;
+    font-size: $title;
+    line-height: 28px;
+    color: $title_color;
+    margin: 40px 0 30px;
+    padding: 0;
+}
+
+.orderListWrapper{
     text-align: center;
-    font-size: 40px;
+  padding-bottom: 20px;
+}
+
+.pagination {
+    position: absolute;
+    right: 0%;
+    width: 250px;
+    margin-top: 5px;
+    margin-bottom: 20px;
 }

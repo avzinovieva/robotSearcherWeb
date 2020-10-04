@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
-import styles from "./CategoriesList.module.scss";
+import React, { useState, useEffect } from 'react';
 import t from '../../translations/i18n'
-import TopBar from "../TopBar/TopBar";
-import Cards from "./Cards/Cards";
-import Footer from "./Footer/Footer";
-import PaginationBar from "./Pagination/Pagination";
+import TopBar from '../TopBar/TopBar';
+import Cards from './Cards/Cards';
+import Footer from '../Footer/Footer';
+import PaginationBar from './Pagination/Pagination';
 import PropTypes from 'prop-types';
 import { categories } from '../../state/modules/categories/action';
 import { connect } from 'react-redux';
+
+import styles from './CategoriesList.module.scss';
 
 const CategoriesList = ({loading, categoriesFunc, categories }) => {
     const [page, setPage] = useState(1);
