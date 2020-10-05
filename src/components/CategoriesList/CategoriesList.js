@@ -12,12 +12,12 @@ import styles from './CategoriesList.module.scss';
 
 const CategoriesList = ({loading, categoriesFunc, categories }) => {
     const [page, setPage] = useState(1);
+    const [cardsPerPage, setCardsPerPage] = useState(24);
 
     useEffect(() => {
         categoriesFunc();
     },[]);
 
-    let cardsPerPage = 24;
     //Amount of all pages with cards
     let pagesCount = Math.ceil(categories.length / cardsPerPage);
 
@@ -44,7 +44,11 @@ const CategoriesList = ({loading, categoriesFunc, categories }) => {
                 <Cards cards={categories} pageNumber={page} />
             </div>
             <div className={styles.FooterBlock}>
-                <Footer handleChange={handleChange.bind(this)} />
+                <Footer onClickFunc = {
+                () => {
+                    setCardsPerPage(cardsPerPage+10)
+                    setPage(1)}
+            }/>
                 {pagination(handleChange, page, pagesCount)}
             </div>
         </div>
