@@ -11,6 +11,7 @@
 }
 .cardContainer{
     display:flex;
+    min-height: 80px;
     z-index: 1;
     flex-direction: column;
     align-content: center;
@@ -18,13 +19,14 @@
 }
 .category{
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: center;
 
     font-family: $main-font;
     font-style: normal;
     font-weight: bold;
-    font-size: 100%;
+    font-size: $h2;
+    height: $h2*2;
     padding: 0% 10%;
 
     color: $title_color;
