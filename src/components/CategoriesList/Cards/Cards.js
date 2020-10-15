@@ -10,7 +10,7 @@ function Cards(props) {
     let firstCardIndex = (pageNumber-1)*24;
     //All cards on the page:
     let cardsElements = props.cards.slice(firstCardIndex, lastCardIndex).map(
-        card => <Card id={card.id} category={card.name} workTypes={"work types"}/>);
+        card => <Card id={card.id} category={card.name} workTypes={'work types'}/>);
 
     return (
         <div className={styles.cardsBlock}>

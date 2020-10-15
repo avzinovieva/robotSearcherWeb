@@ -2,7 +2,7 @@ export  default {
     loading: {
         header: 'Loading',
     },
-    orderList: {
+    ordersList: {
         header: 'OrderList',
     },
     noMatch:{
@@ -16,5 +16,8 @@ export  default {
     },
     categoriesList:{
         header: 'Categories',
+    },
+    mastersList:{
+        header: 'Masters list',
     },
 };

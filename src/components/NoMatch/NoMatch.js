@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import t from  '../../translations/i18n'
 
 const NoMatch = () =>{
