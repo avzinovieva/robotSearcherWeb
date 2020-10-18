@@ -1,0 +1,20 @@
+[
+  {
+    "masterImg": "http://138.68.71.188/images/noImage.png",
+    "masterName": "Master1",
+    "masterEmail": "Master1.gmail.com",
+    "masterCategories":["category1", "category2", "category3"]
+  },
+  {
+    "masterImg": "http://138.68.71.188/images/noImage.png",
+    "masterName": "Master2",
+    "masterEmail": "Master2.gmail.com",
+    "masterCategories":["category1"]
+  },
+  {
+    "masterImg": "http://138.68.71.188/images/noImage.png",
+    "masterName": "Master3",
+    "masterEmail": "Master3.gmail.com",
+    "masterCategories":["category1", "category2"]
+  }
+]
