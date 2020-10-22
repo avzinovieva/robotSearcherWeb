@@ -6,6 +6,7 @@ import Login from '../components/Login/Login';
 import NoMatch from '../components/NoMatch/NoMatch';
 import CategoriesList from '../components/CategoriesList/CategoriesList';
 import MastersList from "../components/MastersList/MastersList";
+import MastersRequestsTab from "../components/MastersRequestsTab/MastersRequestsTab";
 
 const Routes = () => {
     return(
@@ -14,7 +15,8 @@ const Routes = () => {
             <Route path='/login' render={() => <Login/>} />
             <Route path='/orderList' render={() => <OrderList/>} />
             <Route path='/categories' render={() => <CategoriesList/>} />
-            <Route path='/masters' render={() => <MastersList/>}></Route>
+            <Route path='/masters' render={() => <MastersList/>}/>
+            <Route path='/mastersRequests' render={() => <MastersRequestsTab/>}/>
             <Route render={() => <NoMatch/>} />
         </Switch>
     )
