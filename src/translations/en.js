@@ -23,7 +23,7 @@ export  default {
     mastersRequestsList:{
         header: 'Masters requests list',
         accept:{
-            popup:{
+            modal:{
                 title: 'Master acception',
                 subtitle: 'Are you sure you want to accept this master?',
                 buttonYes: 'Yes',
@@ -31,7 +31,7 @@ export  default {
             },
         },
         decline:{
-            popup:{
+            modal:{
                 title: 'Master rejection',
                 subtitle: 'Please tell the reason for decline',
                 buttonYes: 'Accept',

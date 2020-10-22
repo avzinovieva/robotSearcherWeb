@@ -7,7 +7,7 @@ import {Formik} from 'formik';
 import {masterAccept} from '../../state/modules/masterAccept/action';
 import {masterDecline} from '../../state/modules/masterDecline/action';
 
-import styles from './popup.module.scss';
+import styles from './manageMasterModal.module.scss';
 
 const declineReasonSchema = Yup.object().shape({
     reason: Yup.string()
@@ -16,7 +16,7 @@ const declineReasonSchema = Yup.object().shape({
         .required('Required'),
 });
 
-const Popup = ({
+const ManageMasterModal = ({
         loadingAccept,
         loadingDecline,
         type,
@@ -48,8 +48,8 @@ const Popup = ({
             >
                 {({errors, handleSubmit, isValid, handleChange})=>(
                     <div className={styles.popupContent}>
-                        <p className={styles.title}>{t('mastersRequestsList.'+type+'.popup.title')}</p>
-                        <p className={styles.subtitle}>{t('mastersRequestsList.'+type+'.popup.subtitle')}</p>
+                        <p className={styles.title}>{t('mastersRequestsList.'+type+'.modal.title')}</p>
+                        <p className={styles.subtitle}>{t('mastersRequestsList.'+type+'.modal.subtitle')}</p>
 
                             {type === 'decline' &&
                             <input
@@ -67,12 +67,12 @@ const Popup = ({
                                 disabled={type === 'decline' && !isValid}
                                 className={styles.button}
                                 onClick={type === 'decline' ? handleSubmit : handleClick}
-                            >{t('mastersRequestsList.'+type+'.popup.buttonYes')}</button>
+                            >{t('mastersRequestsList.'+type+'.modal.buttonYes')}</button>
 
                             <button
                                 className={styles.button}
                                 onClick={closePopup}
-                            >{t('mastersRequestsList.'+type+'.popup.buttonNo')}</button>
+                            >{t('mastersRequestsList.'+type+'.modal.buttonNo')}</button>
                         </div>
                     </div>
                 )}
@@ -82,7 +82,7 @@ const Popup = ({
     )
 }
 
-Popup.propTypes = {
+ManageMasterModal.propTypes = {
     loadingAccept: PropTypes.bool.isRequired,
     loadingDecline: PropTypes.bool.isRequired,
     type: PropTypes.string.isRequired,
@@ -102,4 +102,4 @@ const mapStateToProps = ({ masterAccept, masterDecline }) => ({
 export default connect(
     () => mapStateToProps,
     {acceptFunc: masterAccept, declineFunc: masterDecline})
-(Popup);
+(ManageMasterModal);

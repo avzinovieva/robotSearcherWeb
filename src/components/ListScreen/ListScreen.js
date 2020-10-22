@@ -6,7 +6,7 @@ import SearchInput from '../OrderList/InputSearch/InputSearch';
 import Footer from '../Footer/Footer';
 import PropTypes from 'prop-types';
 import ListTile from '../ListTile/ListTile';
-import Popup from '../Popup/Popup';
+import Popup from '../ManageMasterModal/ManageMasterModal';
 
 import styles from './listScreen.module.scss';
 
