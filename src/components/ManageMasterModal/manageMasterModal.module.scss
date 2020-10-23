@@ -1,0 +1,91 @@
+@import '../../theme.module';
+
+.popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($black, 0.85);
+}
+
+.popupContent{
+  text-align: center;
+  box-sizing: border-box;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 350px;
+  background-color: $white;
+  border-radius: 10px;
+  padding:40px;
+}
+
+.title{
+  font-family: $main_font;
+  font-style: normal;
+  font-weight: bold;
+  font-size: $h1;
+  line-height: 28px;
+  color: $title_color;
+}
+
+.subtitle{
+  font-family: $main_font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $h2;
+  line-height: 28px;
+  color: $dark_grey;
+}
+
+.input{
+  border: none;
+  outline:none;
+  border-bottom: 1.5px solid $underline_color;
+  width: 60%;
+  margin: 0;
+
+  font-family: $main_font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: $input_text_size;
+  color: $violet;
+}
+
+.error{
+  width: 60%;
+  font-family: $main_font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: $error_text_size;
+  color: $red;
+  margin-left: 7px;
+}
+
+.button{
+  box-sizing: border-box;
+  outline: none;
+  background: $violet;
+  border: none;
+  padding: 12px 40px;
+
+  font-family: $main_font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: $button_text_size;
+  color: $white;
+}
+
+.button:hover{
+  cursor: pointer;
+}
+
+.buttonsWrapper{
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  margin: 80px auto 0;
+}

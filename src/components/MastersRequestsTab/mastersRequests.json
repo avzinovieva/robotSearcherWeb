@@ -4,7 +4,7 @@
     "masterImg": "http://138.68.71.188/images/noImage.png",
     "masterName": "Master1",
     "masterEmail": "Master1.gmail.com",
-    "masterCategories":["category1", "category2", "category3"]
+    "masterCategories":["category3"]
   },
   {
     "masterId": 2,
@@ -12,12 +12,5 @@
     "masterName": "Master2",
     "masterEmail": "Master2.gmail.com",
     "masterCategories":["category1"]
-  },
-  {
-    "masterId": 3,
-    "masterImg": "http://138.68.71.188/images/noImage.png",
-    "masterName": "Master3",
-    "masterEmail": "Master3.gmail.com",
-    "masterCategories":["category1", "category2"]
   }
 ]
