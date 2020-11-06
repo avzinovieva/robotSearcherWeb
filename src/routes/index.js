@@ -5,21 +5,22 @@ import Loading from '../components/Loading/Loading';
 import Login from '../components/Login/Login';
 import NoMatch from '../components/NoMatch/NoMatch';
 import CategoriesList from '../components/CategoriesList/CategoriesList';
-import MastersList from "../components/MastersList/MastersList";
-import MastersRequestsTab from "../components/MastersRequestsTab/MastersRequestsTab";
+import MastersList from '../components/MastersList/MastersList';
+import MastersRequestsTab
+  from '../components/MastersRequestsTab/MastersRequestsTab';
 
 const Routes = () => {
-    return(
-        <Switch>
-            <Route exact path='/' render={() => <Loading/>} />
-            <Route path='/login' render={() => <Login/>} />
-            <Route path='/orderList' render={() => <OrderList/>} />
-            <Route path='/categories' render={() => <CategoriesList/>} />
-            <Route path='/masters' render={() => <MastersList/>}/>
-            <Route path='/mastersRequests' render={() => <MastersRequestsTab/>}/>
-            <Route render={() => <NoMatch/>} />
-        </Switch>
-    )
-}
+  return (
+    <Switch>
+      <Route exact path='/' render={() => <Loading/>} />
+      <Route path='/login' render={() => <Login/>} />
+      <Route path='/orderList' render={() => <OrderList/>} />
+      <Route path='/categories' render={() => <CategoriesList/>} />
+      <Route path='/masters' render={() => <MastersList/>}/>
+      <Route path='/mastersRequests' render={() => <MastersRequestsTab/>}/>
+      <Route render={() => <NoMatch/>} />
+    </Switch>
+  );
+};
 
 export default Routes;

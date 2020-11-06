@@ -10,18 +10,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// eslint-disable-next-line require-jsdoc
 export default function PaginationBar(props) {
   const classes = useStyles();
 
   return (
-      <div className={classes.root}>
-        <Pagination
-            count={props.pagesCount}
-            siblingCount={0}
-            page={props.pageNumber}
-            onChange={props.handleChange}
-            size='small'
-        />
-      </div>
+    <div className={classes.root}>
+      <Pagination
+        count={props.pagesCount}
+        siblingCount={0}
+        page={props.pageNumber}
+        onChange={props.handleChange}
+        size='small'
+      />
+    </div>
   );
 }

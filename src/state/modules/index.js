@@ -5,14 +5,14 @@ import masters from './masters';
 import mastersRequests from './mastersRequests';
 import masterAccept from './masterAccept';
 import masterDecline from './masterDecline';
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 
 export default combineReducers({
-    login: login,
-    categories: categories,
-    orders: orders,
-    masters: masters,
-    mastersRequests: mastersRequests,
-    masterAccept: masterAccept,
-    masterDecline: masterDecline,
+  login,
+  categories,
+  orders,
+  masters,
+  mastersRequests,
+  masterAccept,
+  masterDecline,
 });

@@ -5,14 +5,14 @@ import Corgi from '../Corgi/Corgi';
 import Hi from './Hi/Hi';
 
 const Login = () => {
-    return (
-        <div>
-            <TopBar/>
-            <LoginForm/>
-            <Corgi/>
-            <Hi/>
-        </div>
-    );
-}
+  return (
+    <div>
+      <TopBar/>
+      <LoginForm/>
+      <Corgi/>
+      <Hi/>
+    </div>
+  );
+};
 
 export default Login;
