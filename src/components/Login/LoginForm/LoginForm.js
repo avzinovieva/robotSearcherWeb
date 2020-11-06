@@ -15,9 +15,21 @@ const LoginForm = ({loading, loginFunc}) => {
   return (
     <div className={styles.loginWrapper} >
       <p className={styles.title}>{t('login.header')}</p>
-      <Input type='text' placeholder={t('login.name')} onChangeFunc={(text) => setLogin(text)} />
-      <Input type='password' placeholder={t('login.password')} onChangeFunc={(text) => setPass(text)}/>
-      <Button str = {t('login.button')} onclickFunc = {loginFunc} state = {{login, password}}/>
+      <Input
+        type='text'
+        placeholder={t('login.name')}
+        onChangeFunc={(text) => setLogin(text)}
+      />
+      <Input
+        type='password'
+        placeholder={t('login.password')}
+        onChangeFunc={(text) => setPass(text)}
+      />
+      <Button
+        str = {t('login.button')}
+        onclickFunc = {loginFunc}
+        state = {{login, password}}
+      />
       { loading && <p className={styles.title}>{t('login.header')}</p>}
     </div>
   );
