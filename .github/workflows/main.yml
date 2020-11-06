@@ -44,4 +44,4 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
-          path: build/release/
+          path: build/
