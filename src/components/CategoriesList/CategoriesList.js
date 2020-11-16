@@ -18,7 +18,6 @@ const CategoriesList = ({loading, categoriesFunc, categories}) => {
     categoriesFunc();
   }, []);
 
-  // Amount of all pages with cards
   const pagesCount = Math.ceil(categories.length / cardsPerPage);
 
   // OnChange function for pagination and pagination element
