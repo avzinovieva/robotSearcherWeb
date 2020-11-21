@@ -7,7 +7,6 @@ import PaginationBar from './Pagination/Pagination';
 import PropTypes from 'prop-types';
 import {categories} from '../../state/modules/categories/action';
 import {connect} from 'react-redux';
-
 import styles from './CategoriesList.module.scss';
 
 const CategoriesList = ({loading, categoriesFunc, categories}) => {
