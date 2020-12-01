@@ -30,7 +30,6 @@ const LoginForm = ({loading, loginFunc}) => {
         onclickFunc = {loginFunc}
         state = {{login, password}}
       />
-      { loading && <p className={styles.title}>{t('login.header')}</p>}
     </div>
   );
 };
