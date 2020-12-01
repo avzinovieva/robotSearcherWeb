@@ -9,7 +9,11 @@ const TopBar = () => {
   return (
     <div className={styles.navigation}>
       <div className={styles.wrapper}>
-        <img src={logo} alt='logo' className={styles.logo}/>
+        <img
+          src={logo}
+          alt='logo'
+          className={styles.logo}
+          onClick={() => window.location.reload()}/>
         <NavBar />
         <RightBar/>
       </div>

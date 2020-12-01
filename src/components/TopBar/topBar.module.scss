@@ -10,7 +10,7 @@
     height: 47px;
     width: 90%;
     margin: 0 auto;
-    padding: 5px 0px;
+    padding: 5px 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
@@ -18,4 +18,8 @@
 .logo{
     width: 120px;
     height: auto;
+}
+
+.logo:hover{
+    cursor:pointer;
 }
