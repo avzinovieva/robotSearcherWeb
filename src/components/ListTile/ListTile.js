@@ -12,7 +12,7 @@ const ListTile = ({itemData, id, openPopupAccept, openPopupDecline}) => {
             case 'img':
               return <img
                 src={item.item}
-                alt='user_img'
+                alt='img'
                 className={styles.img}
               />;
             case 'date':
