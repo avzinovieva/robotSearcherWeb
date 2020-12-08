@@ -1,5 +1,22 @@
 @import "../../../../theme.module.scss";
 
+.errorWrapper{
+    height: 7px;
+    margin: -5px 0 0;
+    padding: 0;
+}
+
+.error{
+    font-family: $main_font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: $error_text_size;
+    color: $red;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
 .button{
     width: 100%;
 

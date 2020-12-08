@@ -5,24 +5,37 @@ import {Redirect} from 'react-router-dom';
 
 import styles from './button.module.scss';
 
-const loginClick = (state, loginFunc, setLoggedUser) =>{
+const loginClick = (state, loginFunc, setLoggedUser, setLoginError) =>{
   loginFunc(state).then(async () => {
     const token = await localStorage.getItem(USER_TOKEN);
     if (token) {
       await localStorage.setItem(USER_LOGIN, state.login);
       await localStorage.setItem(USER_PASS, state.password);
       setLoggedUser(true);
+      setLoginError(false);
+    } else {
+      setLoginError(true);
     }
   });
 };
 
-const Button = ({str, state, onclickFunc}) => {
+const Button = ({str, state, onclickFunc, errorMessage}) => {
   const [isLogged, setLoggedUser] = useState( false);
+  const [loginError, setLoginError] = useState(false);
   return (
     <div>
+      <div className={styles.errorWrapper}>
+        {loginError && <p className={styles.error}>{errorMessage}</p>}
+      </div>
       <button
         className={styles.button}
-        onClick={async ()=> loginClick(state, onclickFunc, setLoggedUser)}
+        onClick={async ()=>
+          loginClick(
+              state,
+              onclickFunc,
+              setLoggedUser,
+              setLoginError
+          )}
       >
         {str}
       </button>
@@ -35,6 +48,7 @@ Button.propTypes = {
   str: PropTypes.string.isRequired,
   state: PropTypes.object.isRequired,
   onclickFunc: PropTypes.func.isRequired,
+  errorMessage: PropTypes.string.isRequired,
 };
 
 export default Button;
