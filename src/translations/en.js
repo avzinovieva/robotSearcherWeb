@@ -13,6 +13,7 @@ export default {
     button: 'Login',
     name: 'Username',
     password: 'Password',
+    error: 'Incorrect login or password',
   },
   categoriesList: {
     header: 'Categories',

@@ -29,6 +29,7 @@ const LoginForm = ({loading, loginFunc}) => {
         str = {t('login.button')}
         onclickFunc = {loginFunc}
         state = {{login, password}}
+        errorMessage = {t('login.error')}
       />
     </div>
   );
