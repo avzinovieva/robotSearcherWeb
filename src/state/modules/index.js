@@ -1,18 +1,24 @@
 import login from './login';
-import categories from './categories';
 import orders from './orders';
 import masters from './masters';
-import mastersRequests from './mastersRequests';
+import sendMyCode from './referrals';
+import categories from './categories';
+import {combineReducers} from 'redux';
 import masterAccept from './masterAccept';
 import masterDecline from './masterDecline';
-import {combineReducers} from 'redux';
+import getIsReferralValid from './referrals';
+import mastersRequests from './mastersRequests';
+import partialRegistration from './partialRegistration';
 
 export default combineReducers({
   login,
-  categories,
   orders,
   masters,
-  mastersRequests,
+  sendMyCode,
+  categories,
   masterAccept,
   masterDecline,
+  mastersRequests,
+  getIsReferralValid,
+  partialRegistration,
 });
