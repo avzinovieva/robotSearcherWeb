@@ -8,6 +8,7 @@ import CategoriesList from '../components/CategoriesList/CategoriesList';
 import MastersList from '../components/MastersList/MastersList';
 import MastersRequestsTab
   from '../components/MastersRequestsTab/MastersRequestsTab';
+import Landing from "../components/Landing/Landing";
 
 const Routes = () => {
   return (
@@ -18,6 +19,7 @@ const Routes = () => {
       <Route path='/categories' render={() => <CategoriesList/>} />
       <Route path='/masters' render={() => <MastersList/>}/>
       <Route path='/mastersRequests' render={() => <MastersRequestsTab/>}/>
+      <Route path='/landing' render={() => <Landing/>}/>
       <Route render={() => <NoMatch/>} />
     </Switch>
   );

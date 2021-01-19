@@ -14,6 +14,8 @@ $underline_color:#D8D8D8;
 
 //fonts
 $main_font: 'Roboto', sans-serif;
+$landing_font: 'Montserrat', sans-serif;
+$landing_additional_font: 'Basic', sans-serif;
 
 //fonts sizes
 $title: 42px;
@@ -24,3 +26,20 @@ $p: 14px;
 $input_text_size: 14px;
 $button_text_size: 14px;
 $error_text_size: 13px;
+//fonts size for landing
+//$landing_h1: 72px 5;
+$landing_h1:  65px;
+$landing_h1_mobile:  22px;
+$landing_h1_tablet:  48px;
+//$landing_h2: 48px 3.5;
+$landing_h2: 48px;
+$landing_h2_mobile:  20px;
+$landing_h2_tablet:  36px;
+//$landing_h3:36px 2.5
+$landing_h3: 36px ;
+$landing_h3_mobile: 16px;
+$landing_h3_tablet:  24px;
+//$landing_text: 24px 1.5;
+$landing_text: 24px;
+$landing_text_tablet:  18px;
+$landing_text_mobile:  12px;
