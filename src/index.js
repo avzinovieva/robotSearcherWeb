@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux';
 import {BrowserRouter} from 'react-router-dom';
 import createStore from './state';
-
+ 
 const store = createStore();
 
 ReactDOM.render(
