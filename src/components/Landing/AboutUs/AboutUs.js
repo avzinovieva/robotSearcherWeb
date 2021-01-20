@@ -8,7 +8,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 const AboutUs = () => {
     const isMobile = useMediaQuery('(max-width:576px)');
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} id="about">
       <h2 className={styles.title}>{t('landing.aboutUs.title')}</h2>
       <div>
         <div className={styles.paragraphs}>

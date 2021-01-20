@@ -46,7 +46,7 @@ export default {
       contacts: 'Contacts',
       corgiText: 'You are master of your craft?',
       subtitle1: 'Looking for your clients?',
-      subtitle2: 'Quarantine is killing your business?'
+      subtitle2: 'Quarantine is killing your business?',
     },
     aboutUs: {
       title: 'About us',
@@ -79,6 +79,11 @@ export default {
       qrCode: 'code to download the application',
       city: 'с. Kharkiv',
       socials: 'We are in social networks',
-    }
+      errors: {
+        minimumLength: 'Too short',
+        maximumLength: 'To long',
+        required: 'Required',
+      },
+    },
   },
 };

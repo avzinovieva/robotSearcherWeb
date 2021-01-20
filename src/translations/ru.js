@@ -38,6 +38,11 @@ export default {
       qrCode: 'код для скачивания приложения',
       city: 'г. Харьков',
       socials: 'Мы в социальных сетях',
+      errors: {
+        minimumLength: 'Строка очень короткая',
+        maximumLength: 'Строка очень длинная',
+        required: 'Поле обязательное',
+      },
     },
   },
 };

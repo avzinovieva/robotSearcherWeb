@@ -23,7 +23,7 @@ const Landing = () => {
       <AboutUs/>
       <Reason/>
       <HowItWorks/>
-      <Footer/>
+      <Footer i18n = {i18n}/>
     </div>
   );
 };
