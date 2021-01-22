@@ -24,7 +24,7 @@ export const partialRegistration = (user) => ({
     request: {
       method: 'post',
       url: `/users/register/partial`,
-      data: {email: user.email, phone: user.phone, password: user.password},
+      data: {email: user.email, phone: user.phone, userName: user.userName},
     },
   },
 });

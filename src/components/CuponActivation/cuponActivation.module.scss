@@ -16,7 +16,12 @@
     justify-content: space-between;
     padding-left: 10px;
     padding-right: 10px;
-    padding-bottom: 20px;//stay
+    padding-bottom: 20px;
+}
+.errorText{
+    font-size: 11px;
+    color: red;
+    font-family: $main_font;
 }
 .fixeHeader{
     color: white;
