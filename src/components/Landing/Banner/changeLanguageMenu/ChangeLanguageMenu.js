@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import styles from './changeLanguageMenu.module.scss';
 import i18n from 'i18n-js';
 
+import styles from './changeLanguageMenu.module.scss';
 
 const ChangeLanguageMenu = ({languages,
   selectedLanguage,

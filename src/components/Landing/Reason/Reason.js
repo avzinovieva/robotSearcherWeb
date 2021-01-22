@@ -11,8 +11,10 @@ const Reason = () => {
       <h2 className={styles.title}>{t('landing.reasons.title')}</h2>
       <div className={styles.corgiTextWrapper}>
         <img src={textBoxBorder} alt="" className={styles.corgiTextBg}/>
-        {/* eslint-disable-next-line max-len */}
-        <p className={styles.corgiText}><span className={styles.fixe}>Fixe </span>{t('landing.reasons.corgiText')}</p>
+        <p className={styles.corgiText}>
+          <span className={styles.fixe}>Fixe </span>
+          {t('landing.reasons.corgiText')}
+        </p>
       </div>
       <img src={corgi} alt="" className={styles.corgi}/>
       <ul className={styles.list}>

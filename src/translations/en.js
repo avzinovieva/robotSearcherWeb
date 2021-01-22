@@ -65,7 +65,7 @@ export default {
       reasonDesc3: 'will help you to safely receive money for completed orders directly to your bank card.',
     },
     howItWorks: {
-      title: 'Why is it worth working with us?',
+      title: 'How it works?',
       p1: 'It\'s simple!',
       p2: 'Register and receive your first orders within a few minutes.',
       p3: 'Get the next orders in your city right now!',

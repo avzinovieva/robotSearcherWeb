@@ -19,9 +19,9 @@
   font-style: normal;
   font-weight: 500;
   font-size: $landing_h3_mobile;
-  color: #838383;
+  color: $landing_inactive_language;
 }
 
 .selected{
-  color: #1E1D99;
+  color: $landing_blue_color;
 }

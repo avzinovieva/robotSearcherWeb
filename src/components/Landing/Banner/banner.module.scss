@@ -3,7 +3,7 @@
 .wrapper{
   width: 100%;
   height: 100vh;
-  background: linear-gradient(94.46deg, #3E0963 0%, #1A1F9E 107.33%);
+  background: linear-gradient(94.46deg, $landing_gradient1 0%, $landing_gradient2 107.33%);
 
   @media (max-width: 992px) and (orientation: landscape)  {
     position: relative;
@@ -73,7 +73,7 @@
     font-size: $landing_text_tablet;
   }
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: $landing_text_small_tablet;
   }
 }
 
@@ -106,19 +106,8 @@
     font-size: $landing_text_tablet;
   }
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: $landing_text_small_tablet;
   }
-}
-
-.underline{
-  text-decoration: underline;
-  color: #33E27A;
-}
-
-.lang{
-  color: $white;
-  text-decoration: none;
-  padding-bottom: 5px;
 }
 
 .bannerContent{
@@ -165,7 +154,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: $landing_h1;
-  color: #210136;
+  color: $landing_h1_color;
 
   @media (max-width: 1100px) {
     left: 3%;
@@ -178,7 +167,7 @@
   }
   @media (max-width: 768px) {
     width: 90%;
-    font-size: 34px;
+    font-size: $landing_h1_small_tablet;
     height: 150px;
     left: 10%;
   }
@@ -205,12 +194,12 @@
     margin-top: 25px;
   }
   @media (max-width: 992px) {
-    font-size: $landing_h2_tablet;
+    font-size: $landing_h3_tablet;
     margin-top: 20px;
     line-height: 50px;
   }
   @media (max-width: 768px) {
-    font-size: 22px;
+    font-size: $landing_h3_small_tablet;
     margin-top: 10px;
   }
   @media (max-width: 576px) {
@@ -319,37 +308,4 @@
   @media (max-width: 992px) and (orientation: landscape)  {
     bottom: 2%;
   }
-}
-
-// mobile menus
-.mobileMenu{
-  width: 150px;
-  height: 150px;
-  border-radius: 40px 00px 0px 40px;
-  background-color: $white;
-  position: absolute;
-  padding: 10px;
-  right: 0%;
-  top: 5%;
-  z-index: 3;
-}
-
-.mobileMenu .bars{
-  position: absolute;
-  right: 10%;
-  top: 10%;
-  width: 25px;
-}
-
-.mobileMenu a{
-  font-family: $landing_font;
-  font-style: normal;
-  font-weight: 500;
-  font-size: $landing_h3_mobile;
-  margin-top: 30px;
-  margin-left: 20px;
-  color: #1E1D99;
-  text-decoration: none;
-  display: block;
-  outline: none;
 }

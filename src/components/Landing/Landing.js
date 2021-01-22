@@ -6,8 +6,6 @@ import HowItWorks from './HowItWorks/HowItWorks';
 import Footer from './Footer/Footer';
 import i18n from 'i18n-js';
 
-import styles from './landing.module.scss';
-
 const Landing = () => {
   const language = localStorage.getItem('fixe_landing_master_lang');
   if (language == null) {
@@ -18,12 +16,12 @@ const Landing = () => {
   }
 
   return (
-    <div className={styles.wrapper}>
+    <div>
       <Banner/>
       <AboutUs/>
       <Reason/>
       <HowItWorks/>
-      <Footer i18n = {i18n}/>
+      <Footer/>
     </div>
   );
 };

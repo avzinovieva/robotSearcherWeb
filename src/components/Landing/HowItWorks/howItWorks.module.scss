@@ -21,13 +21,13 @@
   font-weight: 500;
   font-size: $landing_h2;
 
-  color: #3E0A64;
+  color: $landing_title_color;
 
   @media (max-width: 992px) {
     font-size: $landing_h2_tablet;
   }
   @media (max-width: 768px) {
-    font-size: 24px;
+    font-size: $landing_h2_small_tablet;
   }
   @media (max-width: 576px) {
     font-size: $landing_h2_mobile;
@@ -65,7 +65,7 @@
 
   width: 70%;
 
-  color: #454545;
+  color: $landing_text_color;
 
   @media (max-width: 992px) {
     font-size: $landing_text_tablet;
@@ -73,7 +73,7 @@
   @media (max-width: 768px) {
     margin: 0 0 15px;
     line-height: 25px;
-    font-size: 16px;
+    font-size: $landing_text_small_tablet;
   }
   @media (max-width: 576px) {
     margin-left: 25px;
@@ -91,7 +91,7 @@
   font-weight: 500;
   font-size: $landing_h3;
 
-  color: #3E0A64;
+  color: $landing_title_color;
 
   width: 60%;
 
@@ -99,7 +99,7 @@
     font-size: $landing_h3_tablet;
   }
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: $landing_h3_small_tablet;
     width: 70%;
   }
   @media (max-width: 576px) {

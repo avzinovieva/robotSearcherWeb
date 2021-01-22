@@ -8,100 +8,90 @@ import instagramIcon from '../../../img/instagram.png';
 import corgi from '../../../img/corgi.png';
 import bottomArrow from '../../../img/arrowBottom.png';
 import bars from '../../../img/bar.png';
-import coloredBars from '../../../img/coloredBar.png';
+import NavigationMobileMenu from './NavigationMobileMenu/NavigationMobileMenu';
 import t from '../../../translations/i18n';
-import i18n from 'i18n-js';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import {Link} from 'react-scroll';
+import ChangeLanguageMenu from './changeLanguageMenu/ChangeLanguageMenu';
+import LanguageBlock from './LanguageBlock/LanguageBlock';
 
 import styles from './banner.module.scss';
-import ChangeLanguageMenu from './changeLanguageMenu/ChangeLanguageMenu';
 
 const Banner = () => {
   const isMobile = useMediaQuery('(max-width:576px)');
   const languages = ['RU', 'UA', 'EN'];
-  const [selectedLanguage, setSelectedLanguage] = useState(localStorage.getItem('fixe_landing_master_lang'));
+  const [selectedLanguage, setSelectedLanguage] =
+      useState(localStorage.getItem('fixe_landing_master_lang'));
   const [isMobileMenuOpened, setMobileMenuOpened] = useState(false);
-  const [isMobileMenuLanguagesOpened, setMobileMenuLanguagesOpened] = useState(false);
+  const [isMobileMenuLanguagesOpened, setMobileMenuLanguagesOpened] =
+      useState(false);
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.contentWrapper}>
-
-        {isMobile &&
-        <p
+        {
+          isMobile && <p
             className={styles.selectedLanguage}
             onClick={() => setMobileMenuLanguagesOpened(true)}
-        >{selectedLanguage}</p>}
+          >{selectedLanguage}</p>
+        }
         <div className={styles.navigation}>
           <img src={logo} alt="logo" className={styles.logo}/>
-          {isMobile && !isMobileMenuOpened && <img
-            src={bars}
-            alt="bars"
-            className = {styles.bars}
-            onClick={() => setMobileMenuOpened( true)}
-          />}
           {
-            isMobileMenuOpened && (
-              <div className={styles.mobileMenu}>
-                <img
-                  src={coloredBars}
-                  alt="bars"
-                  className = {styles.bars}
-                  onClick={() => setMobileMenuOpened( false)}
-                />
-                <a href="#">
-                  <Link
-                    to="about"
-                    spy={true}
-                    smooth={true}>
-                    {t('landing.banner.aboutUs')}
-                  </Link>
-                </a>
-                <a href="#">
-                  <Link
-                    to="contacts"
-                    spy={true}
-                    smooth={true}>
-                    {t('landing.banner.contacts')}
-                  </Link>
-                </a>
-              </div>
-            )
+            isMobile && !isMobileMenuOpened && <img
+              src={bars}
+              alt="bars"
+              className = {styles.bars}
+              onClick={() => setMobileMenuOpened( true)}/>
           }
-          {!isMobile && <div className={styles.links}>
-            <a
-              href=""
-              className={styles.navLink}
-            ><Link to="about" spy={true} smooth={true}>{t('landing.banner.aboutUs')}</Link></a>
-            <a href="" className={styles.navLink}>{t('landing.banner.contacts')}</a>
-            <div className={styles.navLink}>
-              {
-                languages.map( (item, i) => {
-                  const underlinedState = selectedLanguage === item ? '1px solid #ffffff' : 'none';
-                  return (
-                    <div key={i}>
-                      <a href="" className={styles.lang} style = {{'borderBottom': underlinedState}} onClick={() => {
-                        i18n.locale = item.toLocaleLowerCase();
-                        localStorage.setItem('fixe_landing_master_lang', item);
-                        setSelectedLanguage(item);
-                      }}>{item}</a>
-                      {i !== languages.length -1 && <span>/</span>}
-                    </div>
-                  );
-                })
-              }
+          {
+            isMobileMenuOpened && <NavigationMobileMenu
+              closeMobileNavMenu = {() => setMobileMenuOpened(false)}/>
+          }
+          {
+            !isMobile && <div className={styles.links}>
+              <a
+                href=""
+                className={styles.navLink}>
+                <Link
+                  to="about"
+                  spy={true}
+                  smooth={true}>
+                  {t('landing.banner.aboutUs')}</Link>
+              </a>
+              <a
+                href=""
+                className={styles.navLink}>
+                {t('landing.banner.contacts')}
+              </a>
+              <div className={styles.navLink}>
+                {
+                  languages.map( (item, i) =>
+                  // eslint-disable-next-line react/jsx-key
+                    <LanguageBlock
+                      selectedLanguage={selectedLanguage}
+                      languages={languages}
+                      curLanguage={item}
+                      i={i}
+                      setSelectedLanguage={() => setSelectedLanguage()}
+                    />,
+                  )
+                }
+              </div>
             </div>
-          </div> }
+          }
         </div>
-        {isMobileMenuLanguagesOpened && <ChangeLanguageMenu
-          closeMenu={() => setMobileMenuLanguagesOpened(false)}
-          languages={languages}
-          selectedLanguage={selectedLanguage}
-          setSelectedLanguage = {setSelectedLanguage}
-        />}
+        {
+          isMobileMenuLanguagesOpened && <ChangeLanguageMenu
+            closeMenu={() => setMobileMenuLanguagesOpened(false)}
+            languages={languages}
+            selectedLanguage={selectedLanguage}
+            setSelectedLanguage = {() => setSelectedLanguage}/>
+        }
         <div className={styles.bannerContent}>
           <div className={styles.corgiTextWrapper}>
-            {isMobile ?
+            {
+              isMobile ?
                 <img
                   src={textImgMobile}
                   alt=""
@@ -111,11 +101,17 @@ const Banner = () => {
                   alt=""
                   className={styles.corgiTextBackground}/>
             }
-            <h1 className={styles.corgiText}>{t('landing.banner.corgiText')}</h1>
+            <h1
+              className={styles.corgiText}>
+              {t('landing.banner.corgiText')}</h1>
           </div>
           <div>
-            <h2 className={styles.bannerSubtitle}>{t('landing.banner.subtitle1')}</h2>
-            <h2 className={styles.bannerSubtitle}>{t('landing.banner.subtitle2')}</h2>
+            <h2
+              className={styles.bannerSubtitle}>
+              {t('landing.banner.subtitle1')}</h2>
+            <h2
+              className={styles.bannerSubtitle}>
+              {t('landing.banner.subtitle2')}</h2>
           </div>
           <div>
             <div className={styles.socials}>

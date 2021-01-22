@@ -16,7 +16,7 @@
   font-weight: 500;
   font-size: $landing_h2;
 
-  color: #3E0A64;
+  color: $landing_title_color;
 
   @media (max-width: 992px) {
     font-size: $landing_h2_tablet;
@@ -26,8 +26,7 @@
   }
   @media (max-width: 576px) {
     width: 80%;
-    margin: 0 auto;
-    margin-top: 10px;
+    margin: 10px auto 0;
     font-size: $landing_h2_mobile;
   }
 }
@@ -69,7 +68,7 @@
   font-size: $landing_text;
   line-height: 40px;
 
-  color: #454545;
+  color: $landing_text_color;
 
   @media (max-width: 992px) {
     line-height: 30px;
@@ -77,7 +76,7 @@
   }
   @media (max-width: 768px) {
     line-height: 20px;
-    font-size: 16px;
+    font-size: $landing_text_small_tablet;
   }
   @media (max-width: 576px) {
     font-size: $landing_text_mobile;
@@ -92,7 +91,7 @@
 
 .fixe{
   font-weight: 500;
-  color: #3E0A64;
+  color: $landing_title_color;
 }
 
 .corgi{
@@ -135,7 +134,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 45px;
-  color: #1A1F9E;
+  color: $landing_blue_color;
   font-size:$landing_h3;
 
   @media (max-width: 992px) {
@@ -144,7 +143,7 @@
   }
   @media (max-width: 768px) {
     line-height: 25px;
-    font-size: 20px;
+    font-size: $landing_h3_small_tablet;
   }
   @media (max-width: 576px) {
     font-size: $landing_h3_mobile;
@@ -154,7 +153,7 @@
 
 .list li p{
   font-weight: normal;
-  color: #210136;
+  color: $landing_text_color;
   font-size: $landing_text;
   margin-bottom: 40px;
 
@@ -163,7 +162,7 @@
   }
   @media (max-width: 768px) {
     margin-bottom: 20px;
-    font-size: 16px;
+    font-size: $landing_text_small_tablet;
   }
   @media (max-width: 576px) {
     font-size: $landing_text_mobile;
