@@ -7,12 +7,12 @@ import styles from './languageBlock.module.scss';
 const LanguageBlock = ({languages,
   selectedLanguage,
   curLanguage,
-  i,
+  indexLanguage,
   setSelectedLanguage}) => {
   const underlinedState = selectedLanguage === curLanguage ?
         '1px solid #ffffff' : 'none';
   return (
-    <div key={i}>
+    <div key={indexLanguage}>
       <a
         href=""
         className={styles.lang}
@@ -23,7 +23,7 @@ const LanguageBlock = ({languages,
               .setItem('fixe_landing_master_lang', curLanguage);
           setSelectedLanguage(curLanguage);
         }}>{curLanguage}</a>
-      {i !== languages.length -1 && <span>/</span>}
+      {indexLanguage !== languages.length -1 && <span>/</span>}
     </div>
   );
 };
@@ -32,7 +32,7 @@ LanguageBlock.propTypes = {
   languages: PropTypes.array.isRequired,
   selectedLanguage: PropTypes.string.isRequired,
   curLanguage: PropTypes.string.isRequired,
-  i: PropTypes.number.isRequired,
+  indexLanguage: PropTypes.number.isRequired,
   setSelectedLanguage: PropTypes.func.isRequired,
 };
 

@@ -6,7 +6,7 @@ import ListScreen from '../ListScreen/ListScreen';
 
 const OrderList = ({loading, ordersFunc, orders}) => {
   useEffect(() => {
-    ordersFunc().then((item) => console.log(item));
+    ordersFunc();
   }, []);
 
   return (

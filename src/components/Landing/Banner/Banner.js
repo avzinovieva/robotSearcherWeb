@@ -72,7 +72,7 @@ const Banner = () => {
                       selectedLanguage={selectedLanguage}
                       languages={languages}
                       curLanguage={item}
-                      i={i}
+                      indexLanguage={i}
                       setSelectedLanguage={() => setSelectedLanguage()}
                     />,
                   )

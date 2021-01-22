@@ -21,13 +21,11 @@
 .title{
   text-align: center;
   margin: 0 auto;
-
   font-family: $landing_font;
   font-style: normal;
   font-weight: 500;
   font-size: $landing_h2;
   width: 100%;
-
   color: $landing_title_color;
 
   @media (max-width: 992px) {
@@ -70,15 +68,12 @@
   margin: 0;
   padding: 0;
   line-height: 20px;
-
   color: $landing_text_color;
   width: 70%;
 }
 
 .text{
-
   width: 100%;
-
   font-family: $landing_font;
   font-style: normal;
   font-weight: normal;
@@ -86,7 +81,6 @@
   margin: 0;
   padding: 0;
   line-height: 40px;
-
   color: $landing_text_color;
 
   @media (max-width: 992px) {

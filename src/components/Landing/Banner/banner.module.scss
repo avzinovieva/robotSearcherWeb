@@ -180,13 +180,11 @@
 .bannerSubtitle{
   width: 80%;
   margin: 0px auto;
-
   font-family: $landing_font;
   font-style: normal;
   font-weight: normal;
   font-size: $landing_h3;
   line-height: 60px;
-
   color: $white;
 
   @media (max-width: 1200px) {

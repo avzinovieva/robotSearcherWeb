@@ -21,7 +21,6 @@ const AboutUs = () => {
         {isMobile &&
          <p className={styles.textBottom}>{t('landing.aboutUs.p3')}</p>}
       </div>
-
     </div>
   );
 };

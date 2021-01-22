@@ -9,7 +9,7 @@ import i18n from 'i18n-js';
 const Landing = () => {
   const language = localStorage.getItem('fixe_landing_master_lang');
   if (language == null) {
-    i18n.locale = 'UA'.toLocaleLowerCase();
+    i18n.locale = 'ua';
     localStorage.setItem('fixe_landing_master_lang', 'UA');
   } else {
     i18n.locale = language.toLocaleLowerCase();

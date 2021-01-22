@@ -15,12 +15,10 @@
 
 .title{
   text-align: center;
-
   font-family: $landing_font;
   font-style: normal;
   font-weight: 500;
   font-size: $landing_h2;
-
   color: $landing_title_color;
 
   @media (max-width: 992px) {
@@ -62,9 +60,7 @@
   padding: 0;
   line-height: 40px;
   margin: 0 0 30px;
-
   width: 70%;
-
   color: $landing_text_color;
 
   @media (max-width: 992px) {
@@ -85,14 +81,11 @@
 .subtitle{
   margin: 0 auto;
   text-align: center;
-
   font-family: $landing_font;
   font-style: normal;
   font-weight: 500;
   font-size: $landing_h3;
-
   color: $landing_title_color;
-
   width: 60%;
 
   @media (max-width: 992px) {

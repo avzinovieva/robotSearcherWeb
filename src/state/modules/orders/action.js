@@ -8,8 +8,7 @@ export const orders = () => ({
   types: [LOAD_ORDER, LOAD_ORDER_SUCCESS, LOAD_ORDER_FAIL],
   payload: {
     request: {
-      url:'/referrals/myInviteCode',
-      //url: `/orders`,
+      url: `/orders`,
     },
   },
 });
