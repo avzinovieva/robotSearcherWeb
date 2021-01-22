@@ -14,6 +14,8 @@ $underline_color:#D8D8D8;
 
 //fonts
 $main_font: 'Roboto', sans-serif;
+$landing_font: 'Montserrat', sans-serif;
+$landing_additional_font: 'Basic', sans-serif;
 
 //fonts sizes
 $title: 42px;
@@ -24,3 +26,38 @@ $p: 14px;
 $input_text_size: 14px;
 $button_text_size: 14px;
 $error_text_size: 13px;
+
+
+$landing_h1:  65px;
+$landing_h1_mobile:  22px;
+$landing_h1_tablet:  48px;
+$landing_h1_small_tablet: 34px;
+
+$landing_h2: 48px;
+$landing_h2_mobile:  20px;
+$landing_h2_tablet:  36px;
+$landing_h2_small_tablet: 24px;
+
+$landing_h3: 36px;
+$landing_h3_mobile: 16px;
+$landing_h3_tablet:  24px;
+$landing_h3_small_tablet: 22px;
+
+$landing_text: 24px;
+$landing_text_tablet:  18px;
+$landing_text_small_tablet:  16px;
+$landing_text_mobile:  12px;
+
+$landing_error: 20px;
+$landing_error_tablet:  16px;
+$landing_error_mobile:  10px;
+
+$landing_gradient1: #3E0963;
+$landing_gradient2: #1A1F9E;
+$landing_h1_color: #210136;
+$landing_text_color: #454545;
+$landing_title_color: #3E0A64;
+$landing_blue_color: #1E1D99;
+$landing_inactive_language: #838383;
+$landing_button_bg_color: #FDA94D;
+$landing_error_color: #FC1D1D;

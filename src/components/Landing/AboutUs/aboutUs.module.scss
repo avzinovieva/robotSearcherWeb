@@ -1,0 +1,116 @@
+@import "../../../theme.module";
+
+.wrapper{
+  padding-top: 100px;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+
+  @media (max-width: 576px) {
+    padding-top: 20px;
+  }
+  @media (max-width: 768px) {
+    padding-top: 15px;
+  }
+  @media (max-width: 576px) {
+    width: 90%;
+    padding-top: 30px;
+  }
+}
+
+.title{
+  text-align: center;
+  margin: 0 auto;
+
+  font-family: $landing_font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: $landing_h2;
+  width: 100%;
+
+  color: $landing_title_color;
+
+  @media (max-width: 992px) {
+    font-size: $landing_h2_tablet;
+  }
+  @media (max-width: 768px) {
+    font-size: $landing_h2_small_tablet;
+  }
+  @media (max-width: 576px) {
+    font-size: $landing_h2_mobile;
+  }
+}
+
+.paragraphs{
+  width: 50%;
+  float: right;
+  margin-top: 100px;
+
+  @media (max-width: 992px) {
+    margin-top: 30px;
+  }
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
+  @media (max-width: 576px) {
+    font-size: $landing_h2_mobile;
+  }
+  @media (max-width: 576px) {
+    position: absolute;
+    left: 30%;
+    width: 70%;
+  }
+}
+
+.textBottom{
+  font-family: $landing_font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $landing_text_mobile;
+  margin: 0;
+  padding: 0;
+  line-height: 20px;
+
+  color: $landing_text_color;
+  width: 70%;
+}
+
+.text{
+
+  width: 100%;
+
+  font-family: $landing_font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $landing_text;
+  margin: 0;
+  padding: 0;
+  line-height: 40px;
+
+  color: $landing_text_color;
+
+  @media (max-width: 992px) {
+    line-height: 35px;
+    font-size: $landing_text_tablet;
+  }
+  @media (max-width: 768px) {
+    font-size: $landing_text_small_tablet;
+  }
+  @media (max-width: 576px) {
+    font-size: $landing_text_mobile;
+    line-height: 20px;
+    width: 100%;
+  }
+}
+
+.girl{
+  width: 40%;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 45%;
+  }
+  @media (max-width: 576px) {
+    width: 55%;
+  }
+}
