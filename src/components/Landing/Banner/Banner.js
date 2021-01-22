@@ -66,13 +66,13 @@ const Banner = () => {
               </a>
               <div className={styles.navLink}>
                 {
-                  languages.map( (item, i) =>
+                  languages.map( (item, languageIndex) =>
                   // eslint-disable-next-line react/jsx-key
                     <LanguageBlock
                       selectedLanguage={selectedLanguage}
                       languages={languages}
                       curLanguage={item}
-                      indexLanguage={i}
+                      indexLanguage={languageIndex}
                       setSelectedLanguage={() => setSelectedLanguage()}
                     />,
                   )
