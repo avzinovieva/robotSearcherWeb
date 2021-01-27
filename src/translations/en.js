@@ -44,7 +44,7 @@ export default {
     banner: {
       aboutUs: 'About us',
       contacts: 'Contacts',
-      corgiText: 'You are master of your craft?',
+      corgiText: 'Are you master of your craft?',
       subtitle1: 'Looking for your clients?',
       subtitle2: 'Quarantine is killing your business?',
     },
