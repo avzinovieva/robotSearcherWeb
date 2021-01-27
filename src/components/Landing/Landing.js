@@ -7,6 +7,8 @@ import Footer from './Footer/Footer';
 import i18n from 'i18n-js';
 
 const Landing = () => {
+  document.title = 'Fixe master';
+
   const language = localStorage.getItem('fixe_landing_master_lang');
   if (language == null) {
     i18n.locale = 'ua';
@@ -15,13 +17,27 @@ const Landing = () => {
     i18n.locale = language.toLocaleLowerCase();
   }
 
+  const socialsLinks = {
+    instagram: 'https://instagram.com/fixe.me',
+    facebook: '',
+    twitter: '',
+  };
+
   return (
     <div>
-      <Banner/>
+      <Banner
+        instagram = {socialsLinks.instagram}
+        facebook = {socialsLinks.facebook}
+        twitter = {socialsLinks.twitter}
+      />
       <AboutUs/>
       <Reason/>
       <HowItWorks/>
-      <Footer/>
+      <Footer
+        instagram = {socialsLinks.instagram}
+        facebook = {socialsLinks.facebook}
+        twitter = {socialsLinks.twitter}
+      />
     </div>
   );
 };

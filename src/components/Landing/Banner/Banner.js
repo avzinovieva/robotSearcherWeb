@@ -14,10 +14,11 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import {Link} from 'react-scroll';
 import ChangeLanguageMenu from './changeLanguageMenu/ChangeLanguageMenu';
 import LanguageBlock from './LanguageBlock/LanguageBlock';
+import PropTypes from 'prop-types';
 
 import styles from './banner.module.scss';
 
-const Banner = () => {
+const Banner = ({instagram, facebook, twitter}) => {
   const isMobile = useMediaQuery('(max-width:576px)');
   const languages = ['RU', 'UA', 'EN'];
   const [selectedLanguage, setSelectedLanguage] =
@@ -62,7 +63,11 @@ const Banner = () => {
               <a
                 href=""
                 className={styles.navLink}>
-                {t('landing.banner.contacts')}
+                <Link
+                  to="contacts"
+                  spy={true}
+                  smooth={true}>
+                  {t('landing.banner.contacts')}</Link>
               </a>
               <div className={styles.navLink}>
                 {
@@ -115,19 +120,27 @@ const Banner = () => {
           </div>
           <div>
             <div className={styles.socials}>
-              <a href=""><img src={facebookIcon} alt="facebook"/></a>
-              <a href=""><img src={twitterIcon} alt="twitter"/></a>
-              <a href=""><img src={instagramIcon} alt="instagram"/></a>
+              <a href={facebook}><img src={facebookIcon} alt="facebook"/></a>
+              <a href={twitter}><img src={twitterIcon} alt="twitter"/></a>
+              <a href={instagram}><img src={instagramIcon} alt="instagram"/></a>
             </div>
           </div>
         </div>
         <div className={styles.corgiImgWrapper}>
           <img src={corgi} alt="corgi" className={styles.corgiImg}/>
         </div>
-        <img src={bottomArrow} alt="scroll" className={styles.bottomArrow}/>
+        <Link to="about" spy={true} smooth={true}>
+          <img src={bottomArrow} alt="scroll" className={styles.bottomArrow}/>
+        </Link>
       </div>
     </div>
   );
+};
+
+Banner.propTypes = {
+  instagram: PropTypes.string.isRequired,
+  facebook: PropTypes.string.isRequired,
+  twitter: PropTypes.string.isRequired,
 };
 
 export default Banner;
