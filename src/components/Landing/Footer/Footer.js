@@ -53,9 +53,9 @@ const Footer = ({instagram, facebook, twitter}) => {
               <div className={styles.link_block}>
                 <p className={styles.text}>{t('landing.footer.socials')}</p>
                 <div className={styles.socials}>
-                  <a href={facebook}><img src={facebookIcon} alt=""/></a>
-                  <a href={twitter}><img src={twitterIcon} alt=""/></a>
-                  <a href={instagram}><img src={instagramIcon} style={{marginRight: '0'}} alt=""/></a>
+                  <a href={facebook} className={styles.social_link_footer}><img src={facebookIcon} alt=""/></a>
+                  <a href={twitter} className={styles.social_link_footer}><img src={twitterIcon} alt=""/></a>
+                  <a href={instagram} className={styles.social_link_footer}><img src={instagramIcon} style={{marginRight: '0'}} alt=""/></a>
                 </div>
               </div>
           }
@@ -72,9 +72,15 @@ const Footer = ({instagram, facebook, twitter}) => {
                 <div style = {{}} >
                   <p className={styles.text}>{t('landing.footer.socials')}</p>
                   <div className={styles.socials}>
-                    <a href={facebook}><img src={facebookIcon} alt=""/></a>
-                    <a href={twitter}><img src={twitterIcon} alt=""/></a>
-                    <a href={instagram}><img src={instagramIcon} alt=""/></a>
+                    <a href={facebook} className={styles.social_link_footer}>
+                      <img src={facebookIcon} alt=""/>
+                    </a>
+                    <a href={twitter} className={styles.social_link_footer}>
+                      <img src={twitterIcon} alt=""/>
+                    </a>
+                    <a href={instagram} className={styles.social_link_footer}>
+                      <img src={instagramIcon} alt=""/>
+                    </a>
                   </div>
                 </div>
               </div>

@@ -17,6 +17,7 @@ import LanguageBlock from './LanguageBlock/LanguageBlock';
 import PropTypes from 'prop-types';
 
 import styles from './banner.module.scss';
+import coloredBars from '../../../img/coloredBar.png';
 
 const Banner = ({instagram, facebook, twitter}) => {
   const isMobile = useMediaQuery('(max-width:576px)');
@@ -27,7 +28,10 @@ const Banner = ({instagram, facebook, twitter}) => {
   const [isMobileMenuLanguagesOpened, setMobileMenuLanguagesOpened] =
       useState(false);
 
+  const navMenuRef = React.createRef();
+
   return (
+
     <div className={styles.wrapper}>
       <div className={styles.contentWrapper}>
         {
@@ -43,12 +47,38 @@ const Banner = ({instagram, facebook, twitter}) => {
               src={bars}
               alt="bars"
               className = {styles.bars}
-              onClick={() => setMobileMenuOpened( true)}/>
+              /* onClick={() => setMobileMenuOpened( true)}*/
+              onClick={()=>navMenuRef.current.classList.toggle(styles.closeMobileMenu)}
+            />
           }
-          {
+          {/* {
             isMobileMenuOpened && <NavigationMobileMenu
               closeMobileNavMenu = {() => setMobileMenuOpened(false)}/>
-          }
+          }*/}
+          <div className={styles.mobileMenu} ref={navMenuRef}>
+            <img
+              src={coloredBars}
+              alt="bars"
+              className = {styles.bars}
+              onClick={()=>navMenuRef.current.classList.toggle(styles.closeMobileMenu)}
+            />
+            <a href="#">
+              <Link
+                to="about"
+                spy={true}
+                smooth={true}>
+                {t('landing.banner.aboutUs')}
+              </Link>
+            </a>
+            <a href="#">
+              <Link
+                to="contacts"
+                spy={true}
+                smooth={true}>
+                {t('landing.banner.contacts')}
+              </Link>
+            </a>
+          </div>
           {
             !isMobile && <div className={styles.links}>
               <a
@@ -120,9 +150,9 @@ const Banner = ({instagram, facebook, twitter}) => {
           </div>
           <div>
             <div className={styles.socials}>
-              <a href={facebook}><img src={facebookIcon} alt="facebook"/></a>
-              <a href={twitter}><img src={twitterIcon} alt="twitter"/></a>
-              <a href={instagram}><img src={instagramIcon} alt="instagram"/></a>
+              <a href={facebook} className={styles.social_link}><img src={facebookIcon} alt="facebook"/></a>
+              <a href={twitter} className={styles.social_link}><img src={twitterIcon} alt="twitter"/></a>
+              <a href={instagram} className={styles.social_link}><img src={instagramIcon} alt="instagram"/></a>
             </div>
           </div>
         </div>

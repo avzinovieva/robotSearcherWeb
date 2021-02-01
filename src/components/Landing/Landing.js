@@ -7,7 +7,7 @@ import Footer from './Footer/Footer';
 import i18n from 'i18n-js';
 
 const Landing = () => {
-  document.title = 'Fixe master';
+  document.title = 'Fixe Master';
 
   const language = localStorage.getItem('fixe_landing_master_lang');
   if (language == null) {
