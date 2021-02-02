@@ -8,77 +8,113 @@ import instagramIcon from '../../../img/instagram.png';
 import corgi from '../../../img/corgi.png';
 import bottomArrow from '../../../img/arrowBottom.png';
 import bars from '../../../img/bar.png';
-import NavigationMobileMenu from './NavigationMobileMenu/NavigationMobileMenu';
 import t from '../../../translations/i18n';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import {Link} from 'react-scroll';
-import ChangeLanguageMenu from './changeLanguageMenu/ChangeLanguageMenu';
 import LanguageBlock from './LanguageBlock/LanguageBlock';
 import PropTypes from 'prop-types';
 
 import styles from './banner.module.scss';
 import coloredBars from '../../../img/coloredBar.png';
+import i18n from 'i18n-js';
 
 const Banner = ({instagram, facebook, twitter}) => {
   const isMobile = useMediaQuery('(max-width:576px)');
   const languages = ['RU', 'UA', 'EN'];
   const [selectedLanguage, setSelectedLanguage] =
       useState(localStorage.getItem('fixe_landing_master_lang'));
-  const [isMobileMenuOpened, setMobileMenuOpened] = useState(false);
-  const [isMobileMenuLanguagesOpened, setMobileMenuLanguagesOpened] =
-      useState(false);
 
   const navMenuRef = React.createRef();
+  const lanMenuRef = React.createRef();
+
+  const navigationMenu = () => {
+    return (
+      <div className={styles.mobileMenu} ref={navMenuRef}>
+        <img
+          src={coloredBars}
+          alt="bars"
+          className = {styles.bars}
+          onClick={
+            ()=>navMenuRef.current.classList.toggle(styles.closeMobileMenu)
+          }
+        />
+        <a href="#">
+          <Link
+            to="about"
+            spy={true}
+            smooth={true}>
+            {t('landing.banner.aboutUs')}
+          </Link>
+        </a>
+        <a href="#">
+          <Link
+            to="contacts"
+            spy={true}
+            smooth={true}>
+            {t('landing.banner.contacts')}
+          </Link>
+        </a>
+      </div>
+    );
+  };
+  const languageMenu = () => {
+    return (
+      <div className={styles.languageMenu} ref={lanMenuRef}>
+        <p
+          className={`${styles.selected} ${styles.text}`}
+          onClick={
+            // eslint-disable-next-line max-len
+            () => lanMenuRef.current.classList.toggle(styles.closeMobileMenu)
+          }
+        >{selectedLanguage}</p>
+        <div >
+          {
+            languages.map((item, i) => {
+              if (item !== selectedLanguage) {
+                return <p
+                  key={i}
+                  className={styles.text}
+                  onClick={() => {
+                    i18n.locale = item.toLocaleLowerCase();
+                    localStorage.setItem('fixe_landing_master_lang', item);
+                    setSelectedLanguage(item);
+                    window.location.reload();
+                  }}
+                >{item}</p>;
+              }
+            })
+          }
+        </div>
+      </div>
+    );
+  };
 
   return (
-
     <div className={styles.wrapper}>
       <div className={styles.contentWrapper}>
         {
           isMobile && <p
             className={styles.selectedLanguage}
-            onClick={() => setMobileMenuLanguagesOpened(true)}
+            onClick={
+              () => lanMenuRef.current.classList.toggle(styles.closeMobileMenu)
+            }
           >{selectedLanguage}</p>
         }
         <div className={styles.navigation}>
           <img src={logo} alt="logo" className={styles.logo}/>
           {
-            isMobile && !isMobileMenuOpened && <img
+            isMobile && <img
               src={bars}
               alt="bars"
               className = {styles.bars}
-              /* onClick={() => setMobileMenuOpened( true)}*/
-              onClick={()=>navMenuRef.current.classList.toggle(styles.closeMobileMenu)}
+              onClick={
+                ()=>navMenuRef.current.classList.toggle(styles.closeMobileMenu)
+              }
             />
           }
-          {/* {
-            isMobileMenuOpened && <NavigationMobileMenu
-              closeMobileNavMenu = {() => setMobileMenuOpened(false)}/>
-          }*/}
-          <div className={styles.mobileMenu} ref={navMenuRef}>
-            <img
-              src={coloredBars}
-              alt="bars"
-              className = {styles.bars}
-              onClick={()=>navMenuRef.current.classList.toggle(styles.closeMobileMenu)}
-            />
-            <a href="#">
-              <Link
-                to="about"
-                spy={true}
-                smooth={true}>
-                {t('landing.banner.aboutUs')}
-              </Link>
-            </a>
-            <a href="#">
-              <Link
-                to="contacts"
-                spy={true}
-                smooth={true}>
-                {t('landing.banner.contacts')}
-              </Link>
-            </a>
-          </div>
+          {
+            navigationMenu()
+          }
           {
             !isMobile && <div className={styles.links}>
               <a
@@ -117,11 +153,7 @@ const Banner = ({instagram, facebook, twitter}) => {
           }
         </div>
         {
-          isMobileMenuLanguagesOpened && <ChangeLanguageMenu
-            closeMenu={() => setMobileMenuLanguagesOpened(false)}
-            languages={languages}
-            selectedLanguage={selectedLanguage}
-            setSelectedLanguage = {() => setSelectedLanguage}/>
+          languageMenu()
         }
         <div className={styles.bannerContent}>
           <div className={styles.corgiTextWrapper}>
@@ -150,9 +182,15 @@ const Banner = ({instagram, facebook, twitter}) => {
           </div>
           <div>
             <div className={styles.socials}>
-              <a href={facebook} className={styles.social_link}><img src={facebookIcon} alt="facebook"/></a>
-              <a href={twitter} className={styles.social_link}><img src={twitterIcon} alt="twitter"/></a>
-              <a href={instagram} className={styles.social_link}><img src={instagramIcon} alt="instagram"/></a>
+              <a href={facebook} className={styles.social_link}>
+                <img src={facebookIcon} alt="facebook"/>
+              </a>
+              <a href={twitter} className={styles.social_link}>
+                <img src={twitterIcon} alt="twitter"/>
+              </a>
+              <a href={instagram} className={styles.social_link}>
+                <img src={instagramIcon} alt="instagram"/>
+              </a>
             </div>
           </div>
         </div>
