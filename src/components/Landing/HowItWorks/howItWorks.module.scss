@@ -2,7 +2,6 @@
 
 .wrapper{
   position: relative;
-  height: 100%;
   padding-top: 50px;
 
   @media (max-width: 992px) {
@@ -34,12 +33,16 @@
   }
 }
 
-.img{
-  width: 50%;
+.imgWrapper{
+  width: 100%;
 
   @media (max-width: 576px) {
     width: 90%;
   }
+}
+
+.img{
+  width: 100%;
 }
 
 .aboutUsContent{

@@ -67,6 +67,7 @@
   font-family: $landing_font;
   font-size: $landing_text;
   font-weight: 600;
+  transition: 0.4s;
 
   @media (max-width: 992px) {
     height: 82px;
@@ -86,4 +87,8 @@
     margin-top: 20px;
     font-size: $landing_text_mobile;
   }
+}
+
+.getLink:hover{
+  cursor: pointer;
 }

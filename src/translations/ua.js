@@ -34,8 +34,8 @@ export default {
       getLink: 'Отримати посилання',
       android: 'Fixe для android',
       download: 'Завантажити додаток',
-      soon: 'iOS - скоро в App Store',
-      qrCode: 'QR - код для завантаження додатку',
+      soon: 'скоро в App Store',
+      qrCode: 'код для завантаження додатку',
       city: 'м. Харків',
       socials: 'Ми у соціальних мережах',
       errors: {
