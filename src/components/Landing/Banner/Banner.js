@@ -182,12 +182,16 @@ const Banner = ({instagram, facebook, twitter}) => {
           </div>
           <div>
             <div className={styles.socials}>
-              <a href={facebook} className={styles.social_link}>
-                <img src={facebookIcon} alt="facebook"/>
-              </a>
+              {facebook.length !== 0 &&
+                <a href={facebook} className={styles.social_link}>
+                  <img src={facebookIcon} alt="facebook"/>
+                </a>
+              }
+              {twitter.length !== 0 &&
               <a href={twitter} className={styles.social_link}>
                 <img src={twitterIcon} alt="twitter"/>
               </a>
+              }
               <a href={instagram} className={styles.social_link}>
                 <img src={instagramIcon} alt="instagram"/>
               </a>
