@@ -34,7 +34,7 @@ export default {
       getLink: 'Получить ссылку',
       android: 'Fixe для android',
       download: 'Скачать приложение',
-      soon: 'скоро в App Store',
+      soon: 'скоро в',
       qrCode: 'код для скачивания приложения',
       city: 'г. Харьков',
       socials: 'Мы в социальных сетях',

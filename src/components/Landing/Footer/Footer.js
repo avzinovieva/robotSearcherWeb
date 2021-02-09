@@ -29,7 +29,9 @@ const Footer = ({instagram, facebook, twitter}) => {
                 {t('landing.footer.android')}
               </p>
             </div>
-            <button className={styles.download}>Скачать приложение</button>
+            <button className={styles.download}>
+              {t('landing.footer.download')}
+            </button>
             <p className={styles.text}>
               <span className={styles.dedicated}>iOS - </span>
               {t('landing.footer.soon')}
