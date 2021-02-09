@@ -20,7 +20,7 @@ const Footer = ({instagram, facebook, twitter}) => {
     <div className={styles.wrapper}>
       <div className={styles.contentWrapper}>
         <p className={styles.subtitle}>{t('landing.footer.title')}</p>
-        <GetMessage/>
+        {/*<GetMessage/>*/}
         <div className={styles.downloadBlock}>
           <div className={styles.downloadAndroidBlock}>
             <div className={styles.android}>
@@ -29,7 +29,9 @@ const Footer = ({instagram, facebook, twitter}) => {
                 {t('landing.footer.android')}
               </p>
             </div>
-            <button className={styles.download}>Скачать приложение</button>
+            <button className={styles.download}>
+              {t('landing.footer.download')}
+            </button>
             <p className={styles.text}>
               <span className={styles.dedicated}>iOS - </span>
               {t('landing.footer.soon')}
@@ -52,12 +54,16 @@ const Footer = ({instagram, facebook, twitter}) => {
               <div className={styles.link_block}>
                 <p className={styles.text}>{t('landing.footer.socials')}</p>
                 <div className={styles.socials}>
+                  {facebook.length !== 0 &&
                   <a href={facebook} className={styles.social_link_footer}>
                     <img src={facebookIcon} alt=""/>
                   </a>
+                  }
+                  {twitter.length !== 0 &&
                   <a href={twitter} className={styles.social_link_footer}>
                     <img src={twitterIcon} alt=""/>
                   </a>
+                  }
                   <a href={instagram} className={styles.social_link_footer}>
                     <img src={instagramIcon} alt=""/>
                   </a>
@@ -77,12 +83,16 @@ const Footer = ({instagram, facebook, twitter}) => {
                 <div>
                   <p className={styles.text}>{t('landing.footer.socials')}</p>
                   <div className={styles.socials}>
+                    {facebook.length !== 0 &&
                     <a href={facebook} className={styles.social_link_footer}>
                       <img src={facebookIcon} alt=""/>
                     </a>
+                    }
+                    {twitter.length !== 0 &&
                     <a href={twitter} className={styles.social_link_footer}>
                       <img src={twitterIcon} alt=""/>
                     </a>
+                    }
                     <a href={instagram} className={styles.social_link_footer}>
                       <img src={instagramIcon} alt=""/>
                     </a>
