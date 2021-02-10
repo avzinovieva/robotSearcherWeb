@@ -100,7 +100,7 @@
   font-size: $landing_text;
   text-decoration: none;
   display: flex;
-
+  padding:5px;
 
   @media (max-width: 992px) {
     font-size: $landing_text_tablet;

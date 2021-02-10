@@ -4,19 +4,15 @@ import AboutUs from './AboutUs/AboutUs';
 import Reason from './Reason/Reason';
 import HowItWorks from './HowItWorks/HowItWorks';
 import Footer from './Footer/Footer';
-import i18n from 'i18n-js';
+import PropTypes from 'prop-types';
 
-const Landing = () => {
-  document.title = 'Fixe Master';
-
-  const language = localStorage.getItem('fixe_landing_master_lang');
-  if (language == null) {
-    i18n.locale = 'ua';
-    localStorage.setItem('fixe_landing_master_lang', 'UA');
-  } else {
-    i18n.locale = language.toLocaleLowerCase();
-  }
-
+const Landing = ({
+  aboutUsParagraphs,
+  reasonsParagraphs,
+  mobileScreenImg,
+  howItWorksParagraphs,
+  howItWorksSubtitle,
+}) => {
   const socialsLinks = {
     instagram: 'https://instagram.com/fixe.me',
     facebook: '',
@@ -30,9 +26,13 @@ const Landing = () => {
         facebook = {socialsLinks.facebook}
         twitter = {socialsLinks.twitter}
       />
-      <AboutUs/>
-      <Reason/>
-      <HowItWorks/>
+      <AboutUs aboutUsParagraphs={aboutUsParagraphs}/>
+      <Reason reasonsParagraphs={reasonsParagraphs}/>
+      <HowItWorks
+        mobileScreenImg={mobileScreenImg}
+        howItWorksParagraphs={howItWorksParagraphs}
+        howItWorksSubtitle={howItWorksSubtitle}
+      />
       <Footer
         instagram = {socialsLinks.instagram}
         facebook = {socialsLinks.facebook}
@@ -40,6 +40,14 @@ const Landing = () => {
       />
     </div>
   );
+};
+
+Landing.propTypes = {
+  aboutUsParagraphs: PropTypes.array.isRequired,
+  reasonsParagraphs: PropTypes.array.isRequired,
+  mobileScreenImg: PropTypes.string.isRequired,
+  howItWorksParagraphs: PropTypes.array.isRequired,
+  howItWorksSubtitle: PropTypes.string.isRequired,
 };
 
 export default Landing;

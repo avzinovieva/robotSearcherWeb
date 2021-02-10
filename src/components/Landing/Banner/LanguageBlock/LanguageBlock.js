@@ -12,7 +12,7 @@ const LanguageBlock = ({languages,
   const underlinedState = selectedLanguage === curLanguage ?
         '1px solid #ffffff' : 'none';
   return (
-    <div key={indexLanguage}>
+    <div>
       <a
         href=""
         className={styles.lang}

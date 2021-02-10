@@ -4,21 +4,34 @@ import t from '../../../translations/i18n';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import ScrollAnimation from 'react-animate-on-scroll';
 import 'animate.css/animate.compat.css';
+import PropTypes from 'prop-types';
 
 import styles from './aboutUs.module.scss';
 
-const AboutUs = () => {
+const AboutUs = ({aboutUsParagraphs}) => {
   const isMobile = useMediaQuery('(max-width:576px)');
+  console.log(aboutUsParagraphs);
   return (
     <div className={styles.wrapper} id="about">
       <h2 className={styles.title}>{t('landing.aboutUs.title')}</h2>
       <div>
         <ScrollAnimation animateIn='fadeInRight' animateOnce={true}>
           <div className={styles.paragraphs}>
-            <p className={styles.text}>{t('landing.aboutUs.p1')}</p>
-            <p className={styles.text}>{t('landing.aboutUs.p2')}</p>
+            {
+              aboutUsParagraphs.map((paragraph, index) =>{
+                if (index!==aboutUsParagraphs.length-1) {
+                  return (
+                    <p className={styles.text} key={index}>
+                      {paragraph}
+                    </p>);
+                }
+              },
+              )
+            }
             {!isMobile &&
-            <p className={styles.text}>{t('landing.aboutUs.p3')}</p>}
+            <p className={styles.text}>
+              {aboutUsParagraphs[aboutUsParagraphs.length-1]}
+            </p>}
           </div>
         </ScrollAnimation>
         <ScrollAnimation animateIn='fadeInLeft' animateOnce={true}>
@@ -26,12 +39,18 @@ const AboutUs = () => {
         </ScrollAnimation>
         {isMobile &&
         <ScrollAnimation animateIn='fadeInUp' animateOnce={true}>
-          <p className={styles.textBottom}>{t('landing.aboutUs.p3')}</p>
+          <p className={styles.textBottom}>
+            {aboutUsParagraphs[aboutUsParagraphs.length-1]}
+          </p>
         </ScrollAnimation>
         }
       </div>
     </div>
   );
+};
+
+AboutUs.propTypes = {
+  aboutUsParagraphs: PropTypes.array.isRequired,
 };
 
 export default AboutUs;
