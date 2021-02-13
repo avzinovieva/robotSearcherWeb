@@ -133,7 +133,7 @@ const NavigationForLanding = () => {
                     selectedLanguage={selectedLanguage}
                     languages={languages}
                     curLanguage={item}
-                    key={languageIndex}
+                    indexLanguage={languageIndex}
                     setSelectedLanguage={() => setSelectedLanguage()}
                   />,
                 )

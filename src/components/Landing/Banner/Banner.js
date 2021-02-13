@@ -11,7 +11,7 @@ import t from '../../../translations/i18n';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import {Link} from 'react-scroll';
 import PropTypes from 'prop-types';
-import NavigationForLanding from "./Navigation/NavigationForLanding";
+import NavigationForLanding from './Navigation/NavigationForLanding';
 
 import styles from './banner.module.scss';
 

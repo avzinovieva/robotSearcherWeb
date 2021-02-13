@@ -10,6 +10,7 @@ const HowItWorks = ({
   mobileScreenImg,
   howItWorksParagraphs,
   howItWorksSubtitle,
+    landingType
 }) => {
   return (
     <div className={styles.wrapper}>
@@ -20,7 +21,7 @@ const HowItWorks = ({
             <img src={mobileScreenImg} alt="" className={styles.img}/>
           </ScrollAnimation>
         </div>
-        <div>
+        <div className={styles.textWrapper}>
           <ScrollAnimation animateIn='fadeInRight' animateOnce={true}>
             <p className={styles.text}>{t('landing.howItWorks.p1')}</p>
             {
@@ -28,7 +29,7 @@ const HowItWorks = ({
                       <ul>
                         {
                           howItWorksParagraphs.map((text, i) =>
-                            <li key={i}>{text}</li>,
+                            <li key={i} className={styles.text}>{text}</li>,
                           )
                         }
                       </ul> :

@@ -37,6 +37,7 @@ const LandingMaster = () => {
       mobileScreenImg={mobileScreenImg}
       howItWorksParagraphs={howItWorksParagraphs}
       howItWorksSubtitle={howItWorksSubtitle}
+      landingType={'master'}
     />
   );
 };

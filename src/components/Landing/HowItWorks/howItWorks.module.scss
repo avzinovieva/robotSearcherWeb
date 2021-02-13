@@ -3,6 +3,8 @@
 .wrapper{
   position: relative;
   padding-top: 50px;
+  width: 90%;
+  margin: 0 auto;
 
   @media (max-width: 992px) {
     padding-top: 10px;
@@ -34,7 +36,7 @@
 }
 
 .imgWrapper{
-  width: 100%;
+  width: 60%;
 
   @media (max-width: 576px) {
     width: 90%;
@@ -55,6 +57,15 @@
   }
 }
 
+.textWrapper{
+  margin-left: 100px;
+
+  @media (max-width: 768px) {
+    margin-left: 0px;
+  }
+}
+
+
 .text{
   font-family: $landing_font;
   font-style: normal;
@@ -63,7 +74,7 @@
   padding: 0;
   line-height: 40px;
   margin: 0 0 30px;
-  width: 70%;
+  width: 90%;
   color: $landing_text_color;
 
   @media (max-width: 992px) {
@@ -73,6 +84,7 @@
     margin: 0 0 15px;
     line-height: 25px;
     font-size: $landing_text_small_tablet;
+    width: 80%;
   }
   @media (max-width: 576px) {
     margin-left: 25px;
@@ -82,7 +94,7 @@
 }
 
 .subtitle{
-  margin: 0 auto;
+  margin: 30px auto 0;
   text-align: center;
   font-family: $landing_font;
   font-style: normal;
