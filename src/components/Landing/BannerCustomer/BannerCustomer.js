@@ -31,7 +31,9 @@ const BannerCustomer = ({facebook, twitter, instagram}) => {
         </div>
         <div className={styles.corgiTextWrapper}>
           <img src={textBg} alt="" className={styles.corgiTextBackground}/>
-          <p className={styles.corgiText}>{t('landingCustomer.banner.corgiText')}</p>
+          <p className={styles.corgiText}>
+            {t('landingCustomer.banner.corgiText')}
+          </p>
         </div>
         <div>
           <div className={styles.socials}>
