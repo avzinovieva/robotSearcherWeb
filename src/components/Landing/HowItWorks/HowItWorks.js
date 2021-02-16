@@ -10,7 +10,6 @@ const HowItWorks = ({
   mobileScreenImg,
   howItWorksParagraphs,
   howItWorksSubtitle,
-    landingType
 }) => {
   return (
     <div className={styles.wrapper}>

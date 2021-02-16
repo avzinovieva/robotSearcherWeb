@@ -28,6 +28,11 @@
   @media (max-width: 1200px) {
     width: 15%;
   }
+  @media (max-width: 768px) {
+    width: 100%;
+    left: 0%;
+    top: 10%;
+  }
 }
 
 .contentWrapper{
@@ -47,7 +52,7 @@
     margin-top: 5vh;
   }
   @media (max-width: 576px) {
-    margin-top: 2vh;
+    margin-top: 5vh;
   }
   @media (max-height: 640px) and (max-width: 576px){
     margin-top: 1vh;
@@ -70,12 +75,8 @@
     height: auto;
   }
   @media (max-width: 768px) {
-    height: 200px;
-    width: 90%;
+    width: 100%;
     margin: 10px auto 0;
-  }
-  @media (max-height: 640px) and (max-width: 576px){
-    height: 170px;
   }
 }
 
@@ -103,13 +104,14 @@
   }
   @media (max-width: 768px) {
     width: 90%;
-    font-size: $landing_h1_small_tablet;
+    font-size: $landing_h3_small_tablet;
     height: 150px;
     left: 10%;
   }
   @media (max-width: 576px) {
-    height: 180px;
-    width: 250px;
+    font-size: $landing_h3_mobile;
+    height: auto;
+    margin-top: 25px;
   }
 }
 
@@ -120,7 +122,10 @@
   @media (max-width: 1200px) {
     margin-top: 10vh;
   }
-
+  @media (max-width: 768px) {
+    font-size: $landing_h2_small_tablet;
+    margin: 11vh auto 0;
+  }
 }
 
 .bannerTitle{
@@ -149,7 +154,7 @@
     margin-top: 10px;
   }
   @media (max-width: 576px) {
-    font-size: $landing_h3_mobile;
+    font-size: $landing_h2_mobile;
     margin-top: 1vh;
     line-height: 30px;
   }
@@ -169,7 +174,7 @@
   }
   @media (max-width: 576px) {
     position: absolute;
-    top: 60%;
+    top: 35%;
     left: 3%;
     display: block;
     width: 50px;
@@ -190,7 +195,7 @@
     height: 50px;
   }
   @media (max-width: 768px) {
-    height: 30px;
+    height: 60px;
   }
   @media (max-width: 576px) {
     display: block;
@@ -220,15 +225,17 @@
   }
   @media (max-width: 768px) {
     margin-top: 0px;
+    width: 22%;
+    bottom: 0%;
   }
   @media (max-width: 576px) {
-    height: 200px;
     width: 60%;
     display: flex;
     justify-content: flex-end;
     position: absolute;
-    bottom: 8%;
+    bottom: 0%;
     right: 5%;
+    transform: translateY(-12vh);
   }
   @media (max-height: 640px) and (max-width: 576px){
     height: 150px;

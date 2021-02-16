@@ -35,7 +35,7 @@ const Landing = ({
               twitter = {socialsLinks.twitter}
             />
       }
-      <AboutUs aboutUsParagraphs={aboutUsParagraphs}/>
+      <AboutUs aboutUsParagraphs={aboutUsParagraphs} landingType={landingType}/>
       <Reason reasonsParagraphs={reasonsParagraphs}/>
       <HowItWorks
         mobileScreenImg={mobileScreenImg}

@@ -8,9 +8,8 @@ import PropTypes from 'prop-types';
 
 import styles from './aboutUs.module.scss';
 
-const AboutUs = ({aboutUsParagraphs}) => {
+const AboutUs = ({aboutUsParagraphs, landingType}) => {
   const isMobile = useMediaQuery('(max-width:576px)');
-  console.log(aboutUsParagraphs);
   return (
     <div className={styles.wrapper} id="about">
       <h2 className={styles.title}>{t('landing.aboutUs.title')}</h2>
@@ -39,7 +38,7 @@ const AboutUs = ({aboutUsParagraphs}) => {
         </ScrollAnimation>
         {isMobile &&
         <ScrollAnimation animateIn='fadeInUp' animateOnce={true}>
-          <p className={styles.textBottom}>
+          <p className={`${styles.textBottom} ${landingType === 'customer' && styles.textBottomCustomer}`}>
             {aboutUsParagraphs[aboutUsParagraphs.length-1]}
           </p>
         </ScrollAnimation>

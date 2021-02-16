@@ -11,11 +11,14 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import PropTypes from 'prop-types';
 import textBg from '../../../img/textBox_customer.png';
 import questionMark from '../../../img/questionMark.png';
+import textBg_mobile from '../../../img/textBox_customer_mobile.png';
 
 import styles from './bannerCustomer.module.scss';
 
 const BannerCustomer = ({facebook, twitter, instagram}) => {
   const isMobile = useMediaQuery('(max-width:576px)');
+  const corgiTextBg = isMobile ? textBg_mobile : textBg;
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.contentWrapper}>
@@ -30,7 +33,7 @@ const BannerCustomer = ({facebook, twitter, instagram}) => {
           </h2>
         </div>
         <div className={styles.corgiTextWrapper}>
-          <img src={textBg} alt="" className={styles.corgiTextBackground}/>
+          <img src={corgiTextBg} alt="" className={styles.corgiTextBackground}/>
           <p className={styles.corgiText}>
             {t('landingCustomer.banner.corgiText')}
           </p>
