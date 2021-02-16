@@ -44,6 +44,7 @@ export default {
     banner: {
       aboutUs: 'About us',
       contacts: 'Contacts',
+      investors: 'For investors',
       corgiText: 'Are you master of your craft?',
       subtitle1: 'Looking for your clients?',
       subtitle2: 'Quarantine is killing your business?',
@@ -96,6 +97,7 @@ export default {
     banner: {
       aboutUs: 'About us',
       contacts: 'Contacts',
+      investors: 'For investors',
       corgiText: 'Refer to trusted masters',
       subtitle1: 'Something, as always at the wrong time, broke?',
       subtitle2: 'Urgent need to fix?',

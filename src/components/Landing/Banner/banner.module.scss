@@ -78,19 +78,19 @@
 }
 
 .links{
-  width: 40%;
+  width: 60%;
   display: flex;
   justify-content: space-between;
 
   @media (max-width: 1200px) {
-    width: 60%;
+    width: 70%;
     margin-top: 20px;
   }
   @media (max-width: 992px) {
     margin-top: 0px;
   }
   @media (max-width: 768px) {
-    width: 70%;
+    width: 80%;
   }
 }
 
@@ -348,7 +348,7 @@
 
 .mobileMenu{
   width: 150px;
-  height:150px;
+  height: 180px;
   border-radius: 40px 0px 0px 40px;
   background-color: $white;
   position: absolute;

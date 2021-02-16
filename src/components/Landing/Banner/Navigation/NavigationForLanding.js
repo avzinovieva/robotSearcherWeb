@@ -46,6 +46,9 @@ const NavigationForLanding = () => {
             {t('landing.banner.contacts')}
           </Link>
         </a>
+        <a href="#">
+          {t('landing.banner.investors')}
+        </a>
       </div>
     );
   };
@@ -125,6 +128,11 @@ const NavigationForLanding = () => {
                 spy={true}
                 smooth={true}>
                 {t('landing.banner.contacts')}</Link>
+            </a>
+            <a
+              href=""
+              className={styles.navLink}>
+              {t('landing.banner.investors')}
             </a>
             <div className={styles.navLink}>
               {

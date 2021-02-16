@@ -19,7 +19,7 @@ const Footer = ({instagram, facebook, twitter}) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.contentWrapper}>
-        <p className={styles.subtitle}>{t('landing.footer.title')}</p>
+        {/*<p className={styles.subtitle}>{t('landing.footer.title')}</p>*/}
         {/* <GetMessage/>*/}
         <div className={styles.downloadBlock}>
           <div className={styles.downloadAndroidBlock}>

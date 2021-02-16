@@ -3,6 +3,7 @@ export default {
     banner: {
       aboutUs: 'Про нас',
       contacts: 'Контакти',
+      investors: 'Інвесторам',
       corgiText: 'Ти майстер своєї справи?',
       subtitle1: 'Шукаєш своіх клієнтів?',
       subtitle2: 'Карантин вбиває твій бізнес?',
@@ -49,6 +50,7 @@ export default {
     banner: {
       aboutUs: 'О нас',
       contacts: 'Контакти',
+      investors: 'Інвесторам',
       corgiText: 'Звернись до перевірених майстрів',
       subtitle1: 'Щось, як завжди невчасно, зламалося?',
       subtitle2: 'Потрібно терміново полагодити?',
