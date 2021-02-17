@@ -27,7 +27,6 @@ const ManageMasterModal = ({
   declineFunc},
 ) => {
   const handleClick = (reason) => {
-    console.log(id, reason);
         type === 'accept' ?
             acceptFunc(id).then(async () => {
               await closePopup();
