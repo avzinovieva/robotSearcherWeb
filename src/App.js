@@ -1,10 +1,9 @@
+/* eslint-disable require-jsdoc */
 import React from 'react';
 import './App.module.scss';
 import Routes from './routes';
 
-// eslint-disable-next-line require-jsdoc
 class App extends React.Component {
-  // eslint-disable-next-line require-jsdoc
   render() {
     return (
       <div className='app-wrapper'>

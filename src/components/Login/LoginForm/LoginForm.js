@@ -8,7 +8,7 @@ import {connect} from 'react-redux';
 
 import styles from './loginForm.module.scss';
 
-const LoginForm = ({loading, loginFunc}) => {
+const LoginForm = ({loginFunc}) => {
   const [login, setLogin] = useState('');
   const [password, setPass] = useState('');
 
@@ -36,7 +36,6 @@ const LoginForm = ({loading, loginFunc}) => {
 };
 
 LoginForm.propTypes = {
-  loading: PropTypes.bool.isRequired,
   loginFunc: PropTypes.func.isRequired,
 };
 

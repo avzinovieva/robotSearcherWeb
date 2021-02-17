@@ -27,7 +27,6 @@ const ManageMasterModal = ({
   declineFunc},
 ) => {
   const handleClick = (reason) => {
-    console.log(id, reason);
         type === 'accept' ?
             acceptFunc(id).then(async () => {
               await closePopup();
@@ -108,5 +107,7 @@ const mapStateToProps = ({masterAccept, masterDecline}) => ({
 
 export default connect(
     () => mapStateToProps,
-    {acceptFunc: masterAccept, declineFunc: masterDecline})
+    {
+      acceptFunc: masterAccept,
+      declineFunc: masterDecline})
 (ManageMasterModal);
