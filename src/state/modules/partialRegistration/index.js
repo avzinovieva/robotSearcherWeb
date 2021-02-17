@@ -19,12 +19,21 @@ const actionHandlers = {
 };
 
 export const partialRegistration = (user) => ({
-  types: [PARTIAL_REGISTRATION, PARTIAL_REGISTRATION_SUCCESS, PARTIAL_REGISTRATION_CODE_FAIL],
+  types: [
+    PARTIAL_REGISTRATION,
+    PARTIAL_REGISTRATION_SUCCESS,
+    PARTIAL_REGISTRATION_CODE_FAIL
+  ],
   payload: {
     request: {
       method: 'post',
       url: `/users/register/partial`,
-      data: {email: user.email, phone: user.phone, userName: user.userName},
+      data: {
+        email: user.email,
+        phone: user.phone,
+        userName: user.userName,
+        inviteCode: user.inviteCode,
+      },
     },
   },
 });

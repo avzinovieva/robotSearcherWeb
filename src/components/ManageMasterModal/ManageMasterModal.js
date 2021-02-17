@@ -107,5 +107,7 @@ const mapStateToProps = ({masterAccept, masterDecline}) => ({
 
 export default connect(
     () => mapStateToProps,
-    {acceptFunc: masterAccept, declineFunc: masterDecline})
+    {
+      acceptFunc: masterAccept,
+      declineFunc: masterDecline})
 (ManageMasterModal);

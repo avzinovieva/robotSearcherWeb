@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import React, {useEffect, useRef, useState} from 'react';
@@ -47,40 +48,34 @@ export async function validateRecaptcha(recaptchaToken, expectedAction) {
   expectedAction = 'submit';
   const recaptchaSecret = await localStorage.getItem(reCAPTCHA_SECRET_KEY);
   const url = `https://www.recaptcha.net/recaptcha/api/siteverify?secret=${recaptchaSecret}&response=${recaptchaToken}`;
-  const valid = false;
-  // const proxyurl = 'https://cors-anywhere.herokuapp.com/';
-  // await fetch(url, {method: 'post'})
-  //     .then((response) => console.log(response))
-  //     .then((data)=> {
-  //       valid = (data.success && data.score && data.action && data.score >=0.5 && data.action === expectedAction);
-  //     });
+  let valid = false;
+  const proxyurl = 'https://cors-anywhere.herokuapp.com/';
+  await fetch(url, {method: 'post'})
+      .then((response) => console.log(response))
+      .then((data)=> {
+        valid = (
+          data.success &&
+            data.score &&
+            data.action &&
+            data.score >=0.5 &&
+            data.action === expectedAction);
+      });
   return valid;
 }
-// eslint-disable-next-line max-len
-const CouponActivation = ({loading, isCodeValid, sendCode, partialRegistration, loginUser}) => {
-  const [isActive, setIsActive]=useState(false);
-
+const CouponActivation = ({loading, isCodeValid, partialRegisterUser}) => {
   useEffect( () => {
-    isCodeValid(splitPath()).then((item) => {
-      console.log(item);
-      if (item.type===CHECK_REFERRAL_CODE_SUCCESS) {
-        setIsActive(false);
-      }
-    });
-    setIsActive(true);
     // let reCaptchaKey='';
     // if (reCaptchaKey==='') {
     //   reCaptchaKey=getCaptcha();
     //   // loadReCaptcha(reCaptchaKey, callback);
     // }
-    // TODO to make recaptcha
   }, []);
 
   const verifyCallback = (recaptchaToken) => {
     // recaptcha.execute().then((item) => console.log(item));
-    if (recaptchaToken) {
-      validateRecaptcha(recaptchaToken, 'submit');
-    };
+    // if (recaptchaToken) {
+    //   validateRecaptcha(recaptchaToken, 'submit');
+    // };
   };
   return (
     <div>
@@ -103,23 +98,11 @@ const CouponActivation = ({loading, isCodeValid, sendCode, partialRegistration, 
             email: '',
             phone: '',
             userName: '',
+            inviteCode: splitPath(),
           }}
           validationSchema={declineReasonSchema}
           onSubmit={(values) => {
-            // loadReCaptcha('6LfzADUaAAAAAFEhwt9Drcp3s_w7nVKF0XRIWmL8', verifyCallback);
-            user.email=values.email;
-            user.phone=values.phone;
-            user.userName=values.userName;
-            partialRegistration(user).then((response) => {
-              console.log(response);
-              if (response.type===PARTIAL_REGISTRATION_SUCCESS) {
-                // loginUser(user);
-                // TODO ask on Back about pass
-                // if (isCodeValid) {
-                //   sendCode(splitPath()).then((item) => console.log(item));
-                // }
-              }
-            });
+            partialRegisterUser(values);
           }}
         >
           {({
@@ -155,9 +138,9 @@ const CouponActivation = ({loading, isCodeValid, sendCode, partialRegistration, 
               </div>
               <TextField
                 className={styles.textField}
-                label="Username"
-                variant="outlined"
-                onBlur={()=>setFieldTouched('userName')}
+                label="Username" variant="outlined"
+                onBlur={()=>setFieldTouched('userName')
+                }
                 onChange={handleChange('userName')}
               />
               {touched.userName && errors.userName &&
@@ -165,7 +148,8 @@ const CouponActivation = ({loading, isCodeValid, sendCode, partialRegistration, 
               }
               <button
                 className={styles.buttonStyle}
-                disabled={!isValid && !isActive}
+                type={'submit'}
+                disabled={!isValid}
                 onClick={handleSubmit}
               >
                   Activate
@@ -184,6 +168,7 @@ CouponActivation.propTypes = {
   partialRegistration: PropTypes.func.isRequired,
   isCodeValid: PropTypes.func.isRequired,
   loginUser: PropTypes.func.isRequired,
+  partialRegisterUser: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({sendMyCode}) => ({
