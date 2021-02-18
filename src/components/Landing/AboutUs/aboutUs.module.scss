@@ -72,6 +72,13 @@
   width: 70%;
 }
 
+.textBottomCustomer{
+  position: absolute;
+  transform: translateY(-100%);
+  left: 35%;
+  width: 65%  ;
+}
+
 .text{
   width: 100%;
   font-family: $landing_font;
@@ -106,5 +113,6 @@
   }
   @media (max-width: 576px) {
     width: 55%;
+    margin-bottom: 30px;
   }
 }

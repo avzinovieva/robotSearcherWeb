@@ -1,22 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Banner from './Banner/Banner';
 import AboutUs from './AboutUs/AboutUs';
 import Reason from './Reason/Reason';
 import HowItWorks from './HowItWorks/HowItWorks';
 import Footer from './Footer/Footer';
-import i18n from 'i18n-js';
+import BannerCustomer from './BannerCustomer/BannerCustomer';
 
-const Landing = () => {
-  document.title = 'Fixe Master';
-
-  const language = localStorage.getItem('fixe_landing_master_lang');
-  if (language == null) {
-    i18n.locale = 'ua';
-    localStorage.setItem('fixe_landing_master_lang', 'UA');
-  } else {
-    i18n.locale = language.toLocaleLowerCase();
-  }
-
+const Landing = ({
+  aboutUsParagraphs,
+  reasonsParagraphs,
+  mobileScreenImg,
+  howItWorksParagraphs,
+  howItWorksSubtitle,
+  landingType,
+}) => {
   const socialsLinks = {
     instagram: 'https://instagram.com/fixe.me',
     facebook: '',
@@ -25,21 +23,45 @@ const Landing = () => {
 
   return (
     <div>
-      <Banner
-        instagram = {socialsLinks.instagram}
-        facebook = {socialsLinks.facebook}
-        twitter = {socialsLinks.twitter}
+      {landingType === 'master'
+        ? (
+          <Banner
+            instagram={socialsLinks.instagram}
+            facebook={socialsLinks.facebook}
+            twitter={socialsLinks.twitter}
+          />
+        )
+        : (
+          <BannerCustomer
+            instagram={socialsLinks.instagram}
+            facebook={socialsLinks.facebook}
+            twitter={socialsLinks.twitter}
+          />
+        )}
+      <AboutUs aboutUsParagraphs={aboutUsParagraphs} landingType={landingType} />
+      <Reason reasonsParagraphs={reasonsParagraphs} />
+      <HowItWorks
+        mobileScreenImg={mobileScreenImg}
+        howItWorksParagraphs={howItWorksParagraphs}
+        howItWorksSubtitle={howItWorksSubtitle}
+        landingType={landingType}
       />
-      <AboutUs/>
-      <Reason/>
-      <HowItWorks/>
       <Footer
-        instagram = {socialsLinks.instagram}
-        facebook = {socialsLinks.facebook}
-        twitter = {socialsLinks.twitter}
+        instagram={socialsLinks.instagram}
+        facebook={socialsLinks.facebook}
+        twitter={socialsLinks.twitter}
       />
     </div>
   );
+};
+
+Landing.propTypes = {
+  aboutUsParagraphs: PropTypes.array.isRequired,
+  reasonsParagraphs: PropTypes.array.isRequired,
+  mobileScreenImg: PropTypes.string.isRequired,
+  howItWorksParagraphs: PropTypes.array.isRequired,
+  howItWorksSubtitle: PropTypes.string.isRequired,
+  landingType: PropTypes.string.isRequired,
 };
 
 export default Landing;
