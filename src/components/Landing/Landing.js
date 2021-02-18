@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Banner from './Banner/Banner';
 import AboutUs from './AboutUs/AboutUs';
 import Reason from './Reason/Reason';
 import HowItWorks from './HowItWorks/HowItWorks';
 import Footer from './Footer/Footer';
-import PropTypes from 'prop-types';
 import BannerCustomer from './BannerCustomer/BannerCustomer';
 
 const Landing = ({
@@ -23,20 +23,23 @@ const Landing = ({
 
   return (
     <div>
-      {landingType === 'master' ?
-         <Banner
-           instagram = {socialsLinks.instagram}
-           facebook = {socialsLinks.facebook}
-           twitter = {socialsLinks.twitter}
-         /> :
-            <BannerCustomer
-              instagram = {socialsLinks.instagram}
-              facebook = {socialsLinks.facebook}
-              twitter = {socialsLinks.twitter}
-            />
-      }
-      <AboutUs aboutUsParagraphs={aboutUsParagraphs} landingType={landingType}/>
-      <Reason reasonsParagraphs={reasonsParagraphs}/>
+      {landingType === 'master'
+        ? (
+          <Banner
+            instagram={socialsLinks.instagram}
+            facebook={socialsLinks.facebook}
+            twitter={socialsLinks.twitter}
+          />
+        )
+        : (
+          <BannerCustomer
+            instagram={socialsLinks.instagram}
+            facebook={socialsLinks.facebook}
+            twitter={socialsLinks.twitter}
+          />
+        )}
+      <AboutUs aboutUsParagraphs={aboutUsParagraphs} landingType={landingType} />
+      <Reason reasonsParagraphs={reasonsParagraphs} />
       <HowItWorks
         mobileScreenImg={mobileScreenImg}
         howItWorksParagraphs={howItWorksParagraphs}
@@ -44,9 +47,9 @@ const Landing = ({
         landingType={landingType}
       />
       <Footer
-        instagram = {socialsLinks.instagram}
-        facebook = {socialsLinks.facebook}
-        twitter = {socialsLinks.twitter}
+        instagram={socialsLinks.instagram}
+        facebook={socialsLinks.facebook}
+        twitter={socialsLinks.twitter}
       />
     </div>
   );
