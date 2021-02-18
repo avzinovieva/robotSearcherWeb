@@ -10,6 +10,8 @@ import MastersRequestsTab
   from '../components/MastersRequestsTab/MastersRequestsTab';
 import LandingCustomer from '../components/LandingCustomer/LandingCustomer';
 import LandingMaster from "../components/LandingMaster/LandingMaster";
+import Landing from '../components/Landing/Landing';
+import CouponActivation from '../components/CuponActivation';
 
 const Routes = () => {
   return (
@@ -22,6 +24,8 @@ const Routes = () => {
       <Route path='/mastersRequests' render={() => <MastersRequestsTab/>}/>
       <Route path='/landing' render={() => <LandingMaster/>}/>
       <Route path='/landing_customer' render={() => <LandingCustomer/>}/>
+      <Route path='/r' render={() => <CouponActivation/>}/>
+      <Route path='/landing' render={() => <Landing/>}/>
       <Route render={() => <NoMatch/>} />
     </Switch>
   );
