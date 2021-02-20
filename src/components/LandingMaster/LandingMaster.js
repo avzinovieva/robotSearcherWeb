@@ -19,6 +19,7 @@ const LandingMaster = () => {
     t('landing.aboutUs.p1'),
     t('landing.aboutUs.p2'),
     t('landing.aboutUs.p3')];
+  const reasonsCorgiText = t('landing.reasons.corgiText');
   const reasonsParagraphs = [
     {reason: t('landing.reasons.reason1'),
       description: t('landing.reasons.reasonDesc1')},
@@ -38,6 +39,7 @@ const LandingMaster = () => {
       howItWorksParagraphs={howItWorksParagraphs}
       howItWorksSubtitle={howItWorksSubtitle}
       landingType={'master'}
+      reasonsCorgiText = {reasonsCorgiText}
     />
   );
 };

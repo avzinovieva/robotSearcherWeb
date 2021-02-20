@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 import styles from './reason.module.scss';
 
-const Reason = ({reasonsParagraphs}) => {
+const Reason = ({reasonsParagraphs, corgiText}) => {
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.title}>{t('landing.reasons.title')}</h2>
@@ -17,7 +17,7 @@ const Reason = ({reasonsParagraphs}) => {
           <img src={textBoxBorder} alt="" className={styles.corgiTextBg}/>
           <p className={styles.corgiText}>
             <span className={styles.fixe}>Fixe </span>
-            {t('landing.reasons.corgiText')}
+              {corgiText}
           </p>
         </div>
       </ScrollAnimation>
@@ -41,6 +41,7 @@ const Reason = ({reasonsParagraphs}) => {
 
 Reason.propTypes = {
   reasonsParagraphs: PropTypes.array.isRequired,
+    corgiText: PropTypes.string.isRequired,
 };
 
 export default Reason;
