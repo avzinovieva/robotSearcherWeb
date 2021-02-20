@@ -18,6 +18,7 @@ const LandingCustomer = () => {
   const aboutUsParagraphs = [
     t('landingCustomer.aboutUs.p1'),
     t('landingCustomer.aboutUs.p2')];
+  const reasonsCorgiText = t('landingCustomer.reasons.corgiText');
   const reasonsParagraphs = [
     {reason: t('landingCustomer.reasons.reason1'),
       description: t('landingCustomer.reasons.reasonDesc1')},
@@ -43,6 +44,7 @@ const LandingCustomer = () => {
       howItWorksSubtitle={howItWorksSubtitle}
       mobileScreenImg={mobileScreenImg}
       landingType={'customer'}
+      reasonsCorgiText={reasonsCorgiText}
     />
   );
 };

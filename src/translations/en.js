@@ -111,6 +111,7 @@ export default {
           'will solve your problem efficiently and quickly',
     },
     reasons: {
+      corgiText: '- it is a convenient way to find a solution to your problem at the best price for work.',
       reason1: 'Facilities',
       reasonDesc1: 'Simple and fast order registration.',
       reason2: 'Security',
