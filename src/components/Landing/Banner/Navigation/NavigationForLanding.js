@@ -7,6 +7,7 @@ import bars from '../../../../img/bar.png';
 import t from '../../../../translations/i18n';
 import LanguageBlock from '../LanguageBlock/LanguageBlock';
 import coloredBars from '../../../../img/coloredBar.png';
+import version from '../../../../config';
 
 import styles from '../banner.module.scss';
 
@@ -114,7 +115,7 @@ const NavigationForLanding = () => {
           />
           )
         }
-        <h3 className={styles.version}>1.0.0</h3>
+        <h3 className={styles.version}>{version}</h3>
         {
           navigationMenu()
         }
