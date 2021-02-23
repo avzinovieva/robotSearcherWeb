@@ -21,7 +21,7 @@ const Landing = ({
     instagram: 'https://instagram.com/fixe.me',
     facebook: 'https://www.facebook.com/fixe.tech',
     twitter: 'https://twitter.com/fixe_tech',
-    telegram: 'https://twitter.com/fixe_tech',
+    telegram: 'https://t.me/fixe_tech',
   };
 
   return (
