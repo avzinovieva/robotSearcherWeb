@@ -114,6 +114,7 @@ const NavigationForLanding = () => {
           />
           )
         }
+        <h3 className={styles.version}>1.0.0</h3>
         {
           navigationMenu()
         }
