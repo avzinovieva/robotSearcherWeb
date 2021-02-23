@@ -1,7 +1,7 @@
 import React from 'react';
+import i18n from 'i18n-js';
 import Landing from '../Landing/Landing';
 import t from '../../translations/i18n';
-import i18n from 'i18n-js';
 import mobileScreenImg from '../../img/mobileScreen.png';
 
 const LandingMaster = () => {
@@ -21,15 +21,22 @@ const LandingMaster = () => {
     t('landing.aboutUs.p3')];
   const reasonsCorgiText = t('landing.reasons.corgiText');
   const reasonsParagraphs = [
-    {reason: t('landing.reasons.reason1'),
-      description: t('landing.reasons.reasonDesc1')},
-    {reason: t('landing.reasons.reason2'),
-      description: t('landing.reasons.reasonDesc2')},
-    {reason: t('landing.reasons.reason3'),
-      description: t('landing.reasons.reasonDesc3')},
+    {
+      reason: t('landing.reasons.reason1'),
+      description: t('landing.reasons.reasonDesc1'),
+    },
+    {
+      reason: t('landing.reasons.reason2'),
+      description: t('landing.reasons.reasonDesc2'),
+    },
+    {
+      reason: t('landing.reasons.reason3'),
+      description: t('landing.reasons.reasonDesc3'),
+    },
   ];
   const howItWorksParagraphs = [t('landing.howItWorks.p2')];
   const howItWorksSubtitle = t('landing.howItWorks.subtitle');
+  const downloadLink = 'https://bit.ly/Fixe_Master_Beta';
 
   return (
     <Landing
@@ -38,8 +45,9 @@ const LandingMaster = () => {
       mobileScreenImg={mobileScreenImg}
       howItWorksParagraphs={howItWorksParagraphs}
       howItWorksSubtitle={howItWorksSubtitle}
-      landingType={'master'}
-      reasonsCorgiText = {reasonsCorgiText}
+      landingType="master"
+      reasonsCorgiText={reasonsCorgiText}
+      downloadLink={downloadLink}
     />
   );
 };

@@ -6,13 +6,16 @@ import logo from '../../../img/fixeLogo.png';
 import facebookIcon from '../../../img/facebook.png';
 import twitterIcon from '../../../img/twitter.png';
 import instagramIcon from '../../../img/instagram.png';
+import telegramIcon from '../../../img/telegram.png';
 import t from '../../../translations/i18n';
 import masterQR from '../../../img/MasterQR.svg';
 import GetMessage from './GetMessage/GetMessage';
 
 import styles from './footer.module.scss';
 
-const Footer = ({ instagram, facebook, twitter }) => {
+const Footer = ({
+  instagram, facebook, twitter, telegram, download,
+}) => {
   const isMobile = useMediaQuery('(max-width:576px)');
   const isTablet = useMediaQuery('(max-width:992px)');
 
@@ -29,9 +32,11 @@ const Footer = ({ instagram, facebook, twitter }) => {
                 {t('landing.footer.android')}
               </p>
             </div>
-            <button className={styles.download}>
-              {t('landing.footer.download')}
-            </button>
+            <a href={download}>
+              <button className={styles.download}>
+                {t('landing.footer.download')}
+              </button>
+            </a>
             <p className={styles.text}>
               <span className={styles.dedicated}>iOS - </span>
               {t('landing.footer.soon')}
@@ -59,20 +64,17 @@ const Footer = ({ instagram, facebook, twitter }) => {
               <div className={styles.link_block}>
                 <p className={styles.text}>{t('landing.footer.socials')}</p>
                 <div className={styles.socials}>
-                  {facebook.length !== 0
-                  && (
                   <a href={facebook} className={styles.social_link_footer}>
                     <img src={facebookIcon} alt="" />
                   </a>
-                  )}
-                  {twitter.length !== 0
-                  && (
                   <a href={twitter} className={styles.social_link_footer}>
                     <img src={twitterIcon} alt="" />
                   </a>
-                  )}
                   <a href={instagram} className={styles.social_link_footer}>
                     <img src={instagramIcon} alt="" />
+                  </a>
+                  <a href={telegram} className={styles.social_link_footer}>
+                    <img src={telegramIcon} alt="" />
                   </a>
                 </div>
               </div>
@@ -93,20 +95,17 @@ const Footer = ({ instagram, facebook, twitter }) => {
                 <div>
                   <p className={styles.text}>{t('landing.footer.socials')}</p>
                   <div className={styles.socials}>
-                    {facebook.length !== 0
-                    && (
                     <a href={facebook} className={styles.social_link_footer}>
                       <img src={facebookIcon} alt="" />
                     </a>
-                    )}
-                    {twitter.length !== 0
-                    && (
                     <a href={twitter} className={styles.social_link_footer}>
                       <img src={twitterIcon} alt="" />
                     </a>
-                    )}
                     <a href={instagram} className={styles.social_link_footer}>
                       <img src={instagramIcon} alt="" />
+                    </a>
+                    <a href={telegram} className={styles.social_link_footer}>
+                      <img src={telegramIcon} alt="" />
                     </a>
                   </div>
                 </div>
@@ -125,6 +124,8 @@ Footer.propTypes = {
   instagram: PropTypes.string.isRequired,
   facebook: PropTypes.string.isRequired,
   twitter: PropTypes.string.isRequired,
+  telegram: PropTypes.string.isRequired,
+  download: PropTypes.string.isRequired,
 };
 
 export default Footer;

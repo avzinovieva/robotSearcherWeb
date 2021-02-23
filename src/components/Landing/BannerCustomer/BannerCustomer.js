@@ -7,6 +7,7 @@ import t from '../../../translations/i18n';
 import facebookIcon from '../../../img/facebook.png';
 import twitterIcon from '../../../img/twitter.png';
 import instagramIcon from '../../../img/instagram.png';
+import telegramIcon from '../../../img/telegram.png';
 import corgi from '../../../img/corgi.png';
 import bottomArrow from '../../../img/arrowBottom.png';
 import textBg from '../../../img/textBox_customer.png';
@@ -15,7 +16,9 @@ import textBg_mobile from '../../../img/textBox_customer_mobile.png';
 
 import styles from './bannerCustomer.module.scss';
 
-const BannerCustomer = ({ facebook, twitter, instagram }) => {
+const BannerCustomer = ({
+  facebook, twitter, instagram, telegram,
+}) => {
   const isMobile = useMediaQuery('(max-width:576px)');
   const corgiTextBg = isMobile ? textBg_mobile : textBg;
 
@@ -28,7 +31,8 @@ const BannerCustomer = ({ facebook, twitter, instagram }) => {
           <h2 className={styles.bannerTitle}>
             {t('landingCustomer.banner.subtitle1')}
           </h2>
-          <h2 className={styles.bannerTitle}>{t('landingCustomer.banner.subtitle2')}
+          <h2 className={styles.bannerTitle}>
+            {t('landingCustomer.banner.subtitle2')}
           </h2>
         </div>
         <div className={styles.corgiTextWrapper}>
@@ -39,20 +43,17 @@ const BannerCustomer = ({ facebook, twitter, instagram }) => {
         </div>
         <div>
           <div className={styles.socials}>
-            {facebook.length !== 0
-                          && (
-                          <a href={facebook} className={styles.social_link}>
-                            <img src={facebookIcon} alt="facebook" />
-                          </a>
-                          )}
-            {twitter.length !== 0
-                          && (
-                          <a href={twitter} className={styles.social_link}>
-                            <img src={twitterIcon} alt="twitter" />
-                          </a>
-                          )}
+            <a href={facebook} className={styles.social_link}>
+              <img src={facebookIcon} alt="facebook" />
+            </a>
+            <a href={twitter} className={styles.social_link}>
+              <img src={twitterIcon} alt="twitter" />
+            </a>
             <a href={instagram} className={styles.social_link}>
               <img src={instagramIcon} alt="instagram" />
+            </a>
+            <a href={telegram} className={styles.social_link}>
+              <img src={telegramIcon} alt="telegram" />
             </a>
           </div>
         </div>
@@ -71,6 +72,7 @@ BannerCustomer.propTypes = {
   instagram: PropTypes.string.isRequired,
   facebook: PropTypes.string.isRequired,
   twitter: PropTypes.string.isRequired,
+  telegram: PropTypes.string.isRequired,
 };
 
 export default BannerCustomer;
