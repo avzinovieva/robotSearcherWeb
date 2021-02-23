@@ -217,7 +217,7 @@
   display: flex;
   align-items: center;
   width: 40%;
-  margin-top: 13vh;
+  margin-top: 11vh;
 
   @media (max-width: 1200px) {
     width: 60%;
@@ -227,7 +227,7 @@
   }
   @media (max-width: 576px) {
     position: absolute;
-    top: 60%;
+    top: 55%;
     left: 3%;
     display: block;
     width: 50px;
@@ -253,7 +253,7 @@
   @media (max-width: 576px) {
     display: block;
     margin: 20px auto 0;
-    height: 5vh;
+    height: 4.5vh;
   }
 }
 

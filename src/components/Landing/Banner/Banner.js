@@ -8,6 +8,7 @@ import textImgMobile from '../../../img/textBox_mobile.png';
 import facebookIcon from '../../../img/facebook.png';
 import twitterIcon from '../../../img/twitter.png';
 import instagramIcon from '../../../img/instagram.png';
+import telegramIcon from '../../../img/telegram.png';
 import corgi from '../../../img/corgi.png';
 import bottomArrow from '../../../img/arrowBottom.png';
 import t from '../../../translations/i18n';
@@ -15,7 +16,9 @@ import NavigationForLanding from './Navigation/NavigationForLanding';
 
 import styles from './banner.module.scss';
 
-const Banner = ({ instagram, facebook, twitter }) => {
+const Banner = ({
+  instagram, facebook, twitter, telegram,
+}) => {
   const isMobile = useMediaQuery('(max-width:576px)');
 
   return (
@@ -61,20 +64,17 @@ const Banner = ({ instagram, facebook, twitter }) => {
           </div>
           <div>
             <div className={styles.socials}>
-              {facebook.length !== 0
-                && (
-                <a href={facebook} className={styles.social_link}>
-                  <img src={facebookIcon} alt="facebook" />
-                </a>
-                )}
-              {twitter.length !== 0
-              && (
+              <a href={facebook} className={styles.social_link}>
+                <img src={facebookIcon} alt="facebook" />
+              </a>
               <a href={twitter} className={styles.social_link}>
                 <img src={twitterIcon} alt="twitter" />
               </a>
-              )}
               <a href={instagram} className={styles.social_link}>
                 <img src={instagramIcon} alt="instagram" />
+              </a>
+              <a href={telegram} className={styles.social_link}>
+                <img src={telegramIcon} alt="telegram" />
               </a>
             </div>
           </div>
@@ -94,6 +94,7 @@ Banner.propTypes = {
   instagram: PropTypes.string.isRequired,
   facebook: PropTypes.string.isRequired,
   twitter: PropTypes.string.isRequired,
+  telegram: PropTypes.string.isRequired,
 };
 
 export default Banner;

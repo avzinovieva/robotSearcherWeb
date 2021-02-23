@@ -15,11 +15,13 @@ const Landing = ({
   howItWorksSubtitle,
   landingType,
   reasonsCorgiText,
+  downloadLink,
 }) => {
   const socialsLinks = {
     instagram: 'https://instagram.com/fixe.me',
-    facebook: '',
-    twitter: '',
+    facebook: 'https://www.facebook.com/fixe.tech',
+    twitter: 'https://twitter.com/fixe_tech',
+    telegram: 'https://twitter.com/fixe_tech',
   };
 
   return (
@@ -30,6 +32,7 @@ const Landing = ({
             instagram={socialsLinks.instagram}
             facebook={socialsLinks.facebook}
             twitter={socialsLinks.twitter}
+            telegram={socialsLinks.telegram}
           />
         )
         : (
@@ -37,6 +40,7 @@ const Landing = ({
             instagram={socialsLinks.instagram}
             facebook={socialsLinks.facebook}
             twitter={socialsLinks.twitter}
+            telegram={socialsLinks.telegram}
           />
         )}
       <AboutUs aboutUsParagraphs={aboutUsParagraphs} landingType={landingType} />
@@ -51,6 +55,8 @@ const Landing = ({
         instagram={socialsLinks.instagram}
         facebook={socialsLinks.facebook}
         twitter={socialsLinks.twitter}
+        telegram={socialsLinks.telegram}
+        download={downloadLink}
       />
     </div>
   );
@@ -64,6 +70,7 @@ Landing.propTypes = {
   howItWorksParagraphs: PropTypes.array.isRequired,
   howItWorksSubtitle: PropTypes.string.isRequired,
   landingType: PropTypes.string.isRequired,
+  downloadLink: PropTypes.string.isRequired,
 };
 
 export default Landing;
