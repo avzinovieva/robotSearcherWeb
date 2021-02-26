@@ -5,6 +5,11 @@
   height: 100vh;
   background: linear-gradient(94.46deg, $landing_gradient1 0%, $landing_gradient2 107.33%);
 
+  @media (max-width: 1200px) and (orientation: landscape)  {
+    position: relative;
+    height: 1200px;
+  }
+
   @media (max-width: 992px) and (orientation: landscape)  {
     position: relative;
     height: 950px;
@@ -63,12 +68,18 @@
   position: absolute;
   top: 6%;
 
+  @media (max-width: 1200px) {
+    top:9%;
+  }
   @media (max-width: 992px) {
     font-size: $landing_text_tablet;
   }
   @media (max-width: 768px) {
     font-size: $landing_text_small_tablet;
-    top: 12%;
+    top: 5%;
+  }
+  @media (max-width: 576px) {
+    top: 13%;
   }
 }
 
@@ -159,9 +170,9 @@
     margin-bottom: 30px;
   }
   @media (max-width: 768px) {
-    height: 200px;
-    width: 90%;
-    margin: 10px auto 0;
+    height: 250px;
+    width: 100%;
+    margin: 3vh auto 0;
   }
   @media (max-height: 640px) and (max-width: 576px){
     height: 170px;
@@ -190,7 +201,7 @@
     transform: translateY(-50%);
   }
   @media (max-width: 768px) {
-    width: 90%;
+    width: 80%;
     font-size: $landing_h1_small_tablet;
     height: 150px;
     left: 10%;
@@ -222,7 +233,7 @@
   }
   @media (max-width: 768px) {
     font-size: $landing_h3_small_tablet;
-    margin-top: 10px;
+    margin-top: 5vh;
   }
   @media (max-width: 576px) {
     font-size: $landing_h3_mobile;
@@ -242,6 +253,9 @@
   }
   @media (max-width: 992px) {
     margin-top: 7vh;
+  }
+  @media (max-width: 768px) {
+    margin-top: 15vh;
   }
   @media (max-width: 576px) {
     position: absolute;
@@ -269,11 +283,11 @@
     height: 50px;
   }
   @media (max-width: 768px) {
-    height: 30px;
+    height: 45px;
   }
   @media (max-width: 576px) {
     display: block;
-    margin: 20px auto 0;
+    margin: 15px auto 0;
     height: 4.5vh;
   }
   @media (max-width: 320px) {
