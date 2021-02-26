@@ -250,6 +250,9 @@
     display: block;
     width: 50px;
   }
+  @media (max-width: 320px) {
+    top: 60%;
+  }
 }
 
 .socials img{
@@ -272,6 +275,10 @@
     display: block;
     margin: 20px auto 0;
     height: 4.5vh;
+  }
+  @media (max-width: 320px) {
+    height: 25px;
+    margin-top: 10px;
   }
 }
 
@@ -309,6 +316,12 @@
   @media (max-height: 640px) and (max-width: 576px){
     height: 150px;
   }
+  @media (max-height: 670px) and (max-width: 376px){
+    height: 100px;
+  }
+  @media (max-width: 320px) {
+    height: 100px;
+  }
 }
 
 .corgiImg{
@@ -320,6 +333,9 @@
   @media (max-width: 576px) {
     height: 30vh;
     width: auto;
+  }
+  @media (max-width: 320px) {
+    height: 150px;
   }
 }
 
