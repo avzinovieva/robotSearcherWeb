@@ -14,6 +14,7 @@ const TopBar = () => {
           alt='logo'
           className={styles.logo}
           onClick={() => window.location.reload()}/>
+          <p className={styles.version}>1.0.0</p>
         <NavBar />
         <RightBar/>
       </div>

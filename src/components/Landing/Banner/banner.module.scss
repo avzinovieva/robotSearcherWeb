@@ -58,30 +58,6 @@
   }
 }
 
-.version{
-  color: $white;
-  font-family: $landing_font;
-  font-size: $landing_text;
-  font-weight: normal;
-  text-decoration: none;
-  position: absolute;
-  top: 6%;
-
-  @media (max-width: 1200px) {
-    top:9%;
-  }
-  @media (max-width: 992px) {
-    font-size: $landing_text_tablet;
-  }
-  @media (max-width: 768px) {
-    font-size: $landing_text_small_tablet;
-    top: 5%;
-  }
-  @media (max-width: 576px) {
-    top: 13%;
-  }
-}
-
 .bars{
   width: 25px;
 }
