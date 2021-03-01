@@ -18,6 +18,9 @@ export default {
   categoriesList: {
     header: 'Categories',
   },
+  workTypesDetails: {
+    header: 'Work types'
+  },
   mastersList: {
     header: 'Masters list',
   },

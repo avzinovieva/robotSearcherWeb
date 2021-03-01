@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './Card/Card';
 import styles from './Cards.module.scss';
 
-// eslint-disable-next-line require-jsdoc
+
 function Cards(props) {
   // Set page value. Finding first and last card on the page
   const pageNumber = (!props.pageNumber)? 1 : props.pageNumber;
