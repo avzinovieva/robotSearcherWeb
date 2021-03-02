@@ -2,21 +2,23 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import TopBar from '../TopBar/TopBar';
-import styles from './WorkTypesDetails.module.scss';
 import t from '../../translations/i18n';
-import Cards from "./Cards/Cards";
+import Cards from './Cards/Cards';
 import Footer from '../Footer/Footer';
 import { categories } from '../../state/modules/categories/action';
-import PaginationBar from '../CategoriesList/Pagination/Pagination';
+import PaginationBar from './Pagination/Pagination';
+import ModalWindow from './Cards/ModalWindow';
+import styles from './WorkTypesDetails.module.scss';
 
 const WorkTypesDetails = ({ loading, categoriesFunc, categories }) => {
   const [page, setPage] = useState(1);
   const [cardsPerPage, setCardsPerPage] = useState(24);
 
+  const [modalActive, setModalActive] = useState(false);
+
   useEffect(() => {
     categoriesFunc();
   }, []);
-
   const pagesCount = Math.ceil(categories.length / cardsPerPage);
 
   // OnChange function for pagination and pagination element
@@ -32,16 +34,26 @@ const WorkTypesDetails = ({ loading, categoriesFunc, categories }) => {
       />
     </div>
   );
+
   return (
     <div>
       <TopBar />
-      <div className={styles.categoriesListTitle}>
+      <div className={styles.workTypesDetailsTitle}>
         <div className={styles.block}>
           <div className={styles.title}>{`${t('workTypesDetails.header')}`}</div>
-          <button className={styles.button}> + </button>
+          <button className={styles.button} onClick={() => setModalActive(true)}> + </button>
         </div>
         {pagination(handleChange, page, pagesCount)}
       </div>
+        <ModalWindow active={modalActive} setActive={setModalActive}>
+            <h1 className={styles.modalWindowTitle}>Work types details</h1>
+            <form action="">
+                <input type="text" placeholder="Work type name"/>
+                <input type="text" placeholder="Work default price"/>
+                <button>Save</button>
+            </form>
+        </ModalWindow>
+
       <div className={styles.categoriesListContent}>
         <Cards cards={categories} pageNumber={page} />
       </div>
@@ -55,6 +67,7 @@ const WorkTypesDetails = ({ loading, categoriesFunc, categories }) => {
         />
         {pagination(handleChange, page, pagesCount)}
       </div>
+
     </div>
   );
 };

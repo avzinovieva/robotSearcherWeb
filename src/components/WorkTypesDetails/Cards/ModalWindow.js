@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import styles from '../WorkTypesDetails.module.scss'
+import React from 'react';
 
-const AddNewWorkTypeCard = () => {
-    return (
-        <div>
-            <div className={styles.title}>Work types details</div>
-          {console.log('work')}
-        </div>
-    );
+import './ModalWindowStyle.css';
+
+const ModalWindow = (props) => {
+  const {active, setActive} = props;
+  const {children} = props;
+  return (
+    <div className={active ? "modal active" : "modal"} onClick={() => setActive(false)}>
+      <div className={active ? "modal__content active" : "modal__content"} onClick={(e) => e.stopPropagation()}>
+        {children}
+      </div>
+    </div>
+  );
 };
-export default AddNewWorkTypeCard;
+export default ModalWindow;
