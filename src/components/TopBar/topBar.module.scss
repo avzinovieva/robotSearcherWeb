@@ -23,3 +23,14 @@
 .logo:hover{
     cursor:pointer;
 }
+
+.version{
+    position: absolute;
+    top:2.5%;
+    left: 14%;
+    font-family: $white;
+    font-style: normal;
+    font-weight: normal;
+    font-size: $h3;
+    color: $white;
+}

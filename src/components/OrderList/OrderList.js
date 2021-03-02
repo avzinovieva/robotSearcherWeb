@@ -1,16 +1,17 @@
-import React, {useEffect} from 'react';
-import {connect} from 'react-redux';
-import {orders} from '../../state/modules/orders/action';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { orders } from '../../state/modules/orders/action';
 import ListScreen from '../ListScreen/ListScreen';
 
-const OrderList = ({loading, ordersFunc, orders}) => {
+// eslint-disable-next-line no-shadow
+const OrderList = ({ loading, ordersFunc, orders }) => {
   useEffect(() => {
     ordersFunc();
   }, []);
 
   return (
-    <ListScreen loading={loading} items={orders} type={'ordersList'}/>
+    <ListScreen loading={loading} items={orders} type="ordersList" />
   );
 };
 
@@ -24,11 +25,12 @@ OrderList.defaultProps = {
   orders: [],
 };
 
-const mapStateToProps = ({orders}) => ({
+const mapStateToProps = ({ orders }) => ({
   loading: orders.loading,
   orders: orders.orders,
 });
 
 export default connect(
-    () => mapStateToProps,
-    {ordersFunc: orders})(OrderList);
+  () => mapStateToProps,
+  { ordersFunc: orders },
+)(OrderList);
