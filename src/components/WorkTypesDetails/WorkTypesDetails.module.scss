@@ -1,6 +1,7 @@
 @import '../../theme.module.scss';
 .modalWindowTitle{
     text-align: center;
+    padding-top: 20px;
 }
 .workTypesDetailsTitle{
     display: flex;
@@ -26,21 +27,22 @@
     color: $title_color;
 }
 .button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    margin-left: 10px;
+
+    color: $white;
+    font-size: $title;
+    font-family: $main_font;
 
     background-color: $violet;
     border-radius: 50%;
     border: none;
     outline:none;
 
-    color: $white;
-    font-size: $title;
-    font-family: $main_font;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
 }
 .Pagination {
     position: absolute;

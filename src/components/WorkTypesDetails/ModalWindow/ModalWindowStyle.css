@@ -4,7 +4,6 @@
     height: 100%;
     background-color: rgba(125, 125, 125, 0.17);
     position: fixed;
-
     top: 0;
     left: 0;
     backdrop-filter: blur(2px);
@@ -25,48 +24,16 @@
 
 .modal__content{
     position: relative;
-
     width: 581px;
-    height: 348px;
+    height: 378px;
+
     background-color: #FFFFFF;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+
     transform: scale(0.5);
     transition: 0.3s all;
-
-
-
 }
-.modal__content form{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-.modal__content input{
-    width: 300px;
-    height: 50px;
-    margin: 20px;
-    padding: 15px;
-    background: #FFFFFF;
-    border: 1px solid #9FB0B9;
-    box-sizing: border-box;
-    border-radius: 10px;
-    overflow: hidden;
-    outline: none;
-}
-.modal__content input:focus{
-    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
-}
-.modal__content button{
-    width: 104px;
-    height: 43px;
-    color: white;
-    background: #8E09E9;
-    border-radius: 4px;
-    margin-bottom: 20px;
-}
-
 
 .modal__content.active {
     transform: scale(1);
