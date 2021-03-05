@@ -1,16 +1,15 @@
 import {
-  LOAD_WORKTYPES,
-  LOAD_WORKTYPES_SUCCESS,
-  LOAD_WORKTYPES_FAIL,
+  LOAD_WORKTYPESPRICE,
+  LOAD_WORKTYPESPRICE_SUCCESS,
+  LOAD_WORKTYPESPRICE_FAIL,
 }
   from './index';
 
-// eslint-disable-next-line import/prefer-default-export
-export const workTypes = (id) => ({
-  types: [LOAD_WORKTYPES, LOAD_WORKTYPES_SUCCESS, LOAD_WORKTYPES_FAIL],
+export const price = (workTypeId) => ({
+  types: [LOAD_WORKTYPESPRICE, LOAD_WORKTYPESPRICE_SUCCESS, LOAD_WORKTYPESPRICE_FAIL],
   payload: {
     request: {
-      url: `/categories/${id}/workTypes`,
+      url: `/workTypes/${workTypeId}/price`,
     },
   },
 });

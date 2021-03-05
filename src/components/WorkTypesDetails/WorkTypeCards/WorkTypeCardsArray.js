@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from './Card';
+import Card from './WorkTypeCard';
 import styles from './Cards.module.scss';
 
-const Cards = ({ pageNumber, cards }) => {
+const WorkTypeCardsArray = ({ pageNumber, cards }) => {
   pageNumber = (!pageNumber) ? 1 : pageNumber;
   const lastCardIndex = (cards.length < pageNumber * 24) ? cards.length : pageNumber * 24;
   const firstCardIndex = (pageNumber - 1) * 24;
@@ -23,13 +23,13 @@ const Cards = ({ pageNumber, cards }) => {
   );
 };
 
-Cards.defaultProps = {
+WorkTypeCardsArray.defaultProps = {
   cards: [],
 };
 
-Cards.propTypes = {
+WorkTypeCardsArray.propTypes = {
   cards: PropTypes.array.isRequired,
   pageNumber: PropTypes.number.isRequired,
 };
 
-export default Cards;
+export default WorkTypeCardsArray;

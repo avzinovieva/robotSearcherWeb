@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import { price } from '../../../state/modules/workTypesPrice/action';
 import styles from './WorkTypeCard.module.scss';
 
-const Card = ({ workTypesFunc, category, id}) => {
+const WorkTypeCard = ({ workTypesFunc, category, id}) => {
   const [priceArray, setPriceArray] = useState([]);
 
   useEffect(() => {
-    workTypesFunc(id).then((item) => {setPriceArray(item.payload.data); });
+    workTypesFunc(id).then((item) => { if (item.length === 0) setPriceArray(item.payload.data); });
   }, []);
 
   return (
@@ -25,14 +25,14 @@ const Card = ({ workTypesFunc, category, id}) => {
   );
 };
 
-Card.propTypes = {
+WorkTypeCard.propTypes = {
   loading: PropTypes.bool.isRequired,
   workTypesFunc: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
 };
 
-Card.defaultProps = {
+WorkTypeCard.defaultProps = {
   page: 1,
   workTypes: [],
   price: [],
@@ -46,4 +46,4 @@ const mapStateToProps = ({ id }) => ({
 export default connect(
   () => mapStateToProps,
   { workTypesFunc: price },
-)(Card);
+)(WorkTypeCard);

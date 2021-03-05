@@ -1,16 +1,16 @@
 import React from 'react';
-import './ModalWindowStyle.css';
-import './FormStyle.css';
+import styles from './ModalWindowStyle.module.scss';
 
 const ModalWindow = (props) => {
-    const {active, setActive} = props;
-    const {children} = props;
-    return (
-        <div className={active ? 'modal active' : 'modal'} onClick={() => setActive(false)}>
-            <div className={active ? 'modal__content active' : 'modal__content'} onClick={(e) => e.stopPropagation()}>
-                {children}
-            </div>
-        </div>
-    );
+  const { active, setActive } = props;
+  const { children } = props;
+  return (
+    <div className={active ? styles.modal_active : styles.modal} onClick={() => setActive(false)}>
+      <div className={active ? styles.modal__content_active : styles.modal__content}
+           onClick={(e) => e.stopPropagation()}>
+        {children}
+      </div>
+    </div>
+  );
 };
 export default ModalWindow;

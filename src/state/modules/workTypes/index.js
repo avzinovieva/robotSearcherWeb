@@ -1,43 +1,40 @@
-export const LOAD_CATEGORIES = 'categories/LOAD_CATEGORIES';
-export const LOAD_CATEGORIES_SUCCESS = 'categories/LOAD_CATEGORIES_SUCCESS';
-export const LOAD_CATEGORIES_FAIL = 'categories/LOAD_CATEGORIES_FAIL';
+export const LOAD_WORKTYPES = 'workTypes/LOAD_WORKTYPES';
+export const LOAD_WORKTYPES_SUCCESS = 'workTypes/LOAD_WORKTYPES_SUCCESS';
+export const LOAD_WORKTYPES_FAIL = 'workTypes/LOAD_WORKTYPES_FAIL';
 
 const initialState = {
   loading: false,
-  categories: [],
+  workTypes: [],
 };
 
 const actionHandlers = {
-  [LOAD_CATEGORIES](state) {
+  [LOAD_WORKTYPES](state) {
     return {
       ...state,
       loading: true,
     };
   },
-  [LOAD_CATEGORIES_SUCCESS](state, action) {
+  [LOAD_WORKTYPES_SUCCESS](state, action) {
     return {
       ...state,
       loading: false,
       categories: action.payload.data,
     };
   },
-  [LOAD_CATEGORIES_FAIL](state, action) {
+  [LOAD_WORKTYPES_FAIL](state, action) {
     return {
       ...state,
       loading: false,
       error: action.error,
     };
   },
-
 };
 
-// eslint-disable-next-line require-jsdoc
 export default function reducer(state = initialState, action = {}) {
-  const {type} = action;
+  const { type } = action;
   const actionHandler = actionHandlers[type];
   if (actionHandler) {
     return actionHandler(state, action);
   }
-
   return state;
 }

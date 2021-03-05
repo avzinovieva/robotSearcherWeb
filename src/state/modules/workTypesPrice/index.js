@@ -1,27 +1,27 @@
-export const LOAD_WORKTYPES= 'workTypes/LOAD_WORKTYPES';
-export const LOAD_WORKTYPES_SUCCESS = 'workTypes/LOAD_WORKTYPES_SUCCESS';
-export const LOAD_WORKTYPES_FAIL = 'workTypes/LOAD_WORKTYPES_FAIL';
+export const LOAD_WORKTYPESPRICE = 'workTypes/LOAD_WORKTYPESPRICE';
+export const LOAD_WORKTYPESPRICE_SUCCESS = 'workTypes/LOAD_WORKTYPESPRICE_SUCCESS';
+export const LOAD_WORKTYPESPRICE_FAIL = 'workTypes/LOAD_WORKTYPESPRICE_FAIL';
 
 const initialState = {
   loading: false,
-  workTypes: [],
+  price: [],
 };
 
 const actionHandlers = {
-  [LOAD_WORKTYPES](state) {
+  [LOAD_WORKTYPESPRICE](state) {
     return {
       ...state,
       loading: true,
     };
   },
-  [LOAD_WORKTYPES_SUCCESS](state, action) {
+  [LOAD_WORKTYPESPRICE_SUCCESS](state, action) {
     return {
       ...state,
       loading: false,
-      categories: action.payload.data,
+      price: action.payload.data,
     };
   },
-  [LOAD_WORKTYPES_FAIL](state, action) {
+  [LOAD_WORKTYPESPRICE_FAIL](state, action) {
     return {
       ...state,
       loading: false,
@@ -31,9 +31,8 @@ const actionHandlers = {
 
 };
 
-// eslint-disable-next-line require-jsdoc
 export default function reducer(state = initialState, action = {}) {
-  const {type} = action;
+  const { type } = action;
   const actionHandler = actionHandlers[type];
   if (actionHandler) {
     return actionHandler(state, action);

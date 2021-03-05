@@ -1,14 +1,15 @@
 import {
-  LOAD_CATEGORIES,
-  LOAD_CATEGORIES_SUCCESS,
-  LOAD_CATEGORIES_FAIL}
+  LOAD_WORKTYPES,
+  LOAD_WORKTYPES_SUCCESS,
+  LOAD_WORKTYPES_FAIL,
+}
   from './index';
 
-export const categories = () => ({
-  types: [LOAD_CATEGORIES, LOAD_CATEGORIES_SUCCESS, LOAD_CATEGORIES_FAIL],
+export const workTypes = (id) => ({
+  types: [LOAD_WORKTYPES, LOAD_WORKTYPES_SUCCESS, LOAD_WORKTYPES_FAIL],
   payload: {
     request: {
-      url: '/categories',
+      url: `/categories/${id}/workTypes`,
     },
   },
 });
