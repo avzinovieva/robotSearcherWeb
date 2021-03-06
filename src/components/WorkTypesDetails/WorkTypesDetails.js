@@ -14,7 +14,7 @@ import formStyles from './FormStyle.module.scss';
 const WorkTypesDetails = ({ loading, workTypesFunc, workTypes }) => {
   const [page, setPage] = useState(1);
   const [cardsPerPage, setCardsPerPage] = useState(24);
-  const [workTypesArray, setWorkTypesArray] = useState([]); // ЗАКОНЧИТЬ ТУПОЕ название
+  const [workTypesArray, setWorkTypesArray] = useState([]);
   const [modalActive, setModalActive] = useState(false);
   const splitPath = () => {
     const splitedPath = window.location.pathname.split('/');
@@ -23,7 +23,11 @@ const WorkTypesDetails = ({ loading, workTypesFunc, workTypes }) => {
 
   useEffect(() => {
     // eslint-disable-next-line max-len
-    workTypesFunc(splitPath()).then((item) => { if (item.length == 0) { setWorkTypesArray(item.payload.data); } });
+    workTypesFunc(splitPath()).then((item) => {
+      if (item.payload === undefined) {
+        setWorkTypesArray([]);
+      } else { setWorkTypesArray(item.payload.data); }
+    });
   }, []);
 
   const pagesCount = Math.ceil(workTypes.length / cardsPerPage);

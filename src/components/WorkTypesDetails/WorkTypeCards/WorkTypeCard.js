@@ -4,13 +4,17 @@ import { connect } from 'react-redux';
 import { price } from '../../../state/modules/workTypesPrice/action';
 import styles from './WorkTypeCard.module.scss';
 
-const WorkTypeCard = ({ workTypesFunc, category, id}) => {
+const WorkTypeCard = ({ workTypesFunc, category, id }) => {
   const [priceArray, setPriceArray] = useState([]);
 
   useEffect(() => {
-    workTypesFunc(id).then((item) => { if (item.length === 0) setPriceArray(item.payload.data); });
+    // eslint-disable-next-line max-len
+    workTypesFunc(id).then((item) => {
+      if (item.payload === undefined) {
+        setPriceArray([]);
+      } else { setPriceArray(item.payload.data); }
+    });
   }, []);
-
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.cardContainer}>
@@ -26,10 +30,9 @@ const WorkTypeCard = ({ workTypesFunc, category, id}) => {
 };
 
 WorkTypeCard.propTypes = {
-  loading: PropTypes.bool.isRequired,
   workTypesFunc: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.array.isRequired,
 };
 
 WorkTypeCard.defaultProps = {
