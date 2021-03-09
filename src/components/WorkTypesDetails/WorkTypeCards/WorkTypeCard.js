@@ -3,16 +3,14 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { price } from '../../../state/modules/workTypesPrice/action';
 import styles from './WorkTypeCard.module.scss';
+import t from '../../../translations/i18n';
 
 const WorkTypeCard = ({ workTypesFunc, category, id }) => {
   const [priceArray, setPriceArray] = useState([]);
 
   useEffect(() => {
-    // eslint-disable-next-line max-len
     workTypesFunc(id).then((item) => {
-      if (item.payload === undefined) {
-        setPriceArray([]);
-      } else { setPriceArray(item.payload.data); }
+      (!item.payload) ? setPriceArray([]) : setPriceArray(item.payload.data);
     });
   }, []);
   return (
@@ -21,8 +19,8 @@ const WorkTypeCard = ({ workTypesFunc, category, id }) => {
         <div className={styles.workTypesCategories}>{category}</div>
         <div className={styles.workTypesPrice}>{priceArray}</div>
         <div className={styles.buttonsBlock}>
-          <button className={styles.button}>Edit</button>
-          <button className={styles.button}>Delete</button>
+          <button className={styles.button}>{`${t('workTypesDetails.cards.buttonEdit')}`}</button>
+          <button className={styles.button}>{`${t('workTypesDetails.cards.buttonDelete')}`}</button>
         </div>
       </div>
     </div>

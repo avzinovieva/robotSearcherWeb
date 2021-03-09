@@ -6,8 +6,10 @@ const ModalWindow = (props) => {
   const { children } = props;
   return (
     <div className={active ? styles.modal_active : styles.modal} onClick={() => setActive(false)}>
-      <div className={active ? styles.modal__content_active : styles.modal__content}
-           onClick={(e) => e.stopPropagation()}>
+      <div
+        className={active ? styles.modal__content_active : styles.modal__content}
+        onClick={(e) => e.stopPropagation()}
+      >
         {children}
       </div>
     </div>

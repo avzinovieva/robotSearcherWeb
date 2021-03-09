@@ -22,15 +22,12 @@ const WorkTypesDetails = ({ loading, workTypesFunc, workTypes }) => {
   };
 
   useEffect(() => {
-    // eslint-disable-next-line max-len
     workTypesFunc(splitPath()).then((item) => {
-      if (item.payload === undefined) {
-        setWorkTypesArray([]);
-      } else { setWorkTypesArray(item.payload.data); }
+      (!item.payload) ? setWorkTypesArray([]) : setWorkTypesArray(item.payload.data);
     });
   }, []);
 
-  const pagesCount = Math.ceil(workTypes.length / cardsPerPage);
+  const pagesCount = Math.ceil(workTypesArray.length / cardsPerPage);
   const handleChange = (event, value) => {
     setPage(value);
   };
