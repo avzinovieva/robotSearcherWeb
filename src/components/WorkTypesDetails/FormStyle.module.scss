@@ -1,0 +1,42 @@
+@import '../../theme.module';
+
+.modal__content_form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__content_input {
+  width: 300px;
+  height: 50px;
+  margin: 20px;
+  padding: 15px;
+
+  background: $white;
+  border: 1px solid $light_gray_border;
+  box-sizing: border-box;
+  border-radius: 10px;
+
+  overflow: hidden;
+  outline: none;
+}
+
+.modal__content_form:focus {
+  box-shadow: 0 0 10px 5px $modal_box_shadow_light_gray;
+}
+
+.modal__content_button {
+  width: 104px;
+  height: 43px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+
+  color: $white;
+  background: $violet;
+}
+
+.modal__content_button:focus, .modal__content_button:active {
+  background-color: $light_violet_button_focus_color;
+  outline: none;
+}

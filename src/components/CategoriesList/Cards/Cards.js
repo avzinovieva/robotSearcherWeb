@@ -14,7 +14,7 @@ function Cards(props) {
         key = {i}
         id={card.id}
         category={card.name}
-        workTypes={'work types'}
+        workTypes={card.workTypes}
       />);
 
   return (

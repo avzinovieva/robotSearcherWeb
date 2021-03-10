@@ -1,8 +1,9 @@
 //colors
 $white: #FFFFFF;
 $black: #000000;
-$violet: #8E09E9;
+$violet: #b259ef;
 $title_color: #5C3875;
+$dark_violet_title: #2A0941;
 $dark_violet: #14134C;
 $grey: #7E7E7E;
 $dark_grey: #414141;
@@ -11,7 +12,11 @@ $account_bg: #C4C4C4;
 $light_grey: #9FB0B9;
 $green: #33E27A;
 $red: #EA5B7A;
-$underline_color:#D8D8D8;
+$underline_color: #D8D8D8;
+$very_dark_gray: rgba(0, 0, 0, 0.25);
+$modal_box_shadow_light_gray: rgba(221, 221, 221, 1);
+$light_violet_button_focus_color: #BE68EF;
+$light_gray_border: #9FB0B9;
 
 //fonts
 $main_font: 'Roboto', sans-serif;
@@ -27,31 +32,33 @@ $p: 14px;
 $input_text_size: 14px;
 $button_text_size: 14px;
 $error_text_size: 13px;
+$price_font_size: 20px;
+$line_height_price: 35px;
+$work_types_title_font_size: 20px;
 
-
-$landing_h1:  65px;
-$landing_h1_mobile:  22px;
-$landing_h1_tablet:  48px;
+$landing_h1: 65px;
+$landing_h1_mobile: 22px;
+$landing_h1_tablet: 48px;
 $landing_h1_small_tablet: 34px;
 
 $landing_h2: 48px;
-$landing_h2_mobile:  20px;
-$landing_h2_tablet:  36px;
+$landing_h2_mobile: 20px;
+$landing_h2_tablet: 36px;
 $landing_h2_small_tablet: 24px;
 
 $landing_h3: 36px;
 $landing_h3_mobile: 16px;
-$landing_h3_tablet:  24px;
+$landing_h3_tablet: 24px;
 $landing_h3_small_tablet: 22px;
 
 $landing_text: 24px;
-$landing_text_tablet:  18px;
-$landing_text_small_tablet:  16px;
-$landing_text_mobile:  12px;
+$landing_text_tablet: 18px;
+$landing_text_small_tablet: 16px;
+$landing_text_mobile: 12px;
 
 $landing_error: 20px;
-$landing_error_tablet:  16px;
-$landing_error_mobile:  10px;
+$landing_error_tablet: 16px;
+$landing_error_mobile: 10px;
 
 $landing_gradient1: #3E0963;
 $landing_gradient2: #1A1F9E;

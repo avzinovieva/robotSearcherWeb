@@ -12,6 +12,7 @@ import LandingCustomer from '../components/LandingCustomer/LandingCustomer';
 import LandingMaster from '../components/LandingMaster/LandingMaster';
 import Landing from '../components/Landing/Landing';
 import CouponActivation from '../components/CuponActivation';
+import WorkTypesDetails from '../components/WorkTypesDetails/WorkTypesDetails';
 
 const Routes = () => (
   <Switch>
@@ -25,6 +26,7 @@ const Routes = () => (
     <Route path="/landing_customer" render={() => <LandingCustomer />} />
     <Route path="/r" render={() => <CouponActivation />} />
     <Route path="/landing" render={() => <Landing />} />
+    <Route path="/workTypesDetails" render={() => <WorkTypesDetails />} />
     <Route render={() => <NoMatch />} />
   </Switch>
 );
