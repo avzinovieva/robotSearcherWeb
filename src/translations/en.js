@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default {
   loading: {
@@ -6,6 +6,7 @@ export default {
   },
   ordersList: {
     header: 'OrderList',
+    inputSearchPlaceholder: 'Order id',
     orderTableHeaders: {
       userName: 'User name',
       orderId: 'Order id',
