@@ -21,13 +21,13 @@ const ListTile = ({
               );
             case 'date':
               return (
-                <p key={i+3} className={styles.p}>
+                <p key={i + 3} className={styles.p}>
                   {item.item.split('T')[0].split('-').reverse().join('/')}
                 </p>
               );
             case 'title':
               return (
-                <div key={i+2} className={styles.description}>
+                <div key={i + 2} className={styles.description}>
                   <p className={styles.bold}>{item.item}</p>
                   <p className={styles.violet}>
                     {itemData.filter((item) => item.flag === 'subtitle')[0].item}
@@ -58,7 +58,7 @@ const ListTile = ({
                 </div>
               );
             default:
-              return <p key={i+1} className={styles.p}>{item.item}</p>;
+              return <p key={i + 1} className={styles.p}>{item.item}</p>;
           }
         })
       }

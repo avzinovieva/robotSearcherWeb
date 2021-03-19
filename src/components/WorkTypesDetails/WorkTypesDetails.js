@@ -25,7 +25,7 @@ const WorkTypesDetails = ({ loading, workTypesFunc, workTypes }) => {
     workTypesFunc(splitPath()).then((item) => {
       (!item.payload) ? setWorkTypesArray([]) : setWorkTypesArray(item.payload.data);
     });
-  }, []);
+  }, [workTypesFunc]);
 
   const pagesCount = Math.ceil(workTypesArray.length / cardsPerPage);
   const handleChange = (event, value) => {

@@ -1,9 +1,17 @@
+import React from "react";
+
 export default {
   loading: {
     header: 'Loading',
   },
   ordersList: {
     header: 'OrderList',
+    orderTableHeaders: {
+      userName: 'User name',
+      orderId: 'Order id',
+      requestData: 'Request data',
+      moneyAmount: 'Money amount',
+    },
   },
   noMatch: {
     header: 'Page is not exist',
@@ -17,6 +25,7 @@ export default {
   },
   categoriesList: {
     header: 'Categories',
+    workTypesButtonName: 'Work Types',
   },
   workTypesDetails: {
     header: 'Work types',

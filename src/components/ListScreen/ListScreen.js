@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import t from '../../translations/i18n';
 import TopBar from '../TopBar/TopBar';
 import PaginationBar from '../CategoriesList/Pagination/Pagination';
-import SearchInput from '../OrderList/InputSearch/InputSearch';
+import InputSearch from '../OrderList/InputSearch/InputSearch';
 import Footer from '../Footer/Footer';
 import ListTile from '../ListTile/ListTile';
+import ListTileDescriptionsHeader from '../ListTile/ListTileDescriptionsHeader';
+
 import Popup from '../ManageMasterModal/ManageMasterModal';
 
 import styles from './listScreen.module.scss';
@@ -95,7 +97,8 @@ const ListScreen = ({ loading, items, type }) => {
         {pagination(handleChange, page, pagesCount)}
       </div>
       <p className={styles.title}>{t(`${type}.header`)}</p>
-      <SearchInput onChangeFunc={(text) => setFilter(text)} />
+      <InputSearch onChangeFunc={(text) => setFilter(text)} />
+      <ListTileDescriptionsHeader />
       {
         getItemsToOutput(items, type).map((item, i) => {
           let itemData = [];
@@ -105,7 +108,7 @@ const ListScreen = ({ loading, items, type }) => {
               { item: item.userImage, flag: 'img' },
               { item: item.userName, flag: 'title' },
               { item: item.orderStatus, flag: 'subtitle' },
-              { item: item.userId, flag: 'p' },
+              { item: item.orderId, flag: 'p' },
               { item: item.requestDate, flag: 'date' },
               { item: item.price, flag: 'p' }];
 
