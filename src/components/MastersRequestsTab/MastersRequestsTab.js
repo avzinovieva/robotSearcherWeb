@@ -7,7 +7,7 @@ import ListScreen from '../ListScreen/ListScreen';
 const MastersList = ({loading, mastersRequestsFunc, masters}) =>{
   useEffect(() => {
     mastersRequestsFunc();
-  }, []);
+  }, [mastersRequestsFunc]);
 
   return (
     <ListScreen type={'mastersRequestsList'} items={masters} loading={loading}/>

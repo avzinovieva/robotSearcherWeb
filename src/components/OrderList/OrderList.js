@@ -4,11 +4,10 @@ import PropTypes from 'prop-types';
 import { orders } from '../../state/modules/orders/action';
 import ListScreen from '../ListScreen/ListScreen';
 
-// eslint-disable-next-line no-shadow
 const OrderList = ({ loading, ordersFunc, orders }) => {
   useEffect(() => {
     ordersFunc();
-  }, []);
+  }, [ordersFunc]);
 
   return (
     <ListScreen loading={loading} items={orders} type="ordersList" />
