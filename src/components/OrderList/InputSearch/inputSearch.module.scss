@@ -17,10 +17,15 @@
   margin-bottom: 6px;
   font-family: $main_font;
 }
+.inputSearch::placeholder {
+  color: $grey;
+  font-size: 1.2em;
+}
 
 .searchIcon{
   width: 37px;
   height: auto;
   margin-bottom: 6px;
   margin-right: 6px;
+  cursor: pointer;
 }

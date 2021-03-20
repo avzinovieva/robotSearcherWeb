@@ -1,29 +1,33 @@
-import React, {useState} from 'react';
-import searchIcon from '../../../img/search_icon.png';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import searchIcon from '../../../img/search_icon.png';
 
 import styles from './inputSearch.module.scss';
+import t from '../../../translations/i18n';
 
-const SearchInput = ({onChangeFunc}) =>{
+const InputSearch = ({ onChangeFunc }) => {
   const [filter, setFilter] = useState('');
   return (
     <div className={styles.searchWrapper}>
       <img
         src={searchIcon}
-        alt='search'
+        alt="search"
         className={styles.searchIcon}
-        onClick={()=>onChangeFunc(filter)}
+        onClick={() => onChangeFunc(filter)}
       />
-      <input type='text'
+      <input
+        placeholder={`${t('ordersList.inputSearchPlaceholder')}`}
+        type="text"
         className={styles.inputSearch}
-        onChange={(el)=>setFilter(el.target.value)}
+        onChange={(el) => setFilter(el.target.value)}
+        onKeyUp={() => onChangeFunc(filter)}
       />
     </div>
   );
 };
 
-SearchInput.propTypes = {
+InputSearch.propTypes = {
   onChangeFunc: PropTypes.func.isRequired,
 };
 
-export default SearchInput;
+export default InputSearch;

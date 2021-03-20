@@ -7,8 +7,8 @@ import reducer, {
 describe('orders reducer', () => {
   describe('LOAD_ORDER action', () => {
     it('sets loading to true', () => {
-      const actual = reducer(null, {type: LOAD_ORDER});
-      expect(actual).toEqual({loading: true});
+      const actual = reducer(null, { type: LOAD_ORDER });
+      expect(actual).toEqual({ loading: true });
     });
   });
 
@@ -16,33 +16,33 @@ describe('orders reducer', () => {
     it('sets loading to false and orders success', () => {
       const orders = [
         {
-          masterImageUrl: 'url',
-          masterName: 'master name',
+          userImage: 'url',
+          userName: 'name',
           orderStatus: 'on holding',
           orderId: '1',
           requestDate: '2011-10-05T14:48:00.000Z',
-          extraPrice: '200',
+          price: '122',
         },
         {
-          masterImageUrl: 'url1',
-          masterName: 'master name1',
+          userImage: 'url1',
+          userName: 'user name',
           orderStatus: 'waiting for approve',
           orderId: '2',
           requestDate: '2011-10-05T14:48:00.000Z',
-          extraPrice: '100',
+          price: '200',
         },
       ];
       const actual = reducer(null,
-          {type: LOAD_ORDER_SUCCESS, payload: {data: orders}});
-      expect(actual).toMatchObject({loading: false});
+        { type: LOAD_ORDER_SUCCESS, payload: { data: orders } });
+      expect(actual).toMatchObject({ loading: false });
     });
   });
 
   describe('LOAD_ORDER_FAIL action', () => {
     it('sets loading to false and orders error', () => {
-      const error = {error: 'some error'};
-      const actual = reducer(null, {type: LOAD_ORDER_FAIL, error});
-      expect(actual).toEqual({loading: false, error});
+      const error = { error: 'some error' };
+      const actual = reducer(null, { type: LOAD_ORDER_FAIL, error });
+      expect(actual).toEqual({ loading: false, error });
     });
   });
 });
