@@ -1,24 +1,24 @@
 @import "../../../theme.module";
 
-.wrapper{
+.wrapper {
   width: 100%;
   height: 100vh;
   background: linear-gradient(94.46deg, $landing_gradient1 0%, $landing_gradient2 107.33%);
 
-  @media (max-width: 1200px) and (orientation: landscape)  {
+  @media (max-width: 1200px) and (orientation: landscape) {
     position: relative;
     height: 1200px;
   }
-  @media (max-width: 992px) and (orientation: landscape)  {
+  @media (max-width: 992px) and (orientation: landscape) {
     position: relative;
     height: 950px;
   }
-  @media (max-width: 768px) and (orientation: landscape)  {
+  @media (max-width: 768px) and (orientation: landscape) {
     height: 600px;
   }
 }
 
-.contentWrapper{
+.contentWrapper {
   width: 80%;
   margin: 0 auto;
 
@@ -27,7 +27,7 @@
   }
 }
 
-.navigation{
+.navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,7 +44,7 @@
 
 }
 
-.logo{
+.logo {
   width: 100px;
 
   @media (max-width: 1200px) {
@@ -58,11 +58,11 @@
   }
 }
 
-.bars{
+.bars {
   width: 25px;
 }
 
-.selectedLanguage{
+.selectedLanguage {
   color: $white;
   font-family: $landing_font;
   font-size: $landing_text;
@@ -81,7 +81,7 @@
   }
 }
 
-.links{
+.links {
   width: 60%;
   display: flex;
   justify-content: space-between;
@@ -98,13 +98,13 @@
   }
 }
 
-.navLink{
+.navLink {
   color: $white;
   font-family: $landing_font;
   font-size: $landing_text;
   text-decoration: none;
   display: flex;
-  padding:5px;
+  padding: 5px;
 
   @media (max-width: 992px) {
     font-size: $landing_text_tablet;
@@ -114,29 +114,51 @@
   }
 }
 
-.bannerContent{
+.content{
+  display: flex;
+  justify-content: space-between;
+}
+
+.bannerContent {
   width: 70%;
-  float: left;
 
   @media (max-width: 576px) {
     width: 100%;
   }
 }
 
-.corgiTextWrapper{
+.corgiTextWrapper {
   margin-top: 30px;
   position: relative;
 
   @media (max-width: 576px) {
     margin-top: 2vh;
   }
-  @media (max-height: 640px) and (max-width: 576px){
+  @media (max-height: 640px) and (max-width: 576px) {
     margin-top: 1vh;
   }
 }
 
-.corgiTextBackground{
+.corgiTextBackgroundMobile {
+  background: url("../../../img/textBox_mobile.png") no-repeat;
+  background-size: contain;
+  height: 250px;
+  width: 100%;
+  margin: 3vh auto 0;
+
+  @media (max-width: 400px) {
+    height: 200px;
+  }
+}
+
+.corgiTextBackground {
   width: 90%;
+  height: 300px;
+  background: url("../../../img/textBox.png") no-repeat;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: 1200px) {
     width: 100%;
@@ -149,45 +171,43 @@
     width: 100%;
     margin: 3vh auto 0;
   }
-  @media (max-height: 640px) and (max-width: 576px){
-    height: 170px;
+  @media (max-height: 640px) and (max-width: 576px) {
+    height: 130px;
   }
 }
 
-.corgiText{
-  position: absolute;
-  top: 0;
-  left: 10%;
-  width: 60%;
-  height: 150px;
+.corgiText {
+  height: 250px;
   font-family: $landing_additional_font;
   font-style: normal;
   font-weight: 400;
   font-size: $landing_h1;
   color: $landing_h1_color;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  margin: 0 0 70px;
 
   @media (max-width: 1100px) {
     left: 3%;
   }
   @media (max-width: 1200px) {
     width: 100%;
-    height: 300px;
-    top: 50%;
-    transform: translateY(-50%);
+    font-size: $landing_h1_tablet;
   }
   @media (max-width: 768px) {
     width: 80%;
     font-size: $landing_h1_small_tablet;
-    height: 150px;
-    left: 10%;
+    height: 250px;
+    padding-left: 20px;
   }
   @media (max-width: 576px) {
-    height: 180px;
-    width: 250px;
+    height: 150px;
+    margin-bottom: 10px ;
   }
 }
 
-.bannerSubtitle{
+.bannerSubtitle {
   width: 80%;
   margin: 0px auto;
   font-family: $landing_font;
@@ -217,7 +237,7 @@
   }
 }
 
-.socials{
+.socials {
   display: flex;
   align-items: center;
   width: 40%;
@@ -244,7 +264,7 @@
   }
 }
 
-.socials img{
+.socials img {
   margin-top: 2vh;
   margin-right: 30px;
   margin-bottom: 0;
@@ -271,18 +291,17 @@
   }
 }
 
-.social_link{
+.social_link {
   margin-top: 0px;
   transition: margin-top 0.5s;
 }
 
-.social_link:hover{
+.social_link:hover {
   margin-top: -40px;
 }
 
-.corgiImgWrapper{
+.corgiImgWrapper {
   width: 30%;
-  float: right;
   margin-top: 100px;
 
   @media (max-width: 1200px) {
@@ -302,10 +321,10 @@
     bottom: 8%;
     right: 5%;
   }
-  @media (max-height: 640px) and (max-width: 576px){
+  @media (max-height: 640px) and (max-width: 576px) {
     height: 150px;
   }
-  @media (max-height: 670px) and (max-width: 376px){
+  @media (max-height: 670px) and (max-width: 376px) {
     height: 100px;
   }
   @media (max-width: 320px) {
@@ -313,7 +332,7 @@
   }
 }
 
-.corgiImg{
+.corgiImg {
   width: 95%;
 
   @media (max-width: 1200px) {
@@ -328,7 +347,7 @@
   }
 }
 
-.bottomArrow{
+.bottomArrow {
   width: 100px;
   position: absolute;
   bottom: 3%;
@@ -350,12 +369,12 @@
     width: 50px;
     bottom: 2%;
   }
-  @media (max-width: 992px) and (orientation: landscape)  {
+  @media (max-width: 992px) and (orientation: landscape) {
     bottom: 2%;
   }
 }
 
-.bottomArrow:hover{
+.bottomArrow:hover {
   cursor: pointer;
 }
 
@@ -369,7 +388,7 @@
 }
 
 
-.mobileMenu{
+.mobileMenu {
   width: 150px;
   height: 180px;
   border-radius: 40px 0px 0px 40px;
@@ -384,14 +403,14 @@
   transition: opacity 0.2s, transform 1s;
 }
 
-.mobileMenu .bars{
+.mobileMenu .bars {
   position: absolute;
   right: 10%;
   top: 10%;
   width: 25px;
 }
 
-.mobileMenu a{
+.mobileMenu a {
   font-family: $landing_font;
   font-style: normal;
   font-weight: 500;
@@ -404,12 +423,12 @@
   outline: none;
 }
 
-.closeMobileMenu{
+.closeMobileMenu {
   transform: translateY(0%) !important;
   opacity: 100% !important;
 }
 
-.languageMenu{
+.languageMenu {
   z-index: 2;
   position: absolute;
   top: 0;
@@ -425,7 +444,7 @@
   transition: opacity 0.2s, transform 1s;
 }
 
-.text{
+.text {
   margin: 0;
   line-height: 30px;
   font-family: $landing_font;
@@ -435,6 +454,6 @@
   color: $landing_inactive_language;
 }
 
-.selected{
+.selected {
   color: $landing_blue_color;
 }
