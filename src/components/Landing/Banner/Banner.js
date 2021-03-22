@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { Link } from 'react-scroll';
 import PropTypes from 'prop-types';
-import logo from '../../../img/fixeLogo.png';
 import textImg from '../../../img/textBox.png';
 import textImgMobile from '../../../img/textBox_mobile.png';
 import facebookIcon from '../../../img/facebook.png';
@@ -25,30 +24,30 @@ const Banner = ({
     <div className={styles.wrapper}>
       <div className={styles.contentWrapper}>
         <NavigationForLanding />
+        <div className={styles.content}>
         <div className={styles.bannerContent}>
           <div className={styles.corgiTextWrapper}>
             {
-              isMobile
-                ? (
-                  <img
-                    src={textImgMobile}
-                    alt=""
-                    className={styles.corgiTextBackground}
-                  />
-                )
-                : (
-                  <img
-                    src={textImg}
-                    alt=""
-                    className={styles.corgiTextBackground}
-                  />
-                )
-            }
-            <h1
-              className={styles.corgiText}
-            >
-              {t('landing.banner.corgiText')}
-            </h1>
+                            isMobile
+                              ? (
+                                <div className={styles.corgiTextBackgroundMobile}>
+                                  <h1
+                                    className={styles.corgiText}
+                                  >
+                                    {t('landing.banner.corgiText')}
+                                  </h1>
+                                </div>
+                              )
+                              : (
+                                <div className={styles.corgiTextBackground}>
+                                  <h1
+                                    className={styles.corgiText}
+                                  >
+                                    {t('landing.banner.corgiText')}
+                                  </h1>
+                                </div>
+                              )
+                        }
           </div>
           <div>
             <h2
@@ -81,6 +80,7 @@ const Banner = ({
         </div>
         <div className={styles.corgiImgWrapper}>
           <img src={corgi} alt="corgi" className={styles.corgiImg} />
+        </div>
         </div>
         <Link to="about" spy smooth>
           <img src={bottomArrow} alt="scroll" className={styles.bottomArrow} />

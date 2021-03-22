@@ -32,34 +32,35 @@
 }
 
 .corgiTextWrapper{
-  width: 40%;
+  width: 480px;
+  padding: 20px 40px;
+  height: 142px;
   margin: 0 auto;
   position: relative;
+  background: url("../../../img/textBoxBorder.png");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: 992px) {
-    width: 50%;
+    width: 400px;
+    height: 115px;
   }
   @media (max-width: 768px) {
-    width: 65%;
+    width: 350px;
+    height: 100px;
   }
   @media (max-width: 576px) {
-    width: 75%;
-    margin-left: 20px;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    width: 250px;
+    height: 54px;
+    padding: 20px 20px;
+    margin-top: 10px;
   }
-}
-
-.corgiTextBg{
-  width: 100%;
 }
 
 .corgiText{
-  position: absolute;
-  top: 45%;
-  transform: translateY(-50%) translateX(-50%);
-  left: 50%;
-  width: 65%;
+  width: 85%;
   margin: 0;
 
   font-family: $landing_font;
@@ -71,20 +72,17 @@
   color: $landing_text_color;
 
   @media (max-width: 992px) {
-    line-height: 30px;
+    line-height: 35px;
     font-size: $landing_text_tablet;
   }
   @media (max-width: 768px) {
+    width: 100%;
     line-height: 20px;
     font-size: $landing_text_small_tablet;
   }
   @media (max-width: 576px) {
     font-size: $landing_text_mobile;
     width: 85%;
-  }
-  @media (max-width: 1300px) {
-    width: 90%;
-    line-height: 30px;
   }
 
 }
