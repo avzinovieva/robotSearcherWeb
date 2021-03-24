@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { orders } from '../../state/modules/orders/action';
 import ListScreen from '../ListScreen/ListScreen';
+import t from '../../translations/i18n';
 
 const OrderList = ({ loading, ordersFunc, orders }) => {
   useEffect(() => {
@@ -10,7 +11,13 @@ const OrderList = ({ loading, ordersFunc, orders }) => {
   }, [ordersFunc]);
 
   return (
-    <ListScreen loading={loading} items={orders} type="ordersList" />
+    <ListScreen
+      loading={loading}
+      items={orders}
+      type="ordersList"
+      inputSearchPlaceholder={`${t('ordersList.inputSearchPlaceholder')}`}
+      showTheTableHeader
+    />
   );
 };
 

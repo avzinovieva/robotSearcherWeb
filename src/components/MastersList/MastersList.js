@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { masters } from '../../state/modules/masters/action';
 import ListScreen from '../ListScreen/ListScreen';
+import t from '../../translations/i18n';
 
 const MastersList = ({ loading, mastersFunc, masters }) => {
   useEffect(() => {
@@ -10,7 +11,13 @@ const MastersList = ({ loading, mastersFunc, masters }) => {
   }, [mastersFunc]);
 
   return (
-    <ListScreen type="mastersList" items={masters} loading={loading} />
+    <ListScreen
+      type="mastersList"
+      items={masters}
+      loading={loading}
+      inputSearchPlaceholder={`${t('mastersList.inputSearchPlaceholder')}`}
+      showTheTableHeader={false}
+    />
   );
 };
 

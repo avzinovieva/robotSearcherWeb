@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import searchIcon from '../../../img/search_icon.png';
 
 import styles from './inputSearch.module.scss';
-import t from '../../../translations/i18n';
 
-const InputSearch = ({ onChangeFunc }) => {
+const InputSearch = ({ onChangeFunc, inputSearchPlaceholder }) => {
   const [filter, setFilter] = useState('');
   return (
     <div className={styles.searchWrapper}>
@@ -16,7 +15,7 @@ const InputSearch = ({ onChangeFunc }) => {
         onClick={() => onChangeFunc(filter)}
       />
       <input
-        placeholder={`${t('ordersList.inputSearchPlaceholder')}`}
+        placeholder={inputSearchPlaceholder}
         type="text"
         className={styles.inputSearch}
         onChange={(el) => setFilter(el.target.value)}
@@ -28,6 +27,7 @@ const InputSearch = ({ onChangeFunc }) => {
 
 InputSearch.propTypes = {
   onChangeFunc: PropTypes.func.isRequired,
+  inputSearchPlaceholder: PropTypes.string.isRequired,
 };
 
 export default InputSearch;

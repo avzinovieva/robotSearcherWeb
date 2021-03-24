@@ -37,12 +37,14 @@ export default {
   },
   mastersList: {
     header: 'Masters list',
+    inputSearchPlaceholder: 'User name',
   },
   mastersRequestsList: {
     header: 'Masters requests list',
+    inputSearchPlaceholder: 'User name',
     accept: {
       modal: {
-        title: 'Master acception',
+        title: 'Master acceptation',
         subtitle: 'Are you sure you want to accept this master?',
         buttonYes: 'Yes',
         buttonNo: 'No',
