@@ -1,17 +1,23 @@
-import {connect} from 'react-redux';
-import {masters} from '../../state/modules/masters/action';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
+import { masters } from '../../state/modules/masters/action';
 import ListScreen from '../ListScreen/ListScreen';
+import t from '../../translations/i18n';
 
-
-const MastersList = ({loading, mastersFunc, masters}) =>{
+const MastersList = ({ loading, mastersFunc, masters }) => {
   useEffect(() => {
     mastersFunc();
   }, [mastersFunc]);
 
   return (
-    <ListScreen type={'mastersList'} items={masters} loading={loading}/>
+    <ListScreen
+      type="mastersList"
+      items={masters}
+      loading={loading}
+      inputSearchPlaceholder={`${t('mastersList.inputSearchPlaceholder')}`}
+      showTheTableHeader={false}
+    />
   );
 };
 
@@ -25,11 +31,12 @@ MastersList.defaultProps = {
   masters: [],
 };
 
-const mapStateToProps = ({masters}) => ({
+const mapStateToProps = ({ masters }) => ({
   loading: masters.loading,
   masters: masters.masters,
 });
 
 export default connect(
-    () => mapStateToProps,
-    {mastersFunc: masters})(MastersList);
+  () => mapStateToProps,
+  { mastersFunc: masters },
+)(MastersList);

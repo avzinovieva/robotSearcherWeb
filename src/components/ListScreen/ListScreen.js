@@ -12,14 +12,15 @@ import Popup from '../ManageMasterModal/ManageMasterModal';
 
 import styles from './listScreen.module.scss';
 
-const ListScreen = ({ loading, items, type }) => {
+const ListScreen = ({
+  loading, items, type, inputSearchPlaceholder, showTheTableHeader,
+}) => {
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState('');
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [isVisibleAccept, setVisibleAccept] = useState(false);
   const [isVisibleDecline, setVisibleDecline] = useState(false);
   const [masterIdPopup, setMasterIdPopup] = useState(-1);
-
   const pagesCount = Math.ceil(items.length / itemsPerPage);
 
   const getItemsToOutput = (items, type) => {
@@ -97,8 +98,11 @@ const ListScreen = ({ loading, items, type }) => {
         {pagination(handleChange, page, pagesCount)}
       </div>
       <p className={styles.title}>{t(`${type}.header`)}</p>
-      <InputSearch onChangeFunc={(text) => setFilter(text)} />
-      <ListTileDescriptionsHeader />
+      <InputSearch
+        onChangeFunc={(text) => setFilter(text)}
+        inputSearchPlaceholder={inputSearchPlaceholder}
+      />
+      { showTheTableHeader ? <ListTileDescriptionsHeader /> : null}
       {
         getItemsToOutput(items, type).map((item, i) => {
           let itemData = [];
@@ -168,6 +172,8 @@ ListScreen.propTypes = {
   loading: PropTypes.bool.isRequired,
   items: PropTypes.array.isRequired,
   type: PropTypes.string.isRequired,
+  inputSearchPlaceholder: PropTypes.string.isRequired,
+  showTheTableHeader: PropTypes.bool.isRequired,
 };
 
 export default ListScreen;
