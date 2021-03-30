@@ -1,0 +1,49 @@
+@import '../../../theme.module.scss';
+
+.Pages{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 20px;
+}
+
+.inputNextPages{
+    width: 80px;
+    height: 30px;
+    outline: none;
+    border: 1px solid $liner_gradient_blue;
+    border-radius: 6px;
+    padding-left: 10px;
+
+}
+
+.inputNextPages:focus{
+    color: $liner_gradient_blue;
+}
+
+.nextPagesLegend{
+    padding-bottom: 10px;
+    margin-top: -9px;
+    margin-left: 8px;
+    background: $white;
+    display: inline-block;
+    width: 60px;
+    height: 10px;
+    position: absolute;
+    font-size: 10px;
+    color: $liner_gradient_blue;
+}
+
+.goToNextPageButton{
+    cursor: pointer;
+    margin-top: -40px;
+    margin-left: 80px;
+    font-weight: lighter;
+    width: 2px;
+    height: 8px;
+    font-size: $button_next_text_size;
+    background-color: linear-gradient(to right, $liner_gradient_violet, $liner_gradient_blue);;
+}
+
+.nextPagesBox{
+    margin-top: -7px;
+}

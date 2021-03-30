@@ -2,6 +2,7 @@
 $white: #FFFFFF;
 $black: #000000;
 $violet: #b259ef;
+$orange: #F8B258;
 $title_color: #5C3875;
 $dark_violet_title: #2A0941;
 $dark_violet: #14134C;
@@ -17,11 +18,15 @@ $very_dark_gray: rgba(0, 0, 0, 0.25);
 $modal_box_shadow_light_gray: rgba(221, 221, 221, 1);
 $light_violet_button_focus_color: #BE68EF;
 $light_gray_border: #9FB0B9;
-
+$input-search_background: #E7E8FE;
+$input-search_box-shadow: #D6D6D6;
+$liner_gradient_violet: #3E0963;
+$liner_gradient_blue: #1A1F9E;
 //fonts
 $main_font: 'Roboto', sans-serif;
 $landing_font: 'Montserrat', sans-serif;
 $landing_additional_font: 'Basic', sans-serif;
+$header_font: 'Inter', sans-serif;
 
 //fonts sizes
 $title: 42px;
@@ -35,6 +40,8 @@ $error_text_size: 13px;
 $price_font_size: 20px;
 $line_height_price: 35px;
 $work_types_title_font_size: 20px;
+$order_list_header_size: 55px;
+$button_next_text_size: 28px;
 
 $landing_h1: 65px;
 $landing_h1_mobile: 22px;

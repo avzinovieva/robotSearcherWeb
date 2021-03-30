@@ -1,5 +1,4 @@
 @import '../../theme.module.scss';
-
 .title{
   font-family: $main_font;
   font-style: normal;
@@ -7,8 +6,10 @@
   font-size: $title;
   line-height: 28px;
   color: $title_color;
-  margin: 40px 0 30px;
+  display: flex;
+  align-items: flex-start;
   padding: 0;
+  margin-top: 50px;
 }
 
 .orderListWrapper{
@@ -22,6 +23,7 @@
   width: 250px;
   margin-top: 5px;
   margin-bottom: 20px;
+  margin-right: 40px;
 }
 
 .visible{

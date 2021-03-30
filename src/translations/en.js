@@ -10,8 +10,8 @@ export default {
     orderTableHeaders: {
       userName: 'User name',
       orderId: 'Order id',
-      requestData: 'Request data',
-      moneyAmount: 'Money amount',
+      requestData: 'Creation date',
+      moneyAmount: 'Price',
     },
   },
   noMatch: {
@@ -23,6 +23,9 @@ export default {
     name: 'Username',
     password: 'Password',
     error: 'Incorrect login or password',
+  },
+  topBar: {
+    exitButton: 'Log out',
   },
   categoriesList: {
     header: 'Categories',
@@ -111,6 +114,9 @@ export default {
         required: 'Required',
       },
     },
+  },
+  pagination: {
+    nextToPageLegend: 'Go to page',
   },
   landingCustomer: {
     banner: {

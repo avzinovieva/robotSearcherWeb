@@ -1,8 +1,7 @@
 @import '../../theme.module';
 
 .tileWrapper{
-  background: $white;
-  border: 1px solid $border_color;
+  background: $input-search_background;
   box-sizing: border-box;
   border-radius: 30px;
   width: 88%;
@@ -24,7 +23,7 @@
   }
 }
 .tileWrapperHeaderDescriptions{
-  background: $white;
+  background: linear-gradient(94.46deg, $liner_gradient_violet 0%, $liner_gradient_blue 107.33%);
   border: 1px solid $border_color;
   box-sizing: border-box;
   border-radius: 30px;
@@ -32,7 +31,7 @@
   text-align: left;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 13px 50px;
   margin: 0 auto 20px;
 
@@ -49,7 +48,7 @@
 }
 
 .img {
-  background-color: $account_bg;
+  background-color: linear-gradient(94.46deg, $liner_gradient_violet 0%, $liner_gradient_blue 107.33%);
   border-radius: 50px;
   width: 45px;
   height: 45px;
@@ -61,21 +60,11 @@
   font-weight: normal;
   font-size: $h3;
   line-height: 21px;
-  color: $dark_grey;
+  background-image: linear-gradient(to right, $liner_gradient_violet, $liner_gradient_blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   display: flex;
   justify-content: flex-end;
-}
-
-.p__name{
-  font-family: $main_font;
-  font-style: normal;
-  font-weight: bold;
-  font-size: $h3;
-  line-height: 21px;
-  color: $dark_grey;
-  display: flex;
-  padding-left: 190px;
-  justify-content: flex-start;
 }
 
 .p__orderId{
@@ -84,10 +73,10 @@
   font-weight: bold;
   font-size: $h3;
   line-height: 21px;
-  color: $dark_grey;
-  padding-left: 40px;
+  color: $white;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  padding-right: 40px;
 }
 
 .p__requestData{
@@ -96,9 +85,9 @@
   font-weight: bold;
   font-size: $h3;
   line-height: 21px;
-  color: $dark_grey;
+  color: $white;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 
 }
 
@@ -108,10 +97,11 @@
   font-weight: bold;
   font-size: $h3;
   line-height: 21px;
-  color: $dark_grey;
+  color: $white;
   display: flex;
   justify-content: flex-end;
-  padding-left: 50px;
+  padding-left: 20px;
+  padding-right: 30px;
 }
 
 .bold{
@@ -120,7 +110,9 @@
   font-weight: bold;
   font-size: $h2;
   line-height: 28px;
-  color: $dark_grey;
+  background-image: linear-gradient(to right, $liner_gradient_violet, $liner_gradient_blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .violet{
@@ -129,7 +121,7 @@
   font-weight: bold;
   font-size: $h3;
   line-height: 21px;
-  color: $violet;
+  color: $orange;
 }
 
 .button{

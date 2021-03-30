@@ -14,17 +14,26 @@
     font-size: $h2;
 }
 .button{
+    padding-top: 7px;
     width: 30px;
     height: 20px;
-    
     background:transparent;
     border: none;
     outline: none;
 }
-.button img{
-    width: 15px;
-    height: 10px;
+.footerButtonImg{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(94.46deg, $liner_gradient_violet 0%, $liner_gradient_blue 107.33%);
+    color: $orange;
+    font-size: $title;
+    font-weight: lighter;
 }
+
 .button :active{
     outline: none;
 }

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import t from '../../translations/i18n';
 import TopBar from '../TopBar/TopBar';
 import PaginationBar from '../CategoriesList/Pagination/Pagination';
 import InputSearch from '../OrderList/InputSearch/InputSearch';
@@ -94,13 +93,10 @@ const ListScreen = ({
         )}
 
       <TopBar />
-      <div className={styles.pagination}>
-        {pagination(handleChange, page, pagesCount)}
-      </div>
-      <p className={styles.title}>{t(`${type}.header`)}</p>
       <InputSearch
         onChangeFunc={(text) => setFilter(text)}
         inputSearchPlaceholder={inputSearchPlaceholder}
+        type="ordersList"
       />
       { showTheTableHeader ? <ListTileDescriptionsHeader /> : null}
       {

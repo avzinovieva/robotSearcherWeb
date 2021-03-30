@@ -1,31 +1,62 @@
 @import '../../../theme.module.scss';
+.inputSearchBox{
+  display: grid;
+  grid-auto-columns: 1fr 2fr;
+  margin-right: 90px;
+  margin-top: 50px;
+}
 
 .searchWrapper{
-  display: flex;
-  align-items: flex-end;
-  border-bottom: 1px solid $black;
-  width: 75%;
-  margin: 0 auto;
+  grid-column: 2 right-gutter;
+  border-radius: 30px;
+  background-color: $input-search_background;
+  width: 570px;
+  height: 56px;
   margin-bottom: 40px;
+  box-shadow: 0px 3px 5px $input-search_box-shadow;
+  display: grid;
+  grid-template-columns: 50px 1fr;
 }
 
 .inputSearch{
-  width: 100%;
+  height: 70%;
   border: none;
+  background-color: $input-search_background;
   outline: none;
   font-size: $p;
-  margin-bottom: 6px;
-  font-family: $main_font;
+  font-family: $header_font;
+  border-radius: 30px;
+  align-self: center;
 }
+
 .inputSearch::placeholder {
   color: $grey;
   font-size: 1.2em;
+  grid-column: 2;
+  font-family: $header_font;
 }
 
 .searchIcon{
-  width: 37px;
+  align-self: center;
+  width: 25px;
   height: auto;
-  margin-bottom: 6px;
-  margin-right: 6px;
+  padding-left: 20px;
   cursor: pointer;
+  grid-column: 1;
+}
+
+.title{
+  grid-column: 1;
+  align-self: start;
+  font-family: $header_font;
+  font-style: normal;
+  font-weight: 700;
+  font-size: $order_list_header_size;
+  line-height: 50px;
+  padding-left: 100px;
+  padding-top: 20px;
+  margin: 0;
+  background-image: linear-gradient(to right, $liner_gradient_violet, $liner_gradient_blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

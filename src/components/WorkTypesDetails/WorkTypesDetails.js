@@ -47,7 +47,7 @@ const WorkTypesDetails = ({ loading, workTypesFunc, workTypes }) => {
       <div className={styles.workTypesDetailsTitle}>
         <div className={styles.block}>
           <div className={styles.title}>{`${t('workTypesDetails.header')}`}</div>
-          <button className={styles.button} onClick={() => setModalActive(true)}> +</button>
+          <button className={styles.button} onClick={() => setModalActive(true)}>+</button>
         </div>
         {pagination(handleChange, page, pagesCount)}
       </div>

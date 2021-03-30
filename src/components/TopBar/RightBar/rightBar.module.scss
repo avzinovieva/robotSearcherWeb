@@ -4,6 +4,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  padding-right: 50px;
 }
 
 .item{
@@ -14,9 +15,8 @@
   font-family: $main_font;
   text-decoration: none;
   font-style: normal;
-  font-weight: normal;
+  font-weight: lighter;
   font-size: $h2;
-  line-height: 28px;
   margin-left: 30px;
   color: $white;
 }
@@ -27,7 +27,6 @@
 }
 
 .profileWrapper{
-  background-color: $white;
   width: 45px;
   height: 45px;
   border-radius: 50px;
@@ -43,7 +42,7 @@
 
 .logOut{
   text-decoration: none;
-  font-size: $h2;
+  font-size: $h3;
   line-height: 28px;
   color: $white;
 }

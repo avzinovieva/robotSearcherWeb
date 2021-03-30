@@ -7,6 +7,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .item {
     display: flex;
     flex-direction: row;
@@ -16,7 +17,7 @@
     text-decoration: none;
     font-style: normal;
     font-weight: normal;
-    font-size: $h2;
+    font-size: $h3;
     line-height: 28px;
     margin: 3px;
     color: $white;
