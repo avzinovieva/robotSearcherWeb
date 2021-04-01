@@ -1,7 +1,7 @@
 @import '../../theme.module.scss';
 
 .navigation{
-    background: linear-gradient(94.46deg, $liner_gradient_violet 0%, $liner_gradient_blue 107.33%);
+    background: $liner_gradient_bg;
     width: 100%;
     height: 60px;
 }

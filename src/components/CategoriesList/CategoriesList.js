@@ -43,7 +43,6 @@ const CategoriesList = ({ loading, categoriesFunc, categories }) => {
           <div className={styles.title}>{`${t('categoriesList.header')}`}</div>
           <button className={styles.button}>+</button>
         </div>
-        {pagination(handleChange, page, pagesCount)}
       </div>
       <div className={styles.categoriesListContent}>
         <Cards cards={categories} pageNumber={page} />

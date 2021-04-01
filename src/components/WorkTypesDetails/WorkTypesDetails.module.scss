@@ -32,11 +32,11 @@
 }
 
 .button {
-  color: $white;
+  color: $orange;
   font-size: $title;
   font-family: $main_font;
 
-  background-color: $violet;
+  background: $liner_gradient_bg;
   border-radius: 50%;
   border: none;
   outline: none;

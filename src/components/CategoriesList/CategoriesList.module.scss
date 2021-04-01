@@ -31,12 +31,12 @@
     height: 40px;
     margin-left: 10px;
 
-    background-color: $violet;
+    background: $liner_gradient_bg;
     border-radius: 50%;
     border: none;
     outline:none;
 
-    color: $white;
+    color: $orange;
     font-size: $title;
     font-family: $main_font;
 }

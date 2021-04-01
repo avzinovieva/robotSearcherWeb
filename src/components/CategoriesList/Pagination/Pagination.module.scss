@@ -23,10 +23,10 @@
 .nextPagesLegend{
     padding-bottom: 10px;
     margin-top: -9px;
-    margin-left: 8px;
+    margin-left: 16px;
     background: $white;
     display: inline-block;
-    width: 60px;
+    width: 50px;
     height: 10px;
     position: absolute;
     font-size: 10px;
@@ -36,14 +36,14 @@
 .goToNextPageButton{
     cursor: pointer;
     margin-top: -40px;
-    margin-left: 80px;
+    margin-left: 70px;
     font-weight: lighter;
     width: 2px;
     height: 8px;
     font-size: $button_next_text_size;
-    background-color: linear-gradient(to right, $liner_gradient_violet, $liner_gradient_blue);;
+    background-color: $liner_gradient_bg;
 }
 
 .nextPagesBox{
-    margin-top: -7px;
+    margin-top: -4px;
 }

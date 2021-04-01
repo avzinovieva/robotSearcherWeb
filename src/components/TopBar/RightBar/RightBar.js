@@ -5,6 +5,7 @@ import profileIcon from '../../../img/user.png';
 import { USER_LOGIN, USER_PASS, USER_TOKEN } from '../../../storageKeys';
 
 import styles from './rightBar.module.scss';
+import t from "../../../translations/i18n";
 
 const RightBar = () => {
   if (window.location.pathname === '/login') return null;
@@ -36,7 +37,7 @@ const RightBar = () => {
           localStorage.removeItem(USER_PASS);
         }}
       >
-        <NavLink to="/" className={styles.logOut}>Выйти</NavLink>
+        <NavLink to="/" className={styles.logOut}>{`${t('topBar.exitButton')}`}</NavLink>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import t from '../../translations/i18n';
 import WorkTypeCardsArray from './WorkTypeCards/WorkTypeCardsArray';
 import Footer from '../Footer/Footer';
 import { workTypes } from '../../state/modules/workTypes/action';
-import PaginationBar from './Pagination/Pagination';
+import PaginationBar from '../CategoriesList/Pagination/Pagination';
 import ModalWindow from './ModalWindow/ModalWindow';
 import styles from './WorkTypesDetails.module.scss';
 import formStyles from './FormStyle.module.scss';
@@ -49,7 +49,6 @@ const WorkTypesDetails = ({ loading, workTypesFunc, workTypes }) => {
           <div className={styles.title}>{`${t('workTypesDetails.header')}`}</div>
           <button className={styles.button} onClick={() => setModalActive(true)}>+</button>
         </div>
-        {pagination(handleChange, page, pagesCount)}
       </div>
       <ModalWindow active={modalActive} setActive={setModalActive}>
         <h1 className={styles.modalWindowTitle}>Work types details</h1>

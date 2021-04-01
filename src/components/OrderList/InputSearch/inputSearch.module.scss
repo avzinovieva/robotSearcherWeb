@@ -56,7 +56,7 @@
   padding-left: 100px;
   padding-top: 20px;
   margin: 0;
-  background-image: linear-gradient(to right, $liner_gradient_violet, $liner_gradient_blue);
+  background-image: $liner_gradient_bg;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
