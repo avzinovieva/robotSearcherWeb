@@ -2,12 +2,13 @@
 
 .cardWrapper {
   min-width: 120px;
-  width: 14%;
+  width: 16%;
   height: auto;
   box-shadow: 0 3px 3px $very_dark_gray;
   border-radius: 30px;
   text-align: center;
   padding: 2%;
+  margin-bottom: 20px;
   background: $light_blue_gray_bg;
 }
 
@@ -40,7 +41,7 @@
   font-style: normal;
   text-decoration: underline;
   font-weight: normal;
-  padding: 2%;
+  padding: 10% 2%;
   line-height: $line_height_price;
   font-size: $price_font_size;
   color: $orange;
