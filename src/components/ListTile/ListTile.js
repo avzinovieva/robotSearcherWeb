@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { Col, Container, Row } from 'react-bootstrap';
 import styles from './listTile.module.scss';
 
@@ -14,7 +13,7 @@ const ListTile = ({
           switch (item.flag) {
             case 'img':
               return (
-                <Col xl={1} lg={1} md={1} sm={2} xs={12} className={styles.img}>
+                <Col xl={1} lg={1} md={1} sm={2} xs={12} className={styles.img} key={i}>
                   <img
                     key={i}
                     src={item.item}
@@ -25,7 +24,7 @@ const ListTile = ({
               );
             case 'date':
               return (
-                <Col xl={3} lg={3} md={3} sm={3} xs={6}>
+                <Col xl={3} lg={3} md={3} sm={3} xs={6} key={i+i*2}>
                   <p key={i + 3} className={styles.p}>
                     {item.item.split('T')[0].split('-').reverse().join('/')}
                   </p>
@@ -66,6 +65,7 @@ const ListTile = ({
             default:
               return (
                 <Col
+                    key={i+1}
                   xl={2}
                   lg={2}
                   md={2}
