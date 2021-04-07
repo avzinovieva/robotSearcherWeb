@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 import { Col, Container, Row } from 'react-bootstrap';
 import styles from './Pagination.module.scss';
-import t from '../../../translations/i18n';
+import t from '../../translations/i18n';
 
 const useStyles = makeStyles((theme) => ({
   root: {

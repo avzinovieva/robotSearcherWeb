@@ -6,7 +6,7 @@ import t from '../../translations/i18n';
 import WorkTypeCardsArray from './WorkTypeCards/WorkTypeCardsArray';
 import Footer from '../Footer/Footer';
 import { workTypes } from '../../state/modules/workTypes/action';
-import PaginationBar from '../CategoriesList/Pagination/Pagination';
+import PaginationBar from '../Pagination/Pagination';
 import ModalWindow from './ModalWindow/ModalWindow';
 import styles from './WorkTypesDetails.module.scss';
 import formStyles from './FormStyle.module.scss';
@@ -63,11 +63,11 @@ const WorkTypesDetails = ({ loading, workTypesFunc, workTypes }) => {
       </div>
       <div className={!modalActive ? styles.FooterBlock : styles.footerBlockHide}>
         <Footer onClickFunc={
-                    () => {
-                      setCardsPerPage(cardsPerPage + 10);
-                      setPage(1);
-                    }
-                }
+            () => {
+              setCardsPerPage(cardsPerPage + 10);
+              setPage(1);
+            }
+          }
         />
         {pagination(handleChange, page, pagesCount)}
       </div>

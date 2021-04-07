@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Col, Container, Row } from 'react-bootstrap';
 import TopBar from '../TopBar/TopBar';
-import PaginationBar from '../CategoriesList/Pagination/Pagination';
+import PaginationBar from '../Pagination/Pagination';
 import InputSearch from '../OrderList/InputSearch/InputSearch';
 import Footer from '../Footer/Footer';
 import ListTile from '../ListTile/ListTile';

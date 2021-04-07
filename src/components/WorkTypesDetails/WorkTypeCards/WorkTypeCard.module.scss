@@ -2,12 +2,13 @@
 
 .cardWrapper {
   min-width: 120px;
-  width: 13%;
+  width: 14%;
   height: auto;
   box-shadow: 0 3px 3px $very_dark_gray;
-  border-radius: 10px;
+  border-radius: 30px;
   text-align: center;
-  padding: 1%;
+  padding: 2%;
+  background: $light_blue_gray_bg;
 }
 
 .cardContainer {
@@ -42,7 +43,7 @@
   padding: 2%;
   line-height: $line_height_price;
   font-size: $price_font_size;
-  color: $violet;
+  color: $orange;
 }
 
 .buttonsBlock {
@@ -53,10 +54,10 @@
 
 .button {
   padding: 5px;
-  background-color: $light_grey;
+  background: $liner_gradient_bg;
   height: 500%;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   font-family: $main_font;
   margin: 0 0 5% 5%;
   width: 100%;
