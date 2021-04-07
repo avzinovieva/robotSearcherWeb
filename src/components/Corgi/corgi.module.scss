@@ -2,10 +2,18 @@
     position: absolute;
     left: 7%;
     bottom: 0;
+
+    @media (max-width: 968px) {
+        left: 4%;
+    }
 }
 
 .corgi img{
     object-fit: contain;
     width: 70%;
     height: auto;
+
+    @media (max-width: 968px) {
+        width: 60%;
+    }
 }

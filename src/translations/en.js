@@ -24,8 +24,19 @@ export default {
     password: 'Password',
     error: 'Incorrect login or password',
   },
+  placeholders: {
+    modalWindowInputName: 'Work type name',
+    modalWindowInputPrice: 'Work default price',
+  },
+  modalWindow: {
+    button: 'Save',
+  },
   topBar: {
     exitButton: 'Log out',
+    categories: 'Categories',
+    orders: 'Orders',
+    users: 'Users',
+    payment: 'Payment',
   },
   categoriesList: {
     header: 'Categories',

@@ -7,7 +7,7 @@
     align-items: center;
     align-self: center;
     
-    color:$violet;
+    color: $violet;
     font-family: $main_font;
     font-style: normal;
     font-weight: normal;
@@ -28,7 +28,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(94.46deg, $liner_gradient_violet 0%, $liner_gradient_blue 107.33%);
+    background: $liner_gradient_bg;
     color: $orange;
     font-size: $title;
     font-weight: lighter;

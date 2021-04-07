@@ -2,56 +2,40 @@
 
 .tileWrapper{
   background: $input-search_background;
-  box-sizing: border-box;
   border-radius: 30px;
-  width: 88%;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 13px 100px;
-  margin: 0 auto 10px;
-
-  @media (max-width: 900px) {
-    padding: 13px 50px;
-  }
+  margin: 0 auto 15px;
 
   *{
     margin: 0;
     padding: 0;
-    width: 200px;
   }
-}
-.tileWrapperHeaderDescriptions{
-  background: linear-gradient(94.46deg, $liner_gradient_violet 0%, $liner_gradient_blue 107.33%);
-  border: 1px solid $border_color;
-  box-sizing: border-box;
-  border-radius: 30px;
-  width: 88%;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 13px 50px;
-  margin: 0 auto 20px;
-
-  @media (max-width: 900px) {
-    padding: 13px 50px;
-  }
-
-  *{
-    margin: 0;
-    padding: 0;
-    width: 200px;
-  }
-
 }
 
 .img {
-  background-color: linear-gradient(94.46deg, $liner_gradient_violet 0%, $liner_gradient_blue 107.33%);
+  background-color: $liner_gradient_bg;
   border-radius: 50px;
   width: 45px;
   height: 45px;
+  display: flex;
+  justify-content: flex-end;
+
+  @media (max-width: 1200px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @media (max-width: 578px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .p{
@@ -60,48 +44,29 @@
   font-weight: normal;
   font-size: $h3;
   line-height: 21px;
-  background-image: linear-gradient(to right, $liner_gradient_violet, $liner_gradient_blue);
+  background-image: $liner_gradient_bg;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: flex;
-  justify-content: flex-end;
-}
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 13px;
 
-.p__orderId{
-  font-family: $main_font;
-  font-style: normal;
-  font-weight: bold;
-  font-size: $h3;
-  line-height: 21px;
-  color: $white;
-  display: flex;
-  justify-content: center;
-  padding-right: 40px;
-}
+  @media (max-width: 1200px) {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5px;
+  }
 
-.p__requestData{
-  font-family: $main_font;
-  font-style: normal;
-  font-weight: bold;
-  font-size: $h3;
-  line-height: 21px;
-  color: $white;
-  display: flex;
-  justify-content: center;
+  @media (max-width: 578px) {
+    font-size: $p;
+    display: flex;
+    justify-content: center;
+  }
 
-}
-
-.p__moneyAmount{
-  font-family: $main_font;
-  font-style: normal;
-  font-weight: bold;
-  font-size: $h3;
-  line-height: 21px;
-  color: $white;
-  display: flex;
-  justify-content: flex-end;
-  padding-left: 20px;
-  padding-right: 30px;
+  @media (max-width: 968px) {
+    font-size: $p;
+  }
 }
 
 .bold{
@@ -110,9 +75,18 @@
   font-weight: bold;
   font-size: $h2;
   line-height: 28px;
-  background-image: linear-gradient(to right, $liner_gradient_violet, $liner_gradient_blue);
+  background-image: $liner_gradient_bg;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: flex;
+  justify-content: left;
+  text-align: left;
+
+  @media (max-width: 578px) {
+    font-size: $h3;
+    text-align: center;
+    justify-content: center;
+  }
 }
 
 .violet{
@@ -122,6 +96,13 @@
   font-size: $h3;
   line-height: 21px;
   color: $orange;
+
+  @media (max-width: 578px) {
+    font-size: $p;
+    line-height: 16px;
+    text-align: center;
+    justify-content: center;
+  }
 }
 
 .button{
@@ -148,8 +129,112 @@
 }
 
 .description {
-  margin-left: 30px;
-  p{
-    display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  @media (max-width: 578px) {
+    padding-left: -210px;
+  }
+}
+
+.tileWrapperHeaderDescriptions{
+  background: $liner_gradient_bg;
+  border: 1px solid $border_color;
+  border-radius: 30px;
+  padding: 13px 0;
+  margin: 10px;
+
+  @media (max-width: 900px) {
+    padding: 13px 50px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 13px 20px;
+  }
+}
+
+.p__orderId{
+  font-family: $main_font;
+  font-style: normal;
+  font-weight: bold;
+  font-size: $h3;
+  line-height: 21px;
+  color: $white;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 60px!important;
+
+  @media (max-width: 1200px) {
+    padding-right: 0!important;
+  }
+
+  @media (max-width: 768px) {
+    padding-right: 0!important;
+  }
+
+  @media (max-width: 575px) {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 30px!important;
+  }
+}
+
+.p__requestData{
+  font-family: $main_font;
+  font-style: normal;
+  font-weight: bold;
+  font-size: $h3;
+  line-height: 21px;
+  color: $white;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 1200px) {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    padding-right: 0!important;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @media (max-width: 575px) {
+    display: none;
+  }
+}
+
+.p__moneyAmount{
+  font-family: $main_font;
+  font-style: normal;
+  font-weight: bold;
+  font-size: $h3;
+  line-height: 21px;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  padding-right: 100px!important;
+
+  @media (max-width: 1200px) {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 80px!important;
+  }
+
+  @media (max-width: 1023px) {
+    padding-right: 60px!important;
+  }
+
+  @media (max-width: 767px) {
+    padding-right: 0!important;
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 70px!important;
+  }
+
+  @media (max-width: 575px) {
+    padding-right: 30px!important;
   }
 }

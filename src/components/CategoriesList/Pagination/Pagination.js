@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
+import { Col, Container, Row } from 'react-bootstrap';
 import styles from './Pagination.module.scss';
 import t from '../../../translations/i18n';
 
@@ -31,22 +32,24 @@ export default function PaginationBar(props) {
   };
 
   return (
-    <div className={classes.root}>
-      <div className={styles.Pages}>
-        <Pagination
-          count={props.pagesCount}
-          siblingCount={0}
-          page={pageNb}
-          onChange={props.handleChange}
-          size="small"
-          color="primary"
-        />
-        <div className={styles.nextPagesBox}>
-          <div className={styles.nextPagesLegend}>{`${t('pagination.nextToPageLegend')}`}</div>
-          <input className={styles.inputNextPages} onChange={handleChangeInputValue} />
-          <div className={styles.goToNextPageButton} onClick={() => goTo(inputValue)}>&gt;</div>
-        </div>
-      </div>
-    </div>
+    <Container className={classes.root}>
+      <Row className={styles.paginationBox}>
+        <Col className={styles.Pages}>
+          <Pagination
+            count={props.pagesCount}
+            siblingCount={0}
+            page={pageNb}
+            onChange={props.handleChange}
+            size="small"
+            color="primary"
+          />
+          <div className={styles.nextPageBox}>
+            <span className={styles.nextPagesLegend}>{`${t('pagination.nextToPageLegend')}`}</span>
+            <input className={styles.inputNextPages} onChange={handleChangeInputValue} />
+            <div className={styles.goToNextPageButton} onClick={() => goTo(inputValue)}>&gt;</div>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 }

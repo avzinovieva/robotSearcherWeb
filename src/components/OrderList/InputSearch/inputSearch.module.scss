@@ -1,21 +1,27 @@
 @import '../../../theme.module.scss';
+
 .inputSearchBox{
-  display: grid;
-  grid-auto-columns: 1fr 2fr;
-  margin-right: 90px;
   margin-top: 50px;
+  margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    font-size: $input_search_text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
 }
 
 .searchWrapper{
-  grid-column: 2 right-gutter;
   border-radius: 30px;
   background-color: $input-search_background;
-  width: 570px;
+  width: 100%;
   height: 56px;
-  margin-bottom: 40px;
-  box-shadow: 0px 3px 5px $input-search_box-shadow;
-  display: grid;
-  grid-template-columns: 50px 1fr;
+  box-shadow: 0 3px 5px $input-search_box-shadow;
+  display: flex;
+  align-items: center;
 }
 
 .inputSearch{
@@ -30,33 +36,17 @@
 }
 
 .inputSearch::placeholder {
-  color: $grey;
+  background-image: $liner_gradient_bg;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 1.2em;
-  grid-column: 2;
   font-family: $header_font;
 }
 
 .searchIcon{
   align-self: center;
-  width: 25px;
+  width: 45px;
   height: auto;
   padding-left: 20px;
   cursor: pointer;
-  grid-column: 1;
-}
-
-.title{
-  grid-column: 1;
-  align-self: start;
-  font-family: $header_font;
-  font-style: normal;
-  font-weight: 700;
-  font-size: $order_list_header_size;
-  line-height: 50px;
-  padding-left: 100px;
-  padding-top: 20px;
-  margin: 0;
-  background-image: $liner_gradient_bg;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }

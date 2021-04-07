@@ -8,6 +8,10 @@
     align-items: center;
 }
 
+.navigationMobile{
+   float: left;
+}
+
 .item {
     display: flex;
     flex-direction: row;
@@ -21,4 +25,8 @@
     line-height: 28px;
     margin: 3px;
     color: $white;
+}
+.item:hover{
+    text-decoration: none;
+    color: $link_color;
 }

@@ -1,19 +1,16 @@
 @import '../../../theme.module.scss';
 
 .Pages{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .inputNextPages{
-    width: 80px;
-    height: 30px;
     outline: none;
     border: 1px solid $liner_gradient_blue;
     border-radius: 6px;
-    padding-left: 10px;
-
+    height: 30px;
+    width: 80px;
 }
 
 .inputNextPages:focus{
@@ -23,10 +20,10 @@
 .nextPagesLegend{
     padding-bottom: 10px;
     margin-top: -9px;
-    margin-left: 16px;
+    margin-left: 10px;
     background: $white;
     display: inline-block;
-    width: 50px;
+    width: 52px;
     height: 10px;
     position: absolute;
     font-size: 10px;
@@ -35,15 +32,18 @@
 
 .goToNextPageButton{
     cursor: pointer;
+    position: absolute;
     margin-top: -40px;
-    margin-left: 70px;
+    margin-left: 55px;
     font-weight: lighter;
     width: 2px;
     height: 8px;
     font-size: $button_next_text_size;
     background-color: $liner_gradient_bg;
 }
-
-.nextPagesBox{
-    margin-top: -4px;
+.paginationBox{
+    margin-bottom: 20px;
+}
+.nextPageBox{
+    position: relative;
 }

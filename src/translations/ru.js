@@ -24,8 +24,19 @@ export default {
       reason3: 'Регулярные выплаты',
       reasonDesc3: 'помогут безопасно получать деньги за выполненные заказы прямо на банковскую карту.',
     },
+    placeholders: {
+      modalWindowInputName: 'Найменование работы',
+      modalWindowInputPrice: 'Цена за работу',
+    },
+    modalWindow: {
+      button: 'Сохранить',
+    },
     topBar: {
       exitButton: 'Выйти',
+      categories: 'Категории',
+      orders: 'Заказы',
+      users: 'Пользователи',
+      payment: 'Платежи',
     },
     howItWorks: {
       title: 'Как это работает?',
