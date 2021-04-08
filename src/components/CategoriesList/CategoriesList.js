@@ -5,7 +5,7 @@ import t from '../../translations/i18n';
 import TopBar from '../TopBar/TopBar';
 import Cards from './Cards/Cards';
 import Footer from '../Footer/Footer';
-import PaginationBar from './Pagination/Pagination';
+import PaginationBar from '../Pagination/Pagination';
 import { categories } from '../../state/modules/categories/action';
 
 import styles from './CategoriesList.module.scss';
@@ -43,7 +43,6 @@ const CategoriesList = ({ loading, categoriesFunc, categories }) => {
           <div className={styles.title}>{`${t('categoriesList.header')}`}</div>
           <button className={styles.button}>+</button>
         </div>
-        {pagination(handleChange, page, pagesCount)}
       </div>
       <div className={styles.categoriesListContent}>
         <Cards cards={categories} pageNumber={page} />

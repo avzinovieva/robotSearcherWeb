@@ -6,7 +6,7 @@ import t from '../../translations/i18n';
 import WorkTypeCardsArray from './WorkTypeCards/WorkTypeCardsArray';
 import Footer from '../Footer/Footer';
 import { workTypes } from '../../state/modules/workTypes/action';
-import PaginationBar from './Pagination/Pagination';
+import PaginationBar from '../Pagination/Pagination';
 import ModalWindow from './ModalWindow/ModalWindow';
 import styles from './WorkTypesDetails.module.scss';
 import formStyles from './FormStyle.module.scss';
@@ -47,28 +47,27 @@ const WorkTypesDetails = ({ loading, workTypesFunc, workTypes }) => {
       <div className={styles.workTypesDetailsTitle}>
         <div className={styles.block}>
           <div className={styles.title}>{`${t('workTypesDetails.header')}`}</div>
-          <button className={styles.button} onClick={() => setModalActive(true)}> +</button>
+          <button className={styles.button} onClick={() => setModalActive(true)}>&#43;</button>
         </div>
-        {pagination(handleChange, page, pagesCount)}
       </div>
       <ModalWindow active={modalActive} setActive={setModalActive}>
         <h1 className={styles.modalWindowTitle}>Work types details</h1>
         <form className={formStyles.modal__content_form} action="">
-          <input className={formStyles.modal__content_input} type="text" placeholder="Work type name" />
-          <input className={formStyles.modal__content_input} type="text" placeholder="Work default price" />
-          <button className={formStyles.modal__content_button}>Save</button>
+          <input className={formStyles.modal__content_input} type="text" placeholder={`${t('placeholders.modalWindowInputName')}`} />
+          <input className={formStyles.modal__content_input} type="text" placeholder={`${t('placeholders.modalWindowInputPrice')}`} />
+          <button className={formStyles.modal__content_button}>{`${t('modalWindow.button')}`}</button>
         </form>
       </ModalWindow>
       <div>
         <WorkTypeCardsArray cards={workTypesArray} pageNumber={page} loading={loading} />
       </div>
-      <div className={styles.FooterBlock}>
+      <div className={!modalActive ? styles.FooterBlock : styles.footerBlockHide}>
         <Footer onClickFunc={
-                    () => {
-                      setCardsPerPage(cardsPerPage + 10);
-                      setPage(1);
-                    }
-                }
+            () => {
+              setCardsPerPage(cardsPerPage + 10);
+              setPage(1);
+            }
+          }
         />
         {pagination(handleChange, page, pagesCount)}
       </div>

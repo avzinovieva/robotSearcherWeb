@@ -16,12 +16,13 @@
     display: flex;
     justify-self: center;
     align-self: center;
-
     font-family: $main_font;
     font-style: normal;
     font-weight: bold;
     font-size: $title;
-    color: $title_color;
+    background-image: $liner_gradient_bg;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .button{
     display: flex;
@@ -31,12 +32,12 @@
     height: 40px;
     margin-left: 10px;
 
-    background-color: $violet;
+    background: $liner_gradient_bg;
     border-radius: 50%;
     border: none;
     outline:none;
 
-    color: $white;
+    color: $orange;
     font-size: $title;
     font-family: $main_font;
 }

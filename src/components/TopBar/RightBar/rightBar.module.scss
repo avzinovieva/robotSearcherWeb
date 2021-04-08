@@ -6,28 +6,43 @@
   align-items: center;
 }
 
+.rightNavigationMobile{
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-left: 5px;
+}
+
 .item{
   display: flex;
   flex-direction: row;
   align-self: center;
-  justify-self: center;
+  justify-self: flex-end;
   font-family: $main_font;
   text-decoration: none;
   font-style: normal;
-  font-weight: normal;
+  font-weight: lighter;
   font-size: $h2;
-  line-height: 28px;
   margin-left: 30px;
   color: $white;
+}
+
+.itemMobile {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .ringIcon{
   width: 25px;
   height: auto;
+
+  @media (max-width: 1023px) {
+    width: 20px;
+  }
 }
 
 .profileWrapper{
-  background-color: $white;
   width: 45px;
   height: 45px;
   border-radius: 50px;
@@ -39,11 +54,33 @@
 .profileIcon{
   width: 27px;
   height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 1023px) {
+    width: 22px;
+  }
 }
 
 .logOut{
   text-decoration: none;
-  font-size: $h2;
+  font-size: $h3;
   line-height: 28px;
   color: $white;
+}
+.logOut:hover{
+  text-decoration: none;
+  color: $link_color;
+}
+
+.iconsMobile{
+  display: grid;
+  grid-template-columns: 35px 35px;
+  align-items: center;
+}
+
+.iconsBase{
+  display: flex;
+  align-items: center;
 }

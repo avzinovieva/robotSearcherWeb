@@ -10,8 +10,8 @@ export default {
     orderTableHeaders: {
       userName: 'User name',
       orderId: 'Order id',
-      requestData: 'Request data',
-      moneyAmount: 'Money amount',
+      requestData: 'Creation date',
+      moneyAmount: 'Price',
     },
   },
   noMatch: {
@@ -23,6 +23,20 @@ export default {
     name: 'Username',
     password: 'Password',
     error: 'Incorrect login or password',
+  },
+  placeholders: {
+    modalWindowInputName: 'Work type name',
+    modalWindowInputPrice: 'Work default price',
+  },
+  modalWindow: {
+    button: 'Save',
+  },
+  topBar: {
+    exitButton: 'Log out',
+    categories: 'Categories',
+    orders: 'Orders',
+    users: 'Users',
+    payment: 'Payment',
   },
   categoriesList: {
     header: 'Categories',
@@ -111,6 +125,9 @@ export default {
         required: 'Required',
       },
     },
+  },
+  pagination: {
+    nextToPageLegend: 'Go to page',
   },
   landingCustomer: {
     banner: {

@@ -1,5 +1,4 @@
 @import '../../theme.module.scss';
-
 .title{
   font-family: $main_font;
   font-style: normal;
@@ -7,8 +6,10 @@
   font-size: $title;
   line-height: 28px;
   color: $title_color;
-  margin: 40px 0 30px;
+  display: flex;
+  align-items: flex-start;
   padding: 0;
+  margin-top: 50px;
 }
 
 .orderListWrapper{
@@ -17,11 +18,8 @@
 }
 
 .pagination {
-  position: absolute;
-  right: 0;
-  width: 250px;
-  margin-top: 5px;
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .visible{
@@ -30,4 +28,31 @@
 
 .invisible{
   display: none;
+}
+
+.containerFluid{
+  padding-left: 0!important;
+  padding-right: 0!important;
+}
+
+.title_list{
+  margin-top: 50px;
+  display: flex;
+  font-family: $header_font;
+  font-style: normal;
+  font-weight: 700;
+  font-size: $order_list_header_size;
+  line-height: 50px;
+  background-image: $liner_gradient_bg;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @media (max-width: 768px) {
+    font-size: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
 }

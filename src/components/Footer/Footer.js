@@ -1,22 +1,20 @@
 import React from 'react';
-import buttonImg from '../../img/moreButton.png';
 import PropTypes from 'prop-types';
 
+import { Col, Container, Row } from 'react-bootstrap';
 import styles from './Footer.module.scss';
 
-const Footer = ({onClickFunc}) => {
-  return (
-    <div className={styles.footer} onClick={() => onClickFunc()}>
-      <p>More</p>
-      <button className={styles.button}>
-        <img
-          src={buttonImg}
-          alt='buttonImg'
-        />
-      </button>
-    </div>
-  );
-};
+const Footer = ({ onClickFunc }) => (
+  <Container className={styles.footer} onClick={() => onClickFunc()}>
+    <Row>
+      <Col>
+        <button className={styles.button}>
+          <span className={styles.footerButtonImg}>&#43;</span>
+        </button>
+      </Col>
+    </Row>
+  </Container>
+);
 
 Footer.propTypes = {
   onClickFunc: PropTypes.func.isRequired,

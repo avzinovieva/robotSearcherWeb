@@ -1,36 +1,132 @@
 @import '../../theme.module.scss';
 
 .navigation{
-    background-color: $violet;
-    width: 100%;
-    height: 60px;
+    background: $liner_gradient_bg;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+
+    @media (max-width: 568px) {
+        height: 55px;
+    }
 }
 
-.wrapper{
-    height: 47px;
-    width: 90%;
-    margin: 0 auto;
-    padding: 5px 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+.logoBox{
+    display: flex;
+    justify-content: flex-start;
 }
 
 .logo{
-    width: 120px;
+    width: 110px;
     height: auto;
+
+    @media (max-width: 767px) {
+        width: 70px;
+    }
+
+    @media (max-width: 568px) {
+        width: 50px;
+    }
 }
 
 .logo:hover{
     cursor:pointer;
 }
 
+.iconBarBox{
+        display: flex;
+        justify-content: flex-end;
+}
+
 .version{
-    position: absolute;
-    top:2.5%;
-    left: 14%;
-    font-family: $white;
+    font-family: $header_font;
     font-style: normal;
-    font-weight: normal;
+    font-weight: lighter;
     font-size: $h3;
     color: $white;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 10px;
+
+    @media (max-width: 767px) {
+        font-size: $p;
+    }
+}
+
+.menuBarIcon {
+    cursor: pointer;
+
+    @media (min-width:768px) {
+        display: none;
+    }
+
+    @media (max-width:768px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10px;
+        width: 40px;
+        height: auto;
+    }
+
+    @media (min-width: 767px) and (max-width: 1023px) {
+        display: none;
+    }
+
+    @media (max-width: 1023px) {
+        width: 35px;
+    }
+}
+
+.navBar, .rightBar{
+    @media (max-width:768px) {
+        display: none;
+    }
+
+    @media (min-width: 767px) and (max-width:1023px) {
+        display: initial;
+    }
+}
+
+@keyframes vertical-move {
+    from, to   {top: -60px;}
+    25%, 100%  {top: 0;}
+}
+
+.mobileMenu{
+    @media  (max-width: 767px) {
+        animation: vertical-move 3s normal;
+        transition: 3s;
+        position: relative;
+        background: $liner_gradient_bg;
+        height: 250px;
+    }
+}
+
+.closeMobileMenu{
+    cursor: pointer;
+    content:url("../../img/cancel.png");
+    padding: 0;
+
+    @media (min-width:768px) {
+        display: none;
+    }
+
+    @media (max-width:768px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: auto;
+    }
+
+    @media (min-width: 767px) and (max-width: 1023px) {
+        display: none;
+    }
+
+    @media (max-width: 1023px) {
+        width: 35px;
+        height: auto;
+    }
 }

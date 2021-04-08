@@ -1,38 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { Col, Container, Row } from 'react-bootstrap';
 import styles from './listTile.module.scss';
 
 const ListTile = ({
   itemData, id, openPopupAccept, openPopupDecline,
 }) => (
-  <div key={id} className={styles.tileWrapper} dataid={id}>
-    {
+  <Container key={id} className={styles.tileWrapper} dataid={id}>
+    <Row>
+      {
         itemData.map((item, i) => {
           switch (item.flag) {
             case 'img':
               return (
-                <img
-                  key={i}
-                  src={item.item}
-                  alt="img"
-                  className={styles.img}
-                />
+                <Col xl={1} lg={1} md={1} sm={2} xs={12} className={styles.img} key={i}>
+                  <img
+                    key={i}
+                    src={item.item}
+                    alt="img"
+                    className={styles.img}
+                  />
+                </Col>
               );
             case 'date':
               return (
-                <p key={i + 3} className={styles.p}>
-                  {item.item.split('T')[0].split('-').reverse().join('/')}
-                </p>
+                <Col xl={3} lg={3} md={3} sm={3} xs={6} key={i+i*2}>
+                  <p key={i + 3} className={styles.p}>
+                    {item.item.split('T')[0].split('-').reverse().join('/')}
+                  </p>
+                </Col>
               );
             case 'title':
               return (
-                <div key={i + 2} className={styles.description}>
+                <Col xl={3} lg={3} md={3} sm={3} xs={12} key={i + 2} className={styles.description}>
                   <p className={styles.bold}>{item.item}</p>
                   <p className={styles.violet}>
                     {itemData.filter((item) => item.flag === 'subtitle')[0].item}
                   </p>
-                </div>
+                </Col>
               );
             case 'bold':
               return <p className={styles.bold}>{item.item}</p>;
@@ -58,11 +63,29 @@ const ListTile = ({
                 </div>
               );
             default:
-              return <p key={i + 1} className={styles.p}>{item.item}</p>;
+              return (
+                <Col
+                    key={i+1}
+                  xl={2}
+                  lg={2}
+                  md={2}
+                  sm={2}
+                  xs={3}
+                >
+                  <p
+                    key={i + 1}
+                    className={styles.p}
+                  >
+                    {item.item}
+                  </p>
+                </Col>
+              );
           }
         })
       }
-  </div>
+    </Row>
+  </Container>
+
 );
 
 ListTile.propTypes = {

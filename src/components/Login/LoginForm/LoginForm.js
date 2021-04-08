@@ -1,35 +1,35 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Input from './Input/Input';
 import Button from './Button/Button';
 import t from '../../../translations/i18n';
-import PropTypes from 'prop-types';
-import {login} from '../../../state/modules/login/action';
-import {connect} from 'react-redux';
+import { login } from '../../../state/modules/login/action';
 
 import styles from './loginForm.module.scss';
 
-const LoginForm = ({loginFunc}) => {
+const LoginForm = ({ loginFunc }) => {
   const [login, setLogin] = useState('');
   const [password, setPass] = useState('');
 
   return (
-    <div className={styles.loginWrapper} >
+    <div className={styles.loginWrapper}>
       <p className={styles.title}>{t('login.header')}</p>
       <Input
-        type='text'
+        type="text"
         placeholder={t('login.name')}
         onChangeFunc={(text) => setLogin(text)}
       />
       <Input
-        type='password'
+        type="password"
         placeholder={t('login.password')}
         onChangeFunc={(text) => setPass(text)}
       />
       <Button
-        str = {t('login.button')}
-        onclickFunc = {loginFunc}
-        state = {{login, password}}
-        errorMessage = {t('login.error')}
+        str={t('login.button')}
+        onclickFunc={loginFunc}
+        state={{ login, password }}
+        errorMessage={t('login.error')}
       />
     </div>
   );
@@ -39,10 +39,11 @@ LoginForm.propTypes = {
   loginFunc: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({login}) => ({
+const mapStateToProps = ({ login }) => ({
   loading: login.loading,
 });
 
 export default connect(
-    () => mapStateToProps,
-    {loginFunc: login})(LoginForm);
+  () => mapStateToProps,
+  { loginFunc: login },
+)(LoginForm);
