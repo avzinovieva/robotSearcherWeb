@@ -38,6 +38,15 @@ export default {
       users: 'Пользователи',
       payment: 'Платежи',
     },
+    categories: {
+      placeholder: 'Имя',
+      header: 'Категории',
+      buttons: {
+        delete: 'Удалить',
+        edit: 'Редактировать',
+        workTypesButtonName: 'Типы работ',
+      },
+    },
     howItWorks: {
       title: 'Как это работает?',
       p1: 'Всё просто!',

@@ -38,9 +38,14 @@ export default {
     users: 'Users',
     payment: 'Payment',
   },
-  categoriesList: {
+  categories: {
+    placeholder: 'Name',
     header: 'Categories',
-    workTypesButtonName: 'Work Types',
+    buttons: {
+      delete: 'Delete',
+      edit: 'Edit',
+      workTypesButtonName: 'Work Types',
+    },
   },
   workTypesDetails: {
     header: 'Work types',

@@ -7,7 +7,7 @@ function Card(props) {
   const [redirectTo, setRedirectTo] = useState(false);
   const renderRedirect = () => {
     if (redirectTo) {
-      return <Redirect to={"/worktypesdetails/" + props.id} />;
+      return <Redirect to={`/worktypesdetails/${props.id}`} />;
     }
   };
   const redirectHandler = () => {
@@ -20,12 +20,12 @@ function Card(props) {
         <div className={styles.category}>{props.category}</div>
         <div className={styles.workTypes} onClick={redirectHandler}>
           {props.workTypes}
-          {`${t('categoriesList.workTypesButtonName')}`}
+          {`${t('categories.buttons.workTypesButtonName')}`}
           {renderRedirect()}
         </div>
         <div className={styles.buttonsBlock}>
-          <button className={styles.button}>Edit</button>
-          <button className={styles.button}>Delete</button>
+          <button className={styles.button}>{`${t('categories.buttons.edit')}`}</button>
+          <button className={styles.button}>{`${t('categories.buttons.delete')}`}</button>
         </div>
       </div>
     </div>

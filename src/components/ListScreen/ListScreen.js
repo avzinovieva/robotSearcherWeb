@@ -14,7 +14,6 @@ import t from '../../translations/i18n';
 const ListScreen = ({
   loading, items, type, inputSearchPlaceholder, showTheTableHeader,
 }) => {
-
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState('');
   const [itemsPerPage, setItemsPerPage] = useState(10);
