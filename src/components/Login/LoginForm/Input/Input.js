@@ -22,14 +22,15 @@ const Input = ({ type, placeholder, onChangeFunc }) => (
       className={styles.input}
       onChange={(el) => onChangeFunc(el.target.value)}
     />
-    {(type === 'password') && (
+    {type === 'password'
+      && (
       <img
         src={eyeOff}
         className={styles.showPass}
         alt="eye"
         onClick={showHidePass}
       />
-    )}
+      )}
   </div>
 );
 
