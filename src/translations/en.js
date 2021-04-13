@@ -44,7 +44,7 @@ export default {
     buttons: {
       delete: 'Delete',
       edit: 'Edit',
-      workTypesButtonName: 'Work Types',
+      workTypesButtonName: 'Work types',
     },
   },
   workTypesDetails: {

@@ -28,7 +28,7 @@ export default {
       buttons: {
         delete: 'Видалити',
         edit: 'Редагувати',
-        workTypesButtonName: 'Види роботи',
+        workTypesButtonName: 'Види робіт',
       },
     },
     aboutUs: {
