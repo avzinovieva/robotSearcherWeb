@@ -2,4 +2,9 @@
 
 .cardsBlock {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-left: 0!important;
+  padding-right: 0!important;
 }

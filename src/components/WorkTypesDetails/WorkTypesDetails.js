@@ -43,7 +43,7 @@ const WorkTypesDetails = ({ loading, workTypesFunc, workTypes }) => {
   );
 
   return (
-    <div>
+    <div className={styles.workTypesBox}>
       <Container fluid>
         <Row>
           <Col xl={12} className={styles.topBarBox}>
@@ -52,12 +52,12 @@ const WorkTypesDetails = ({ loading, workTypesFunc, workTypes }) => {
         </Row>
       </Container>
       <Container>
-        <Row>
-          <Col className={styles.titleBox} xl={5}>
+        <Row className={styles.titleWrapper}>
+          <Col className={styles.titleBox} xl={5} lg={5} md={7} sm={7}>
             <div className={styles.title}>{`${t('workTypesDetails.header')}`}</div>
             <button className={styles.button} onClick={() => setModalActive(true)}>&#43;</button>
           </Col>
-          <Col xl={7} className={styles.topBarBox1}>
+          <Col xl={7} lg={7} md={5} sm={5} className={styles.paginationBoxTop}>
             {pagination(handleChange, page, pagesCount)}
           </Col>
         </Row>
@@ -66,35 +66,45 @@ const WorkTypesDetails = ({ loading, workTypesFunc, workTypes }) => {
             <ModalWindow active={modalActive} setActive={setModalActive}>
               <h1 className={styles.modalWindowTitle}>Work types details</h1>
               <form className={formStyles.modal__content_form} action="">
-                <input className={formStyles.modal__content_input} type="text" placeholder={`${t('placeholders.modalWindowInputName')}`} />
-                <input className={formStyles.modal__content_input} type="text" placeholder={`${t('placeholders.modalWindowInputPrice')}`} />
-                <button className={formStyles.modal__content_button}>{`${t('modalWindow.button')}`}</button>
+                <input
+                  className={formStyles.modal__content_input}
+                  type="text"
+                  placeholder={`${t('placeholders.modalWindowInputName')}`}
+                />
+                <input
+                  className={formStyles.modal__content_input}
+                  type="text"
+                  placeholder={`${t('placeholders.modalWindowInputPrice')}`}
+                />
+                <button
+                  className={formStyles.modal__content_button}
+                >
+                  {`${t('modalWindow.button')}`}
+                </button>
               </form>
             </ModalWindow>
           </Col>
         </Row>
-        <Row>
-          <Col xl={12}>
-            <WorkTypeCardsArray cards={workTypesArray} pageNumber={page} loading={loading} />
-          </Col>
+        <Row className={styles.cardsBlock}>
+          <WorkTypeCardsArray cards={workTypesArray} pageNumber={page} loading={loading} />
         </Row>
         <Row>
-          <Col xl={12}>
+          <Col xl={12} lg={12}>
             <Footer onClickFunc={
-                      () => {
-                        setCardsPerPage(cardsPerPage + 10);
-                        setPage(1);
-                      }
-                  }
+                            () => {
+                              setCardsPerPage(cardsPerPage + 10);
+                              setPage(1);
+                            }
+                        }
             />
           </Col>
         </Row>
-        <Row className={styles.topBarBox1}>
-          <Col xl={12} className={styles.topBarBox1}>
+        <Row className={styles.paginationBoxBottom}>
+          <Col xl={12} lg={12}>
             {pagination(handleChange, page, pagesCount)}
           </Col>
         </Row>
-        <div className={!modalActive ? styles.FooterBlock : styles.footerBlockHide} />
+        <div className={!modalActive ? styles.footerBlock : styles.footerBlockHide} />
       </Container>
     </div>
   );

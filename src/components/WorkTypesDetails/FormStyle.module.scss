@@ -20,6 +20,17 @@
 
   overflow: hidden;
   outline: none;
+
+  @media (max-width: 376px){
+    width: 78%;
+    height: 20%;
+    margin: 15px;
+  }
+
+  @media (max-width: 578px) {
+    width: 88%;
+    height: 60%;
+  }
 }
 
 .modal__content_input::placeholder{
@@ -40,6 +51,17 @@
 
   color: $white;
   background: $liner_gradient_bg;
+
+  @media (max-width: 415px){
+    width: 120px;
+    height: 45px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 320px) {
+    width: 120px;
+    height: 35px;
+  }
 }
 
 .modal__content_button:focus, .modal__content_button:active {

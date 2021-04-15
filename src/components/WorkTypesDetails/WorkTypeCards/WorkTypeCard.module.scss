@@ -2,14 +2,25 @@
 
 .cardWrapper {
   min-width: 120px;
-  width: 100%;
+  width: 228px;
   height: auto;
   box-shadow: 0 3px 3px $very_dark_gray;
   border-radius: 30px;
   text-align: center;
-  padding: 2%;
+  padding: 4% 2%;
   margin-bottom: 20px;
   background: $light_blue_gray_bg;
+}
+
+.cardBox{
+  padding-right: 0!important;
+  margin-right: 0!important;
+
+  @media (max-width: 578px){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .cardContainer {
@@ -19,6 +30,7 @@
   flex-direction: column;
   align-content: center;
   justify-content: center;
+  padding: 10px 5px;
 }
 
 .workTypesCategories {
@@ -30,7 +42,7 @@
   font-weight: bold;
   font-size: $work_types_title_font_size;
   height: $work_types_title_font_size*2;
-  padding: 0 10%;
+  padding: 0 5%;
   color: $dark_violet_title;
 }
 
@@ -41,7 +53,7 @@
   font-style: normal;
   text-decoration: underline;
   font-weight: normal;
-  padding: 10% 2%;
+  padding: 4% 1%;
   line-height: $line_height_price;
   font-size: $price_font_size;
   color: $orange;

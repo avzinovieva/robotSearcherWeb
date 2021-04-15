@@ -11,7 +11,7 @@ const ModalWindow = (props) => {
     <Container>
       <Row>
         <Col xl={12}>
-          <div className={styles.ts}>
+          <div>
             <div
               className={active ? styles.modal_active : styles.modal}
               onClick={() => setActive(false)}

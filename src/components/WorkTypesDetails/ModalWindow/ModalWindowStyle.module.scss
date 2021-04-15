@@ -57,4 +57,9 @@
   transition: 0.3s all;
   transform: scale(1);
   position: relative;
+
+  @media (max-width: 578px) {
+    width: 75%;
+    height: 50%;
+  }
 }

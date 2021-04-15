@@ -84,7 +84,7 @@ const CategoriesList = ({ loading, categoriesFunc, categories }) => {
             />
           </Col>
         </Row>
-        <Row>
+        <Row className={styles.paginationBox}>
           <Col xl={12}>
             {pagination(handleChange, page, pagesCount)}
           </Col>
