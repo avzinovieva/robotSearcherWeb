@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Col, Container, Row } from 'react-bootstrap';
 import { price } from '../../../state/modules/workTypesPrice/action';
 import styles from './WorkTypeCard.module.scss';
 import t from '../../../translations/i18n';
@@ -14,16 +15,22 @@ const WorkTypeCard = ({ workTypesFunc, category, id }) => {
     });
   }, [workTypesFunc, id]);
   return (
-    <div className={styles.cardWrapper}>
-      <div className={styles.cardContainer}>
-        <div className={styles.workTypesCategories}>{category}</div>
-        <div className={styles.workTypesPrice}>{priceArray}</div>
-        <div className={styles.buttonsBlock}>
-          <button className={styles.button}>{`${t('workTypesDetails.cards.buttonEdit')}`}</button>
-          <button className={styles.button}>{`${t('workTypesDetails.cards.buttonDelete')}`}</button>
-        </div>
-      </div>
-    </div>
+    <Container>
+      <Row>
+        <Col xl={6} lg={3}>
+          <div className={styles.cardWrapper}>
+            <div className={styles.cardContainer}>
+              <div className={styles.workTypesCategories}>{category}</div>
+              <div className={styles.workTypesPrice}>{priceArray}</div>
+              <div className={styles.buttonsBlock}>
+                <button className={styles.button}>{`${t('workTypesDetails.cards.buttonEdit')}`}</button>
+                <button className={styles.button}>{`${t('workTypesDetails.cards.buttonDelete')}`}</button>
+              </div>
+            </div>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from './WorkTypeCard';
 import styles from './Cards.module.scss';
+import {Col, Container, Row} from "react-bootstrap";
 
 const WorkTypeCardsArray = ({ pageNumber, cards }) => {
   pageNumber = (!pageNumber) ? 1 : pageNumber;
@@ -17,9 +18,16 @@ const WorkTypeCardsArray = ({ pageNumber, cards }) => {
     ),
   );
   return (
-    <div className={styles.cardsBlock}>
-      {cardsElements}
-    </div>
+      <Container>
+        <Row>
+          <Col xl={12}>
+            <div className={styles.cardsBlock}>
+              {cardsElements}
+            </div>
+          </Col>
+        </Row>
+      </Container>
+
   );
 };
 
