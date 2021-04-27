@@ -10,12 +10,12 @@ import BannerCustomer from './BannerCustomer/BannerCustomer';
 const Landing = ({
   aboutUsParagraphs,
   reasonsParagraphs,
-  mobileScreenImg,
   howItWorksParagraphs,
   howItWorksSubtitle,
   landingType,
   reasonsCorgiText,
   downloadLink,
+    qrCode
 }) => {
   const socialsLinks = {
     instagram: 'https://instagram.com/fixe.me',
@@ -46,7 +46,6 @@ const Landing = ({
       <AboutUs aboutUsParagraphs={aboutUsParagraphs} landingType={landingType} />
       <Reason reasonsParagraphs={reasonsParagraphs} corgiText={reasonsCorgiText} />
       <HowItWorks
-        mobileScreenImg={mobileScreenImg}
         howItWorksParagraphs={howItWorksParagraphs}
         howItWorksSubtitle={howItWorksSubtitle}
         landingType={landingType}
@@ -57,6 +56,7 @@ const Landing = ({
         twitter={socialsLinks.twitter}
         telegram={socialsLinks.telegram}
         download={downloadLink}
+        qrCode={qrCode}
       />
     </div>
   );
@@ -66,11 +66,11 @@ Landing.propTypes = {
   aboutUsParagraphs: PropTypes.array.isRequired,
   reasonsParagraphs: PropTypes.array.isRequired,
   reasonsCorgiText: PropTypes.string.isRequired,
-  mobileScreenImg: PropTypes.string.isRequired,
   howItWorksParagraphs: PropTypes.array.isRequired,
   howItWorksSubtitle: PropTypes.string.isRequired,
   landingType: PropTypes.string.isRequired,
   downloadLink: PropTypes.string.isRequired,
+  qrCode: PropTypes.string.isRequired,
 };
 
 export default Landing;
