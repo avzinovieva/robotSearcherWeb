@@ -9,7 +9,7 @@ import Footer from '../Footer/Footer';
 import { workTypes } from '../../state/modules/workTypes/action';
 import PaginationBar from '../Pagination/Pagination';
 import ModalWindow from './ModalWindow/ModalWindow';
-import styles from './WorkTypesDetails.module.scss';
+import styles from './workTypesDetailsStyles.module.scss';
 import formStyles from './FormStyle.module.scss';
 
 const WorkTypesDetails = ({ loading, workTypesFunc, workTypes }) => {

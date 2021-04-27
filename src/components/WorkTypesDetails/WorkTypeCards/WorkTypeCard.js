@@ -13,7 +13,7 @@ const WorkTypeCard = ({ workTypesFunc, category, id }) => {
     workTypesFunc(id).then((item) => {
       (!item.payload) ? setPriceArray([]) : setPriceArray(item.payload.data);
     });
-  }, [workTypesFunc, id]);
+  }, [workTypesFunc]);
 
   return (
     <Col xl={3} lg={4} md={6} sm={6} className={styles.cardBox}>
