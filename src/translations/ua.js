@@ -22,6 +22,15 @@ export default {
     modalWindow: {
       button: 'Зберегти',
     },
+    categories: {
+      placeholder: 'Ім\'я',
+      header: 'Категорії',
+      buttons: {
+        delete: 'Видалити',
+        edit: 'Редагувати',
+        workTypesButtonName: 'Види робіт',
+      },
+    },
     aboutUs: {
       title: 'Про нас',
       p1: 'Fixe допоможе тобі з пошуком клієнтів в твоєму ремеслі.',

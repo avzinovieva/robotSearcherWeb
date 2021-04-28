@@ -1,21 +1,39 @@
 @import '../../theme.module.scss';
-
-.categoriesListTitle{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 2% 0 2% 0;
+.topBarBox{
+    margin-left: 0!important;
+    margin-right: 0!important;
+    padding-left: 0!important;
+    padding-right: 0!important;
 }
+.categoriesListTitle{
+    padding: 3% 0 1% 0;
+
+    @media (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.buttonBox{
+    padding-bottom: 10px;
+}
+
 .block{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-items: center;
-}
-.title{
-    display: flex;
-    justify-self: center;
     align-self: center;
+
+    @media (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.title{
     font-family: $main_font;
     font-style: normal;
     font-weight: bold;
@@ -23,7 +41,14 @@
     background-image: $liner_gradient_bg;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
+
 .button{
     display: flex;
     align-items: center;
@@ -41,11 +66,13 @@
     font-size: $title;
     font-family: $main_font;
 }
+
 .Pagination {
     position: absolute;
     z-index: 1;
     right: 5%;
 }
+
 .FooterBlock {
     display: flex;
     flex-direction: row;
