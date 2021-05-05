@@ -1,19 +1,19 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import t from '../../translations/i18n';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as Yup from 'yup';
-import {Formik} from 'formik';
-import {masterAccept} from '../../state/modules/masterAccept/action';
-import {masterDecline} from '../../state/modules/masterDecline/action';
+import { Formik } from 'formik';
+import t from '../../translations/i18n';
+import { masterAccept } from '../../state/modules/masterAccept/action';
+import { masterDecline } from '../../state/modules/masterDecline/action';
 
 import styles from './manageMasterModal.module.scss';
 
 const declineReasonSchema = Yup.object().shape({
   reason: Yup.string()
-      .min(10, 'not less then 10 letters')
-      .trim()
-      .required('Required'),
+    .min(10, 'not less then 10 letters')
+    .trim()
+    .required('Required'),
 });
 
 const ManageMasterModal = ({
@@ -24,20 +24,20 @@ const ManageMasterModal = ({
   id,
   closePopup,
   acceptFunc,
-  declineFunc},
-) => {
+  declineFunc,
+}) => {
   const handleClick = (reason) => {
-        type === 'accept' ?
-            acceptFunc(id).then(async () => {
-              await closePopup();
-            }) :
-            declineFunc(id, reason).then(async () => {
-              await closePopup();
-            });
+    type === 'accept'
+      ? acceptFunc(id).then(async () => {
+        await closePopup();
+      })
+      : declineFunc(id, reason).then(async () => {
+        await closePopup();
+      });
   };
 
   return (
-    <div className={styles.popup} style={{display: display}}>
+    <div className={styles.popup} style={{ display }}>
       <Formik
         initialValues={{
           reason: '',
@@ -47,39 +47,48 @@ const ManageMasterModal = ({
           handleClick(values.reason);
         }}
       >
-        {({errors, handleSubmit, isValid, handleChange})=>(
+        {({
+          errors, handleSubmit, isValid, handleChange,
+        }) => (
           <div className={styles.popupContent}>
             <p className={styles.title}>
-              {t('mastersRequestsList.'+type+'.modal.title')}
+              {t(`mastersRequestsList.${type}.modal.title`)}
             </p>
             <p className={styles.subtitle}>
-              {t('mastersRequestsList.'+type+'.modal.subtitle')}
+              {t(`mastersRequestsList.${type}.modal.subtitle`)}
             </p>
 
-            {type === 'decline' &&
+            {type === 'decline'
+                            && (
                             <input
-                              name={'reason'}
+                              name="reason"
                               onChange={handleChange('reason')}
                               className={styles.input}
                             />
-            }
-            {type === 'decline' &&
-            errors.reason &&
+                            )}
+            {type === 'decline'
+            && errors.reason
+            && (
             <div className={styles.error}>
               {errors.reason}
-            </div>}
+            </div>
+            )}
             <div className={styles.buttonsWrapper}>
               <button
-                type='submit'
+                type="submit"
                 disabled={type === 'decline' && !isValid}
                 className={styles.button}
                 onClick={type === 'decline' ? handleSubmit : handleClick}
-              >{t('mastersRequestsList.'+type+'.modal.buttonYes')}</button>
+              >
+                {t(`mastersRequestsList.${type}.modal.buttonYes`)}
+              </button>
 
               <button
                 className={styles.button}
                 onClick={closePopup}
-              >{t('mastersRequestsList.'+type+'.modal.buttonNo')}</button>
+              >
+                {t(`mastersRequestsList.${type}.modal.buttonNo`)}
+              </button>
             </div>
           </div>
         )}
@@ -99,15 +108,15 @@ ManageMasterModal.propTypes = {
   declineFunc: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({masterAccept, masterDecline}) => ({
+const mapStateToProps = ({ masterAccept, masterDecline }) => ({
   loadingAccept: masterAccept.loading,
   loadingDecline: masterDecline.loading,
 });
 
-
 export default connect(
-    () => mapStateToProps,
-    {
-      acceptFunc: masterAccept,
-      declineFunc: masterDecline})
-(ManageMasterModal);
+  () => mapStateToProps,
+  {
+    acceptFunc: masterAccept,
+    declineFunc: masterDecline,
+  },
+)(ManageMasterModal);

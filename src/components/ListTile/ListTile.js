@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Container, Row } from 'react-bootstrap';
 import styles from './listTile.module.scss';
+import t from '../../translations/i18n';
 
 const ListTile = ({
   itemData, id, openPopupAccept, openPopupDecline, type,
@@ -40,33 +41,33 @@ const ListTile = ({
                 </Col>
               );
             case 'bold':
-              return <p className={styles.bold}>{item.item}</p>;
+              return <Col className={styles.bold}>{item.item}</Col>;
             case 'subtitle':
               return;
             case 'violet':
-              return <p className={styles.violet}>{item.item}</p>;
+              return <Col className={styles.violet}>{item.item}</Col>;
             case 'buttons':
               return (
-                <div>
+                <Col className={styles.buttonBox}>
                   <button
                     className={[styles.button, styles.decline].join(' ')}
                     onClick={openPopupDecline}
                   >
-                    Decline
+                    {`${t('mastersRequestsList.button.buttonDecline')}`}
                   </button>
                   <button
                     className={[styles.button, styles.accept].join(' ')}
                     onClick={openPopupAccept}
                   >
-                    Accept
+                    {`${t('mastersRequestsList.button.buttonAccept')}`}
                   </button>
-                </div>
+                </Col>
               );
             default:
               return (
                 <Col
                   key={i + 1}
-                  xl={2}
+                  xl={(type === 'masters') ? 4 : 2}
                   lg={2}
                   md={2}
                   sm={2}
@@ -93,6 +94,7 @@ ListTile.propTypes = {
   id: PropTypes.number.isRequired,
   openPopupAccept: PropTypes.func.isRequired,
   openPopupDecline: PropTypes.func.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default ListTile;
