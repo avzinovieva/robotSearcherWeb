@@ -59,7 +59,7 @@ export default {
     inputSearchPlaceholder: 'User name',
   },
   mastersRequestsList: {
-    header: 'Masters requests list',
+    header: 'Masters requests',
     inputSearchPlaceholder: 'User name',
     accept: {
       modal: {

@@ -155,6 +155,7 @@ const ListScreen = ({
                 return (
                   <ListTile
                     key={i}
+                    type={type}
                     itemData={itemData}
                     id={id}
                     openPopupAccept={() => {

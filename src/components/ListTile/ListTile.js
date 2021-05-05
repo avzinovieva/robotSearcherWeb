@@ -4,7 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import styles from './listTile.module.scss';
 
 const ListTile = ({
-  itemData, id, openPopupAccept, openPopupDecline,
+  itemData, id, openPopupAccept, openPopupDecline, type,
 }) => (
   <Container key={id} className={styles.tileWrapper} dataid={id}>
     <Row>
@@ -24,7 +24,7 @@ const ListTile = ({
               );
             case 'date':
               return (
-                <Col xl={3} lg={3} md={3} sm={3} xs={6} key={i+i*2}>
+                <Col xl={3} lg={3} md={3} sm={3} xs={6} key={i + i * 2}>
                   <p key={i + 3} className={styles.p}>
                     {item.item.split('T')[0].split('-').reverse().join('/')}
                   </p>
@@ -65,7 +65,7 @@ const ListTile = ({
             default:
               return (
                 <Col
-                    key={i+1}
+                  key={i + 1}
                   xl={2}
                   lg={2}
                   md={2}
