@@ -2,7 +2,7 @@ import React from 'react';
 import i18n from 'i18n-js';
 import Landing from '../Landing/Landing';
 import t from '../../translations/i18n';
-import mobileScreenImg from '../../img/mobileScreen.png';
+import masterQr from '../../img/MasterQR.svg';
 
 const LandingMaster = () => {
   document.title = 'Fixe Master';
@@ -42,12 +42,12 @@ const LandingMaster = () => {
     <Landing
       aboutUsParagraphs={aboutUsParagraphs}
       reasonsParagraphs={reasonsParagraphs}
-      mobileScreenImg={mobileScreenImg}
       howItWorksParagraphs={howItWorksParagraphs}
       howItWorksSubtitle={howItWorksSubtitle}
       landingType="master"
       reasonsCorgiText={reasonsCorgiText}
       downloadLink={downloadLink}
+      qrCode = {masterQr}
     />
   );
 };

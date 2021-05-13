@@ -2,12 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import t from '../../../translations/i18n';
 import ScrollAnimation from 'react-animate-on-scroll';
-
+import mobileScreenImg from '../../../img/mobileScreenCustomer.png';
 
 import styles from './howItWorks.module.scss';
 
 const HowItWorks = ({
-  mobileScreenImg,
   howItWorksParagraphs,
   howItWorksSubtitle,
 }) => {
@@ -45,7 +44,6 @@ const HowItWorks = ({
 };
 
 HowItWorks.propTypes = {
-  mobileScreenImg: PropTypes.string.isRequired,
   howItWorksParagraphs: PropTypes.array.isRequired,
   howItWorksSubtitle: PropTypes.string.isRequired,
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import i18n from 'i18n-js';
 import Landing from '../Landing/Landing';
 import t from '../../translations/i18n';
-import mobileScreenImg from '../../img/mobileScreenCustomer.png';
+import customerQr from '../../img/CustomerQR.svg';
 
 const LandingCustomer = () => {
   document.title = 'Fixe Customer';
@@ -51,10 +51,10 @@ const LandingCustomer = () => {
       reasonsParagraphs={reasonsParagraphs}
       howItWorksParagraphs={howItWorksParagraphs}
       howItWorksSubtitle={howItWorksSubtitle}
-      mobileScreenImg={mobileScreenImg}
       landingType="customer"
       reasonsCorgiText={reasonsCorgiText}
       downloadLink={downloadLink}
+      qrCode = {customerQr}
     />
   );
 };

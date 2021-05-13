@@ -163,3 +163,10 @@
     margin-bottom: 30px;
   }
 }
+
+.marginTop{
+  margin-top: 30px;
+  @media (max-width: 992px) {
+    margin-top: 5px;
+  }
+}

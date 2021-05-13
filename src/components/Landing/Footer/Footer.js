@@ -8,13 +8,11 @@ import twitterIcon from '../../../img/twitter.png';
 import instagramIcon from '../../../img/instagram.png';
 import telegramIcon from '../../../img/telegram.png';
 import t from '../../../translations/i18n';
-import masterQR from '../../../img/MasterQR.svg';
-import GetMessage from './GetMessage/GetMessage';
 
 import styles from './footer.module.scss';
 
 const Footer = ({
-  instagram, facebook, twitter, telegram, download,
+  instagram, facebook, twitter, telegram, download, qrCode
 }) => {
   const isMobile = useMediaQuery('(max-width:576px)');
   const isTablet = useMediaQuery('(max-width:992px)');
@@ -45,7 +43,7 @@ const Footer = ({
           </div>
           { !isMobile && (
           <div className={styles.downloadQRBlock}>
-            <img src={masterQR} alt="masterQR" className={styles.qrCode} />
+            <img src={qrCode} alt="masterQR" className={styles.qrCode} />
             <p className={styles.text}>
               <span className={styles.dedicated}>QR - </span>
               {t('landing.footer.qrCode')}
@@ -126,6 +124,7 @@ Footer.propTypes = {
   twitter: PropTypes.string.isRequired,
   telegram: PropTypes.string.isRequired,
   download: PropTypes.string.isRequired,
+  qrCode: PropTypes.string.isRequired,
 };
 
 export default Footer;

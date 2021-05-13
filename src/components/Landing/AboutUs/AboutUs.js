@@ -23,7 +23,7 @@ const AboutUs = ({ aboutUsParagraphs, landingType }) => {
                             aboutUsParagraphs.map((paragraph, index) => {
                               if (index !== aboutUsParagraphs.length - 1) {
                                 return (
-                                  <p className={styles.text} key={index}>
+                                  <p className={`${styles.text} ${index === 0 && styles.marginTop}`} key={index}>
                                     {paragraph}
                                   </p>
                                 );
