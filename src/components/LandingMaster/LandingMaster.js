@@ -47,7 +47,7 @@ const LandingMaster = () => {
       landingType="master"
       reasonsCorgiText={reasonsCorgiText}
       downloadLink={downloadLink}
-      qrCode = {masterQr}
+      qrCode={masterQr}
     />
   );
 };

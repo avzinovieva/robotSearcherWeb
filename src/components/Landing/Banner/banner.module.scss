@@ -174,6 +174,7 @@
   @media (max-height: 640px) and (max-width: 576px) {
     height: 130px;
   }
+
 }
 
 .corgiText {
@@ -204,6 +205,16 @@
   }
   @media (max-width: 576px) {
     height: 150px;
+    margin-bottom: 10px ;
+  }
+  @media (min-width: 540px) and (max-width: 541px) {
+    height: 200px;
+    margin-bottom: 10px ;
+    font-size: $landing_h1_tablet;
+  }
+  @media (min-width: 411px) and (max-width: 415px) {
+    font-size: $landing_h1_tablet;
+    height: 200px;
     margin-bottom: 10px ;
   }
 }
