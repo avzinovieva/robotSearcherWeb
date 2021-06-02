@@ -48,6 +48,11 @@
         align-items: center;
     }
 }
+.paginationBox {
+    @media (min-width: 578px) {
+        margin-right: -60px!important;
+    }
+}
 
 .button{
     display: flex;
@@ -62,7 +67,7 @@
     border: none;
     outline:none;
 
-    color: $orange;
+    color: $white;
     font-size: $title;
     font-family: $main_font;
 }
@@ -73,7 +78,7 @@
     right: 5%;
 }
 
-.FooterBlock {
+.footerBlock {
     display: flex;
     flex-direction: row;
     justify-content: center;

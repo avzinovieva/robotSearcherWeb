@@ -1,0 +1,144 @@
+@import '../../theme.module.scss';
+.topBarBox {
+  padding-left: 0!important;
+  padding-right: 0!important;
+  margin-right: 0!important;
+  margin-left: 0!important;
+}
+
+.workTypesBox{
+  overflow: hidden;
+}
+
+.paginationBoxBottom{
+ margin-right: -30px!important;
+}
+
+.paginationBoxTop{
+  margin-right: -140px!important;
+
+  @media (max-width: 578px) {
+    display: none;
+  }
+}
+
+
+.cardsBlock{
+  margin-right: -57px!important;
+
+  @media (max-width: 1199px) {
+    margin-right: -110px!important;
+  }
+
+  @media (max-width: 990px) {
+    margin-right: -220px!important;
+  }
+
+  @media (max-width: 767px) {
+    margin-right: -70px!important;
+  }
+
+  @media (max-width: 578px) {
+    margin: 0!important;
+  }
+}
+
+.titleBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @media (max-width: 578px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.modalWindowTitle {
+  text-align: center;
+  padding-top: 40px;
+  background-image: $liner_gradient_bg;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @media (max-width: 578px) {
+    padding-bottom: 10px;
+    padding-top: 20px;
+    font-size: $modal_window_mobile;
+  }
+
+  @media (max-width: 412px) {
+    padding-bottom: 20px;
+    padding-top: 40px;
+    font-size: $modal_window_mobile_medium;
+  }
+
+  @media (max-width: 375px) {
+    padding-bottom: 0;
+    padding-top: 10px;
+    font-size: $modal_window_mobile;
+  }
+}
+
+.workTypesDetailsTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 2% 0 2% 0;
+}
+
+.block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+}
+
+.title {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+
+  font-family: $main_font;
+  font-style: normal;
+  font-weight: bold;
+  font-size: $title;
+  background-image: $liner_gradient_bg;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button {
+  color: $white;
+  font-size: $title;
+  font-family: $main_font;
+
+  background: $liner_gradient_bg;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+}
+
+.footerBlock {
+  transition: opacity 1s ease-in-out;
+  position: initial;
+  display: flow;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footerBlockHide{
+  opacity:0;
+}
+
+.titleWrapper{
+  padding: 50px 0 30px 0;
+  margin-right: -30px!important;
+}

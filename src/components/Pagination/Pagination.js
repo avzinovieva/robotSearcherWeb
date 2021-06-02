@@ -34,7 +34,7 @@ export default function PaginationBar(props) {
   return (
     <Container className={classes.root}>
       <Row className={styles.paginationBox}>
-        <Col className={styles.Pages}>
+        <Col className={styles.Pages} xl={12} lg={12} md={12} sm={12} xs={12}>
           <Pagination
             count={props.pagesCount}
             siblingCount={0}

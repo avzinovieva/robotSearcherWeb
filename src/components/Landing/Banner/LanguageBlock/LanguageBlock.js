@@ -4,26 +4,31 @@ import i18n from 'i18n-js';
 
 import styles from './languageBlock.module.scss';
 
-const LanguageBlock = ({languages,
+const LanguageBlock = ({
+  languages,
   selectedLanguage,
   curLanguage,
   indexLanguage,
-  setSelectedLanguage}) => {
-  const underlinedState = selectedLanguage === curLanguage ?
-        '1px solid #ffffff' : 'none';
+  setSelectedLanguage,
+}) => {
+  const underlinedState = selectedLanguage === curLanguage
+    ? '1px solid #ffffff' : 'none';
   return (
     <div>
       <a
         href=""
         className={styles.lang}
-        style = {{'borderBottom': underlinedState}}
+        style={{ borderBottom: underlinedState }}
         onClick={() => {
           i18n.locale = curLanguage.toLocaleLowerCase();
           localStorage
-              .setItem('fixe_landing_master_lang', curLanguage);
+            .setItem('fixe_landing_master_lang', curLanguage);
           setSelectedLanguage(curLanguage);
-        }}>{curLanguage}</a>
-      {indexLanguage !== languages.length -1 && <span>/</span>}
+        }}
+      >
+        {curLanguage}
+      </a>
+      {indexLanguage !== languages.length - 1 && <span>/</span>}
     </div>
   );
 };
