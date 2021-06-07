@@ -25,62 +25,62 @@ const Banner = ({
       <div className={styles.contentWrapper}>
         <NavigationForLanding />
         <div className={styles.content}>
-        <div className={styles.bannerContent}>
-          <div className={styles.corgiTextWrapper}>
-            {
-                            isMobile
-                              ? (
-                                <div className={styles.corgiTextBackgroundMobile}>
-                                  <h1
-                                    className={styles.corgiText}
-                                  >
-                                    {t('landing.banner.corgiText')}
-                                  </h1>
-                                </div>
-                              )
-                              : (
-                                <div className={styles.corgiTextBackground}>
-                                  <h1
-                                    className={styles.corgiText}
-                                  >
-                                    {t('landing.banner.corgiText')}
-                                  </h1>
-                                </div>
-                              )
-                        }
-          </div>
-          <div>
-            <h2
-              className={styles.bannerSubtitle}
-            >
-              {t('landing.banner.subtitle1')}
-            </h2>
-            <h2
-              className={styles.bannerSubtitle}
-            >
-              {t('landing.banner.subtitle2')}
-            </h2>
-          </div>
-          <div>
-            <div className={styles.socials}>
-              <a href={facebook} className={styles.social_link}>
-                <img src={facebookIcon} alt="facebook" />
-              </a>
-              <a href={twitter} className={styles.social_link}>
-                <img src={twitterIcon} alt="twitter" />
-              </a>
-              <a href={instagram} className={styles.social_link}>
-                <img src={instagramIcon} alt="instagram" />
-              </a>
-              <a href={telegram} className={styles.social_link}>
-                <img src={telegramIcon} alt="telegram" />
-              </a>
+          <div className={styles.bannerContent}>
+            <div className={styles.corgiTextWrapper}>
+              {
+                isMobile
+                  ? (
+                    <div className={styles.corgiTextBackgroundMobile}>
+                      <h1
+                        className={styles.corgiText}
+                      >
+                        {t('landing.banner.corgiText')}
+                      </h1>
+                    </div>
+                  )
+                  : (
+                    <div className={styles.corgiTextBackground}>
+                      <h1
+                        className={styles.corgiText}
+                      >
+                        {t('landing.banner.corgiText')}
+                      </h1>
+                    </div>
+                  )
+            }
+            </div>
+            <div>
+              <h2
+                className={styles.bannerSubtitle}
+              >
+                {t('landing.banner.subtitle1')}
+              </h2>
+              <h2
+                className={styles.bannerSubtitle}
+              >
+                {t('landing.banner.subtitle2')}
+              </h2>
+            </div>
+            <div>
+              <div className={styles.socials}>
+                <a href={facebook} className={styles.social_link}>
+                  <img src={facebookIcon} alt="facebook" />
+                </a>
+                <a href={twitter} className={styles.social_link}>
+                  <img src={twitterIcon} alt="twitter" />
+                </a>
+                <a href={instagram} className={styles.social_link}>
+                  <img src={instagramIcon} alt="instagram" />
+                </a>
+                <a href={telegram} className={styles.social_link}>
+                  <img src={telegramIcon} alt="telegram" />
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div className={styles.corgiImgWrapper}>
-          <img src={corgi} alt="corgi" className={styles.corgiImg} />
-        </div>
+          <div className={styles.corgiImgWrapper}>
+            <img src={corgi} alt="corgi" className={styles.corgiImg} />
+          </div>
         </div>
         <Link to="about" spy smooth>
           <img src={bottomArrow} alt="scroll" className={styles.bottomArrow} />

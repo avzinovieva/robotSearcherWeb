@@ -54,7 +54,7 @@ const LandingCustomer = () => {
       landingType="customer"
       reasonsCorgiText={reasonsCorgiText}
       downloadLink={downloadLink}
-      qrCode = {customerQr}
+      qrCode={customerQr}
     />
   );
 };
