@@ -1,25 +1,25 @@
 @import "../../../theme.module";
 
-.wrapper{
+.wrapper {
   width: 100%;
   height: 100vh;
   background: linear-gradient(94.46deg, $landing_gradient1 0%, $landing_gradient2 107.33%);
 
-  @media (max-width: 1200px) and (orientation: landscape)  {
+  @media (max-width: 1200px) and (orientation: landscape) {
     position: relative;
     height: auto;
     padding-bottom: 50px;
   }
-  @media (max-width: 992px) and (orientation: landscape)  {
+  @media (max-width: 992px) and (orientation: landscape) {
     position: relative;
     height: 950px;
   }
-  @media (max-width: 768px) and (orientation: landscape)  {
+  @media (max-width: 768px) and (orientation: landscape) {
     height: 600px;
   }
 }
 
-.question{
+.question {
   position: absolute;
   width: 25%;
   top: 20%;
@@ -35,7 +35,7 @@
   }
 }
 
-.contentWrapper{
+.contentWrapper {
   width: 80%;
   margin: 0 auto;
 
@@ -44,7 +44,7 @@
   }
 }
 
-.corgiTextWrapper{
+.corgiTextWrapper {
   margin-top: 30px;
   position: relative;
 
@@ -54,12 +54,12 @@
   @media (max-width: 576px) {
     margin-top: 5vh;
   }
-  @media (max-height: 640px) and (max-width: 576px){
+  @media (max-height: 640px) and (max-width: 576px) {
     margin-top: 1vh;
   }
 }
 
-.corgiTextBackground{
+.corgiTextBackground {
   float: right;
   transform: translateX(-50%);
   width: 50%;
@@ -80,7 +80,7 @@
   }
 }
 
-.corgiText{
+.corgiText {
   position: absolute;
   left: 30%;
   margin-top: 40px;
@@ -98,9 +98,16 @@
     left: 12%;
     top: 100%;
   }
+  @media (min-width: 1023px) and (max-width: 1025px) {
+    margin-top: 30px;
+  }
   @media (max-width: 992px) {
     width: 75%;
     left: 3%;
+  }
+  @media (min-width: 767px) and (max-width: 769px) {
+    margin-top: 50px;
+    font-size: $landing_h2_small_tablet;
   }
   @media (max-width: 768px) {
     width: 90%;
@@ -113,18 +120,30 @@
     height: auto;
     margin-top: 25px;
   }
+  @media (min-width: 539px) and (max-width: 541px) {
+    margin-top: 45px;
+    font-size: $landing_h3_small_tablet;
+  }
   @media (max-width: 412px) {
     margin-top: 35px;
   }
-  @media (max-width: 376px) {
+  @media (min-width: 413px) and (max-width: 415px) {
     margin-top: 35px;
+    font-size: $landing_h2_mobile;
+  }
+  @media (min-width: 359px) and (max-width: 361px) {
+    margin-top: 32px;
+  }
+  @media (max-width: 321px) {
+    margin-top: 30px;
+    left: 4%;
   }
   @media (max-width: 280px) {
     margin-top: 15px;
   }
 }
 
-.titles{
+.titles {
   margin-top: 12vh;
   margin-bottom: 7vh;
 
@@ -137,7 +156,7 @@
   }
 }
 
-.bannerTitle{
+.bannerTitle {
   width: 100%;
   margin: 0 auto;
   font-family: $landing_font;
@@ -169,7 +188,7 @@
   }
 }
 
-.socials{
+.socials {
   display: flex;
   align-items: center;
   width: 40%;
@@ -190,7 +209,7 @@
   }
 }
 
-.socials img{
+.socials img {
   margin-top: 2vh;
   margin-right: 30px;
   margin-bottom: 0;
@@ -213,16 +232,16 @@
   }
 }
 
-.social_link{
+.social_link {
   margin-top: 0px;
   transition: margin-top 0.5s;
 }
 
-.social_link:hover{
+.social_link:hover {
   margin-top: -30px;
 }
 
-.corgiImgWrapper{
+.corgiImgWrapper {
   width: 15%;
   position: absolute;
   right: 15%;
@@ -246,12 +265,12 @@
     right: 5%;
     transform: translateY(-12vh);
   }
-  @media (max-height: 640px) and (max-width: 576px){
+  @media (max-height: 640px) and (max-width: 576px) {
     height: 150px;
   }
 }
 
-.corgiImg{
+.corgiImg {
   width: 100%;
 
   @media (max-width: 1200px) {
@@ -263,7 +282,7 @@
   }
 }
 
-.bottomArrow{
+.bottomArrow {
   width: 100px;
   position: absolute;
   bottom: 3%;
@@ -285,12 +304,12 @@
     width: 50px;
     bottom: 2%;
   }
-  @media (max-width: 992px) and (orientation: landscape)  {
+  @media (max-width: 992px) and (orientation: landscape) {
     bottom: 2%;
   }
 }
 
-.bottomArrow:hover{
+.bottomArrow:hover {
   cursor: pointer;
 }
 
@@ -304,9 +323,9 @@
 }
 
 
-.mobileMenu{
+.mobileMenu {
   width: 150px;
-  height:150px;
+  height: 150px;
   border-radius: 40px 0px 0px 40px;
   background-color: $white;
   position: absolute;
@@ -319,14 +338,14 @@
   transition: opacity 0.2s, transform 1s;
 }
 
-.mobileMenu .bars{
+.mobileMenu .bars {
   position: absolute;
   right: 10%;
   top: 10%;
   width: 25px;
 }
 
-.mobileMenu a{
+.mobileMenu a {
   font-family: $landing_font;
   font-style: normal;
   font-weight: 500;
@@ -339,12 +358,12 @@
   outline: none;
 }
 
-.closeMobileMenu{
+.closeMobileMenu {
   transform: translateY(0%) !important;
   opacity: 100% !important;
 }
 
-.languageMenu{
+.languageMenu {
   z-index: 2;
   position: absolute;
   top: 0;
@@ -360,7 +379,7 @@
   transition: opacity 0.2s, transform 1s;
 }
 
-.text{
+.text {
   margin: 0;
   line-height: 30px;
   font-family: $landing_font;
@@ -370,6 +389,6 @@
   color: $landing_inactive_language;
 }
 
-.selected{
+.selected {
   color: $landing_blue_color;
 }
