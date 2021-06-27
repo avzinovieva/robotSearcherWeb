@@ -1,11 +1,10 @@
-import React, {useState} from 'react';
-import {USER_LOGIN, USER_PASS, USER_TOKEN} from '../../../../storageKeys';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import {Redirect} from 'react-router-dom';
-
+import { Redirect } from 'react-router-dom';
+import { USER_LOGIN, USER_PASS, USER_TOKEN } from '../../../../storageKeys';
 import styles from './button.module.scss';
 
-const loginClick = (state, loginFunc, setLoggedUser, setLoginError) =>{
+const loginClick = (state, loginFunc, setLoggedUser, setLoginError) => {
   loginFunc(state).then(async () => {
     const token = await localStorage.getItem(USER_TOKEN);
     if (token) {
@@ -19,8 +18,10 @@ const loginClick = (state, loginFunc, setLoggedUser, setLoginError) =>{
   });
 };
 
-const Button = ({str, state, onclickFunc, errorMessage}) => {
-  const [isLogged, setLoggedUser] = useState( false);
+const Button = ({
+  str, state, onclickFunc, errorMessage, remember,
+}) => {
+  const [isLogged, setLoggedUser] = useState(false);
   const [loginError, setLoginError] = useState(false);
   return (
     <div>
@@ -29,17 +30,17 @@ const Button = ({str, state, onclickFunc, errorMessage}) => {
       </div>
       <button
         className={styles.button}
-        onClick={async ()=>
-          loginClick(
-              state,
-              onclickFunc,
-              setLoggedUser,
-              setLoginError
-          )}
+        onClick={async () => loginClick(
+          state,
+          onclickFunc,
+          setLoggedUser,
+          setLoginError,
+          remember,
+        )}
       >
         {str}
       </button>
-      {isLogged && <Redirect to='/orderList'/> }
+      {isLogged && <Redirect to="/orderList" /> }
     </div>
   );
 };
@@ -49,6 +50,7 @@ Button.propTypes = {
   state: PropTypes.object.isRequired,
   onclickFunc: PropTypes.func.isRequired,
   errorMessage: PropTypes.string.isRequired,
+  remember: PropTypes.bool.isRequired,
 };
 
 export default Button;

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import eyeOff from '../../../../img/eye-off.png';
-import eyeOn from '../../../../img/eye-on.png';
-
+import eyeOff from '../../../../img/eyeOff.png';
+import eyeOn from '../../../../img/eye.png';
+import emailIcon from '../../../../img/email_icon.png';
 import styles from './input.module.scss';
 
 function showHidePass(e) {
@@ -30,7 +30,16 @@ const Input = ({ type, placeholder, onChangeFunc }) => (
         alt="eye"
         onClick={showHidePass}
       />
-      )}
+      ) }
+    {type === 'text'
+    && (
+    <img
+      src={emailIcon}
+      className={styles.email}
+      alt="Email"
+      onClick={showHidePass}
+    />
+    )}
   </div>
 );
 

@@ -1,0 +1,95 @@
+@import '../../theme.module.scss';
+
+.block {
+  position: relative;
+  width: 50%;
+  height: 100vh;
+  background: $title_color;
+  overflow: hidden;
+}
+
+.figureOne {
+  zoom: .7;
+}
+
+.figuresHeaderText {
+  position: absolute;
+  width: 198px;
+  height: 85px;
+  left: 247px;
+  top: 120%;
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: $login-header-size;
+  line-height: 85px;
+  color: $white;
+}
+
+.figuresTextP {
+  position: absolute;
+  width: 274px;
+  height: 58px;
+  left: 247px;
+  top: 160%;
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  color: $login-p;
+}
+
+.figureTwo {
+  position: absolute;
+  top: 130%;
+  left: 60%;
+}
+
+.figureThree {
+  position: absolute;
+  top: 400px;
+  left: 0;
+}
+
+.figureFour {
+  position: absolute;
+  top: 250%;
+  left: 80%;
+  zoom: .7;
+}
+
+.figureFive {
+  position: absolute;
+  top: 265%;
+  left: 215%;
+  zoom: .7;
+}
+
+.figureSix {
+  position: absolute;
+  top: 120%;
+  left: 295%;
+  zoom: .7;
+}
+
+.figuresBlocks {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+

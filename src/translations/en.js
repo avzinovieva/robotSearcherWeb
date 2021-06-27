@@ -18,10 +18,14 @@ export default {
     header: 'Page is not exist',
   },
   login: {
-    header: 'Login',
-    button: 'Login',
-    name: 'Username',
+    hello: 'Hello!',
+    text: 'Log in to your account and start working with us',
+    header: 'Login in to Fixe',
+    button: 'Login in',
+    name: 'Email',
     password: 'Password',
+    forgotPassword: 'Forgot your password?',
+    rememberMe: 'Remember me',
     error: 'Incorrect login or password',
   },
   placeholders: {

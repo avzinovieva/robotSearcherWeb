@@ -17,18 +17,21 @@
     text-align: center;
 }
 
+
 .button{
-    width: 100%;
+    width: 50%;
 
     margin-top: 27px;
     padding: 17px;
-
-    background: $liner_gradient_bg;
-    border-radius: 20px;
     border: none;
     outline:none;
 
-    color: $white;
+    color: $login_text_button;
     font-size: $button_text_size;
     font-family: $main_font;
+
+    background: $liner_gradient_bg;
+
+    box-shadow: 0 6px 15px $login_box_shadow;
+    border-radius: 300px;
 }

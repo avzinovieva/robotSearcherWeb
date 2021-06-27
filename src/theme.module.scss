@@ -3,7 +3,8 @@ $white: #FFFFFF;
 $black: #000000;
 $violet: #b259ef;
 $orange: #F8B258;
-$title_color: #5C3875;
+$title_color: linear-gradient(92.79deg, #3E0963 0%, #1A1F9E 93.52%);;
+
 $dark_violet_title: #2A0941;
 $blur_bg_color: #100025;
 $dark_violet: #14134C;
@@ -24,8 +25,12 @@ $light_violet_button_focus_color: #686aef;
 $light_gray_border: #9FB0B9;
 $light_blue_gray_bg: #E7E8FE;
 $input-search_box-shadow: #D6D6D6;
+$login-p: #E7E8FE;
+$login_input: #15197E;
 $liner_gradient_violet: #3E0963;
 $liner_gradient_blue: #1A1F9E;
+$login_box_shadow: rgba(214, 214, 214, 0.25);
+$login_text_button: #F8B258;
 //fonts
 $main_font: 'Roboto', sans-serif;
 $landing_font: 'Montserrat', sans-serif;
@@ -48,6 +53,7 @@ $input_search_text: 45px;
 $order_list_header_size: 55px;
 $button_next_text_size: 28px;
 
+$login-header-size: 70px;
 $modal_window_mobile: 22px;
 $modal_window_mobile_medium: 26px;
 $landing_h1: 65px;
