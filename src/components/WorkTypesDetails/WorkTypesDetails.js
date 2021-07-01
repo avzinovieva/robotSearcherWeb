@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Col, Container, Row } from 'react-bootstrap';
-import { Redirect } from 'react-router-dom';
 import TopBar from '../TopBar/TopBar';
 import t from '../../translations/i18n';
 import WorkTypeCardsArray from './WorkTypeCards/WorkTypeCardsArray';
@@ -12,10 +11,10 @@ import PaginationBar from '../Pagination/Pagination';
 import ModalWindow from './ModalWindow/ModalWindow';
 import styles from './workTypesDetailsStyles.module.scss';
 import formStyles from './FormStyle.module.scss';
-import { USER_TOKEN } from '../../storageKeys';
+import CheckAccess from '../Utils/CheckAccess';
 
 const WorkTypesDetails = ({ loading, workTypesFunc, workTypes }) => {
-  const token = localStorage.getItem(USER_TOKEN);
+
   const [page, setPage] = useState(1);
   const [cardsPerPage, setCardsPerPage] = useState(24);
   const [workTypesArray, setWorkTypesArray] = useState([]);
@@ -46,9 +45,8 @@ const WorkTypesDetails = ({ loading, workTypesFunc, workTypes }) => {
   );
 
   return (
-    token
-      ? (
         <div className={styles.workTypesBox}>
+          <CheckAccess childrens />
           <Container fluid>
             <Row>
               <Col xl={12} className={styles.topBarBox}>
@@ -117,12 +115,6 @@ const WorkTypesDetails = ({ loading, workTypesFunc, workTypes }) => {
             <div className={!modalActive ? styles.footerBlock : styles.footerBlockHide} />
           </Container>
         </div>
-      ) : (
-        <Redirect to={{
-          pathname: '/login',
-        }}
-        />
-      )
   );
 };
 

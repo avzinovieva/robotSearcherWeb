@@ -13,9 +13,8 @@ import { sendMyCode, getIsReferralValid, CHECK_REFERRAL_CODE_SUCCESS } from '../
 import t from '../../translations/i18n';
 // eslint-disable-next-line camelcase
 import { reCAPTCHA_OPEN_KEY, reCAPTCHA_SECRET_KEY, USER_TOKEN } from '../../storageKeys';
-
-import { LOGIN_SUCCESS } from '../../state/modules/login';
 import { login } from '../../state/modules/login/action';
+import CheckAccess from '../Utils/CheckAccess';
 
 const splitPath = () => {
   const splitedPath = window.location.pathname.split('/');
@@ -78,109 +77,101 @@ const CouponActivation = ({ loading, isCodeValid, partialRegisterUser }) => {
   };
   const token = localStorage.getItem(USER_TOKEN);
   return (
-    token
-      ? (
-        <div>
-          <ReCaptcha
-            ref={(ref) => recaptcha = ref}
-            sitekey="6LfzADUaAAAAAFEhwt9Drcp3s_w7nVKF0XRIWmL8"
-            action="submit"
-            verifyCallback={verifyCallback}
-          />
-          <div className={styles.header}>
-            <div className={styles.headerTexts}>
-              <p className={styles.fixeHeader}> Fixe </p>
-              <p className={styles.secondText}> Coupons activation </p>
-            </div>
-          </div>
-          <div className={styles.mainContainer}>
-            <p className={styles.mainContainerText}>Coupons activation  </p>
-            <Formik
-              initialValues={{
-                email: '',
-                phone: '',
-                userName: '',
-                inviteCode: splitPath(),
-              }}
-              validationSchema={declineReasonSchema}
-              onSubmit={(values) => {
-                partialRegisterUser(values);
-              }}
-            >
-              {({
-                errors,
-                setFieldTouched, handleSubmit,
-                isValid,
-                touched,
-                handleChange,
-              }) => (
-                <div>
-                  <div className={styles.textField}>
-                  <TextField
-              className={styles.textField}
-              label="Email"
-              variant="outlined"
-              onBlur={() => setFieldTouched('email')}
-              onChange={handleChange('email')}
-            />
-                  {touched.email && errors.email
+    <div>
+      <CheckAccess childrens />
+      <ReCaptcha
+        ref={(ref) => recaptcha = ref}
+        sitekey="6LfzADUaAAAAAFEhwt9Drcp3s_w7nVKF0XRIWmL8"
+        action="submit"
+        verifyCallback={verifyCallback}
+      />
+      <div className={styles.header}>
+        <div className={styles.headerTexts}>
+          <p className={styles.fixeHeader}> Fixe </p>
+          <p className={styles.secondText}> Coupons activation </p>
+        </div>
+      </div>
+      <div className={styles.mainContainer}>
+        <p className={styles.mainContainerText}>Coupons activation  </p>
+        <Formik
+          initialValues={{
+            email: '',
+            phone: '',
+            userName: '',
+            inviteCode: splitPath(),
+          }}
+          validationSchema={declineReasonSchema}
+          onSubmit={(values) => {
+            partialRegisterUser(values);
+          }}
+        >
+          {({
+            errors,
+            setFieldTouched, handleSubmit,
+            isValid,
+            touched,
+            handleChange,
+          }) => (
+            <div>
+              <div className={styles.textField}>
+                <TextField
+                  className={styles.textField}
+                  label="Email"
+                  variant="outlined"
+                  onBlur={() => setFieldTouched('email')}
+                  onChange={handleChange('email')}
+                />
+                {touched.email && errors.email
                 && (
                 <p className={styles.errorText}>
                   {' '}
                   {errors.email}
                 </p>
                 )}
-                </div>
-                  <div className={styles.textField}>
-                  <TextField
-              className={styles.textField}
-              label="Phone"
-              variant="outlined"
-              onBlur={() => setFieldTouched('phone')}
-              onChange={handleChange('phone')}
-            />
-                  {touched.phone && errors.phone
+              </div>
+              <div className={styles.textField}>
+                <TextField
+                  className={styles.textField}
+                  label="Phone"
+                  variant="outlined"
+                  onBlur={() => setFieldTouched('phone')}
+                  onChange={handleChange('phone')}
+                />
+                {touched.phone && errors.phone
                     && (
                     <p className={styles.errorText}>
                       {' '}
                       {errors.phone}
                     </p>
                     )}
-                </div>
-                  <TextField
-                  className={styles.textField}
-                  label="Username"
-                  variant="outlined"
-                  onBlur={() => setFieldTouched('userName')}
-                  onChange={handleChange('userName')}
-                />
-                  {touched.userName && errors.userName
+              </div>
+              <TextField
+                className={styles.textField}
+                label="Username"
+                variant="outlined"
+                onBlur={() => setFieldTouched('userName')}
+                onChange={handleChange('userName')}
+              />
+              {touched.userName && errors.userName
               && (
               <p className={styles.errorText}>
                 {' '}
                 {errors.userName}
               </p>
               )}
-                  <button
-                  className={styles.buttonStyle}
-                  type="submit"
-                  disabled={!isValid}
-                  onClick={handleSubmit}
-                >
+              <button
+                className={styles.buttonStyle}
+                type="submit"
+                disabled={!isValid}
+                onClick={handleSubmit}
+              >
                 Activate
-                </button>
-                </div>
-              )}
-            </Formik>
-          </div>
-        </div>
-      )
-      : (
-        <Redirect to={{
-          pathname: '/login',
-        }}
-        />
-      )
+              </button>
+            </div>
+          )}
+        </Formik>
+      </div>
+    </div>
   );
 };
 
