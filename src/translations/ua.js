@@ -69,6 +69,17 @@ export default {
       },
     },
   },
+  login: {
+    hello: 'Привіт!',
+    text: 'Увійдіть у свій акаунт і починайте працювати з нами',
+    header: 'Увійти в Fixe',
+    button: 'Увійти',
+    name: 'Email',
+    password: 'Пароль',
+    forgotPassword: 'Забули пароль?',
+    rememberMe: 'Запам\'ятати мене',
+    error: 'Неправильний логін або пароль',
+  },
   landingCustomer: {
     banner: {
       aboutUs: 'О нас',

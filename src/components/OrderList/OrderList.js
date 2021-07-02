@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { orders } from '../../state/modules/orders/action';
 import ListScreen from '../ListScreen/ListScreen';
 import t from '../../translations/i18n';
+import CheckAccess from '../Utils/CheckAccess';
 
 const OrderList = ({ loading, ordersFunc, orders }) => {
   useEffect(() => {
@@ -11,13 +12,16 @@ const OrderList = ({ loading, ordersFunc, orders }) => {
   }, [ordersFunc]);
 
   return (
-    <ListScreen
-      loading={loading}
-      items={orders}
-      type="ordersList"
-      inputSearchPlaceholder={`${t('ordersList.inputSearchPlaceholder')}`}
-      showTheTableHeader
-    />
+    <div>
+      <CheckAccess childrens />
+      <ListScreen
+        loading={loading}
+        items={orders}
+        type="ordersList"
+        inputSearchPlaceholder={`${t('ordersList.inputSearchPlaceholder')}`}
+        showTheTableHeader
+      />
+    </div>
   );
 };
 

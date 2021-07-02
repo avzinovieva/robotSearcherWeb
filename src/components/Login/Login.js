@@ -1,18 +1,14 @@
 import React from 'react';
-import TopBar from '../TopBar/TopBar';
 import LoginForm from './LoginForm/LoginForm';
-import Corgi from '../Corgi/Corgi';
-import Hi from './Hi/Hi';
+import styles from './login.module.scss';
+import Figures from './Figures/Figures';
 
-const Login = () => {
-  return (
-    <div>
-      <TopBar/>
-      <LoginForm/>
-      <Corgi/>
-      <Hi/>
-    </div>
-  );
-};
+const Login = () => (
+  <div>
+    <div className={styles.block} />
+    <Figures />
+    <LoginForm />
+  </div>
+);
 
 export default Login;

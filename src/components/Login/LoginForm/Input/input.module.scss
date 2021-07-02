@@ -1,34 +1,46 @@
 @import '../../../../theme.module.scss';
 
-.inputBlock{
-    position: relative;
+.inputBlock {
+  position: relative;
 }
 
-.input{
-    background: $white;
-    border: 1px solid $grey;
-    box-sizing: border-box;
-    border-radius: 20px;
-
-    width: 100%;
-    padding: 16px 15px;
-    margin-bottom: 20px;
-
-    font-family: $main_font;
-    font-style: normal;
-    font-weight: normal;
-    font-size: $input_text_size;
-    line-height: 21px;
-    outline: none;
-    color: $grey;
+.input {
+  background: $light_blue_gray_bg;
+  box-shadow: 0 6px 15px $login_box_shadow;
+  border-radius: 30px;
+  border: none;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 16px 15px 16px 65px;
+  margin-bottom: 20px;
+  font-family: $main_font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $input_text_size;
+  line-height: 21px;
+  outline: none;
+  color: $login_input;
+}
+.input::placeholder{
+  color: $login_input;
 }
 
-.showPass{
-    position: absolute;
-    width: 35px;
-    height: 35px;
-    object-fit: contain;
-    right: 5%;
-    top: 15%;
-    z-index: 2;
+.showPass {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  right: 5%;
+  top: 15%;
+  z-index: 2;
+}
+
+.email {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  right: 86%;
+  top: 15%;
+  z-index: 2;
 }

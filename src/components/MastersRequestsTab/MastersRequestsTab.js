@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { mastersRequests } from '../../state/modules/mastersRequests/action';
 import ListScreen from '../ListScreen/ListScreen';
 import t from '../../translations/i18n';
+import CheckAccess from '../Utils/CheckAccess';
 
 const MastersList = ({ loading, mastersRequestsFunc, masters }) => {
   useEffect(() => {
@@ -11,13 +12,17 @@ const MastersList = ({ loading, mastersRequestsFunc, masters }) => {
   }, [mastersRequestsFunc]);
 
   return (
-    <ListScreen
-      type="mastersRequestsList"
-      items={masters}
-      loading={loading}
-      inputSearchPlaceholder={`${t('mastersRequestsList.inputSearchPlaceholder')}`}
-      showTheTableHeader1={false}
-    />
+    <div>
+      <CheckAccess childrens />
+      <ListScreen
+        type="mastersRequestsList"
+        items={masters}
+        loading={loading}
+        inputSearchPlaceholder={`${t('mastersRequestsList.inputSearchPlaceholder')}`}
+        showTheTableHeader1={false}
+      />
+    </div>
+
   );
 };
 
