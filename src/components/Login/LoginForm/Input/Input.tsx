@@ -1,12 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import eyeOff from '../../../../img/eyeOff.png';
 import eyeOn from '../../../../img/eye.png';
 import emailIcon from '../../../../img/email_icon.png';
 import styles from './input.module.scss';
 
-function showHidePass(e) {
-  const icon = e.target;
+interface IProps {
+  type: string;
+  placeholder: string;
+  onChangeFunc: any;
+}
+
+function showHidePass(e: React.MouseEvent<HTMLImageElement>) {
+  const icon = e.target as any;
   const input = icon.parentNode.childNodes[0];
   let { type } = input;
   type === 'text' ? type = 'password' : type = 'text';
@@ -14,7 +19,7 @@ function showHidePass(e) {
   input.type = type;
 }
 
-const Input = ({ type, placeholder, onChangeFunc }) => (
+const Input: React.FC<IProps> = ({ type, placeholder, onChangeFunc }: IProps) => (
   <div className={styles.inputBlock}>
     <input
       type={type}
@@ -42,11 +47,5 @@ const Input = ({ type, placeholder, onChangeFunc }) => (
     )}
   </div>
 );
-
-Input.propTypes = {
-  type: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  onChangeFunc: PropTypes.func.isRequired,
-};
 
 export default Input;

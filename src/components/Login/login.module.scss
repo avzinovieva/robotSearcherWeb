@@ -12,14 +12,15 @@
   zoom: .7;
 }
 
+.figuresTextBox {
+  position: fixed;
+  left: 16%;
+  top: 40%;
+}
+
 .figuresHeaderText {
-  position: absolute;
   width: 198px;
   height: 85px;
-  left: 247px;
-  top: 120%;
-
-  font-family: Inter;
   font-style: normal;
   font-weight: bold;
   font-size: $login-header-size;
@@ -28,13 +29,8 @@
 }
 
 .figuresTextP {
-  position: absolute;
   width: 274px;
   height: 58px;
-  left: 247px;
-  top: 160%;
-
-  font-family: Inter;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -44,42 +40,63 @@
 }
 
 .figureTwo {
-  position: absolute;
-  top: 130%;
-  left: 60%;
+  position: fixed;
+  width: 77px;
+  height: 34px;
+  left: 10%;
+  top: 49%;
+  background: $figureTwo;
+  transform: rotate(-151.96deg);
 }
 
 .figureThree {
-  position: absolute;
-  top: 400px;
-  left: 0;
+  position: fixed;
+  width: 81px;
+  height: 82px;
+  left: -50px;
+  top: 56%;
+  background: $figureThree;
+  transform: rotate(130deg);
 }
 
 .figureFour {
-  position: absolute;
-  top: 250%;
-  left: 80%;
-  zoom: .7;
+  width: 243.47px;
+  height: 285.14px;
+  left: 32%;
+  top: 87%;
+  position: fixed;
+  background: $figureFour;
+  transform: matrix(-0.91, -0.85, 0.21, -0.71, 0.24, 0);
 }
 
 .figureFive {
-  position: absolute;
-  top: 265%;
-  left: 215%;
-  zoom: .7;
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  left: 10%;
+  top: 80%;
+  background: $figuresFive;
+  transform: rotate(-135deg);
+  border-radius: 50%;
 }
 
 .figureSix {
-  position: absolute;
-  top: 120%;
-  left: 295%;
-  zoom: .7;
+  position: relative;
+  width: 91px;
+  height: 92px;
+  left: 95%;
+  top: 0;
+  background: $figureSix;
+  transform: rotate(-45deg);
 }
 
 .figuresBlocks {
   position: absolute;
   top: 0;
   left: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 50%;
 }
 
 
