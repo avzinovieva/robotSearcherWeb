@@ -12,20 +12,29 @@ interface IProps{
 }
 
 const LoginForm: React.FC<IProps> = ({ loginFunc }: IProps) => {
-  const [login, setLogin] = useState('');
-  const [password, setPass] = useState('');
+  const [login, setLogin] = useState(localStorage.getItem('log') || '');
+  const [password, setPass] = useState(localStorage.getItem('pass') || '');
+  const [isRememberMeChecked, setIsRememberMeChecked] = useState(false);
+  const isLogged = isRememberMeChecked ? localStorage.getItem('isLogged') : false;
+  localStorage.setItem('isLogged', isRememberMeChecked ? 'true' : 'false');
+
+  const rememberHandler = () => {
+    setIsRememberMeChecked(!isRememberMeChecked);
+  };
 
   return (
     <div className={styles.loginWrapper}>
       <p className={styles.title}>{t('login.header')}</p>
       <div>
         <Input
+          isLogged={isLogged}
           type="text"
           placeholder={t('login.name')}
           onChangeFunc={(text: string) => setLogin(text)}
         />
       </div>
       <Input
+        isLogged={isLogged}
         type="password"
         placeholder={t('login.password')}
         onChangeFunc={(text: string) => setPass(text)}
@@ -37,7 +46,7 @@ const LoginForm: React.FC<IProps> = ({ loginFunc }: IProps) => {
       />
       <div className={styles.loginFunctionBox}>
         <div className={styles.labelBox}>
-          <input type="checkbox" value="lsRememberMe" id="rememberMe" />
+          <input type="checkbox" value="lsRememberMe" id="rememberMe" onChange={rememberHandler} />
           <label className={styles.forgotPasswordButton} htmlFor="rememberMe">{t('login.rememberMe')}</label>
         </div>
         <button className={styles.forgotPasswordButton} type="button">{t('login.forgotPassword')}</button>

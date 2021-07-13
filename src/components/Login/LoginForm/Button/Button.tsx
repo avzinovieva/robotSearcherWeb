@@ -9,6 +9,7 @@ interface IProps {
     onclickFunc: any;
     errorMessage: string;
 }
+const isRememberLater = localStorage.getItem('isLogged');
 
 const loginClick: ({
   state,
@@ -28,6 +29,9 @@ const loginClick: ({
     if (token) {
       await localStorage.setItem(USER_LOGIN, state.login);
       await localStorage.setItem(USER_PASS, state.password);
+      await localStorage.setItem('isLogged', 'true');
+      await localStorage.setItem('log', isRememberLater === 'true' ? state.login : '');
+      await localStorage.setItem('pass', isRememberLater === 'true' ? state.password : '');
       setLoggedUser(true);
       setLoginError(false);
     } else {

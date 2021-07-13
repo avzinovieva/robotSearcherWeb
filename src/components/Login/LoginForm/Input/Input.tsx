@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import eyeOff from '../../../../img/eyeOff.png';
 import eyeOn from '../../../../img/eye.png';
 import emailIcon from '../../../../img/email_icon.png';
@@ -8,6 +8,7 @@ interface IProps {
   type: string;
   placeholder: string;
   onChangeFunc: any;
+  isLogged: any;
 }
 
 function showHidePass(e: React.MouseEvent<HTMLImageElement>) {
@@ -19,33 +20,58 @@ function showHidePass(e: React.MouseEvent<HTMLImageElement>) {
   input.type = type;
 }
 
-const Input: React.FC<IProps> = ({ type, placeholder, onChangeFunc }: IProps) => (
-  <div className={styles.inputBlock}>
-    <input
-      type={type}
-      placeholder={placeholder}
-      className={styles.input}
-      onChange={(el) => onChangeFunc(el.target.value)}
-    />
-    {type === 'password'
-      && (
-      <img
-        src={eyeOff}
-        className={styles.showPass}
-        alt="eye"
-        onClick={showHidePass}
+const Input: React.FC<IProps> = ({
+  type, placeholder, onChangeFunc, isLogged,
+}: IProps) => {
+  const loginStorage = localStorage.getItem('log');
+  const passStorage = localStorage.getItem('pass');
+  const [login, setLogin] = useState<any>(loginStorage || '');
+  const [pass, setPass] = useState<any>(passStorage || '');
+
+  const handler: any = (e: any) => {
+    if (e.target.type === 'password') {
+      setPass(e.target.value);
+      /* e.target.value = pass; */
+    }
+    if (e.target.type === 'text') {
+      setLogin(e.target.value);
+      /*      e.target.value = login; */
+    }
+  };
+
+  return (
+    <div className={styles.inputBlock}>
+      <input
+        value={type === 'password' ? pass : login}
+        type={type}
+        placeholder={placeholder}
+        className={styles.input}
+        onChange={(el) => {
+          onChangeFunc(el.target.value);
+          handler(el);
+        }}
+
       />
-      ) }
-    {type === 'text'
-    && (
-    <img
-      src={emailIcon}
-      className={styles.email}
-      alt="Email"
-      onClick={showHidePass}
-    />
-    )}
-  </div>
-);
+      {type === 'password'
+        && (
+        <img
+          src={eyeOff}
+          className={styles.showPass}
+          alt="eye"
+          onClick={showHidePass}
+        />
+        ) }
+      {type === 'text'
+        && (
+        <img
+          src={emailIcon}
+          className={styles.email}
+          alt="Email"
+          onClick={showHidePass}
+        />
+        )}
+    </div>
+  );
+};
 
 export default Input;
