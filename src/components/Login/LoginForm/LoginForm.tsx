@@ -15,11 +15,10 @@ const LoginForm: React.FC<IProps> = ({ loginFunc }: IProps) => {
   const [login, setLogin] = useState(localStorage.getItem('log') || '');
   const [password, setPass] = useState(localStorage.getItem('pass') || '');
   const [isRememberMeChecked, setIsRememberMeChecked] = useState(false);
-  const isLogged = isRememberMeChecked ? localStorage.getItem('isLogged') : false;
-  localStorage.setItem('isLogged', isRememberMeChecked ? 'true' : 'false');
 
   const rememberHandler = () => {
     setIsRememberMeChecked(!isRememberMeChecked);
+    localStorage.setItem('isLogged', isRememberMeChecked === true ? 'true' : 'false');
   };
 
   return (
@@ -27,14 +26,12 @@ const LoginForm: React.FC<IProps> = ({ loginFunc }: IProps) => {
       <p className={styles.title}>{t('login.header')}</p>
       <div>
         <Input
-          isLogged={isLogged}
           type="text"
           placeholder={t('login.name')}
           onChangeFunc={(text: string) => setLogin(text)}
         />
       </div>
       <Input
-        isLogged={isLogged}
         type="password"
         placeholder={t('login.password')}
         onChangeFunc={(text: string) => setPass(text)}

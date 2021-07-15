@@ -80,6 +80,14 @@
   border-radius: 50%;
 }
 
+.figuresColorBlue {
+  stop-color: $figures_blue;
+}
+
+.figuresColorViolet {
+  stop-color: $figures_violet;
+}
+
 .figureSix {
   position: relative;
   width: 91px;

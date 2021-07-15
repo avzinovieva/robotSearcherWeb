@@ -8,7 +8,6 @@ interface IProps {
   type: string;
   placeholder: string;
   onChangeFunc: any;
-  isLogged: any;
 }
 
 function showHidePass(e: React.MouseEvent<HTMLImageElement>) {
@@ -21,21 +20,19 @@ function showHidePass(e: React.MouseEvent<HTMLImageElement>) {
 }
 
 const Input: React.FC<IProps> = ({
-  type, placeholder, onChangeFunc, isLogged,
+  type, placeholder, onChangeFunc,
 }: IProps) => {
   const loginStorage = localStorage.getItem('log');
   const passStorage = localStorage.getItem('pass');
   const [login, setLogin] = useState<any>(loginStorage || '');
   const [pass, setPass] = useState<any>(passStorage || '');
 
-  const handler: any = (e: any) => {
+  const handler: any = (e: any): void => {
     if (e.target.type === 'password') {
       setPass(e.target.value);
-      /* e.target.value = pass; */
     }
     if (e.target.type === 'text') {
       setLogin(e.target.value);
-      /*      e.target.value = login; */
     }
   };
 

@@ -9,8 +9,8 @@ const Figures: React.FC = () => (
         <path d="M346.484 297.655L-191.627 215.51L110.643 -192.948L346.484 297.655Z" fill="url(#paint0_linear)" />
         <defs>
           <linearGradient id="paint0_linear" x1="521" y1="61.8315" x2="158.844" y2="508.28" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#3E0963" />
-            <stop offset="1" stopColor="#1A1F9E" />
+            <stop className={styles.figuresColorBlue} />
+            <stop offset="1" className={styles.figuresColorViolet} />
           </linearGradient>
         </defs>
       </svg>
