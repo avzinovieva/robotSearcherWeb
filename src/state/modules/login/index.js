@@ -1,4 +1,4 @@
-import {USER_TOKEN} from '../../../storageKeys';
+import { USER_TOKEN } from '../../../storageKeys';
 
 export const LOGIN = 'login/LOGIN';
 export const LOGIN_SUCCESS = 'login/LOGIN_SUCCESS';
@@ -37,7 +37,7 @@ const actionHandlers = {
 
 // eslint-disable-next-line require-jsdoc
 export default function reducer(state = initialState, action = {}) {
-  const {type} = action;
+  const { type } = action;
   const actionHandler = actionHandlers[type];
   if (actionHandler) {
     return actionHandler(state, action);
