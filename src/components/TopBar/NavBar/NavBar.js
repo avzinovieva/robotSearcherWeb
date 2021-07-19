@@ -23,6 +23,9 @@ const NavBar = ({ isMobile }) => {
       <div className={styles.item}>
         <NavLink to="/payment" className={styles.item}>{`${t('topBar.payment')}`}</NavLink>
       </div>
+      <div className={styles.item}>
+        <NavLink to="/categoriesPrice" className={styles.item}>{`${t('topBar.categoriesPrice')}`}</NavLink>
+      </div>
     </div>
   );
 };

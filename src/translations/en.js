@@ -36,6 +36,7 @@ export default {
     button: 'Save',
   },
   topBar: {
+    categoriesPrice: 'Categories Price',
     exitButton: 'Log out',
     categories: 'Categories',
     orders: 'Orders',
@@ -50,6 +51,9 @@ export default {
       edit: 'Edit',
       workTypesButtonName: 'Work types',
     },
+  },
+  categoriesPrice: {
+    header: 'To display the data, add the file',
   },
   workTypesDetails: {
     header: 'Work types',

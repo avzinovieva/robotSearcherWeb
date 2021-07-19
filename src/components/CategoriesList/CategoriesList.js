@@ -10,7 +10,6 @@ import PaginationBar from '../Pagination/Pagination';
 import { categories } from '../../state/modules/categories/action';
 import styles from './CategoriesList.module.scss';
 import InputSearch from '../OrderList/InputSearch/InputSearch';
-import { USER_TOKEN } from '../../storageKeys';
 import CheckAccess from '../Utils/CheckAccess';
 
 const CategoriesList = ({ loading, categoriesFunc, categories }) => {

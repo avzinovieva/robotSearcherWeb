@@ -22,7 +22,7 @@ const TopBar = () => {
                 src={logo}
                 alt="logo"
                 className={styles.logo}
-                onClick={() => window.location.reload()}
+                onClick={() => window.location.href = '/orderList'}
               />
               <span className={styles.version}>{version}</span>
             </Col>
