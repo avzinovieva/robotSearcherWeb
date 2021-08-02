@@ -1,13 +1,15 @@
 import React from 'react';
-import LoginForm from './LoginForm/LoginForm';
 import styles from './login.module.scss';
 import Figures from './Figures/Figures';
+import LoginFormTelephone from './LoginFormTelephone/LoginFormTelephone';
 
 const Login: React.FC = () => (
   <div>
     <div className={styles.block} />
     <Figures />
-    <LoginForm />
+    <div className={styles.loginBox2}>
+      <LoginFormTelephone />
+    </div>
   </div>
 );
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // @ts-ignore
 import { ExcelRenderer } from 'react-excel-renderer';
 import { connect } from 'react-redux';
@@ -6,18 +6,26 @@ import TopBar from '../TopBar/TopBar';
 import styles from './categories.module.scss';
 import { categoriesPrice } from '../../state/modules/categoriesPrice/action';
 import t from '../../translations/i18n';
+import { categories } from '../../state/modules/categories/action';
 
-const CategoriesPrice: React.FC = ({ categoriesFunc }: any) => {
+const CategoriesPrice: React.FC = ({ categoriesFuncPrice, categoriesFunc, categories }: any) => {
   const [file, setFile] = useState<any>(null);
+  const [categoria, setCategoria] = useState(1);
   const value: any = {
-    categories: {
-      name: 'name1',
-      defaultPrice: 45,
-    },
+    parentWorkTypeId: { categoria },
+    workTypes: [
+      {
+        name: '',
+        price: 0,
+      },
+    ],
   };
-
   const sendToTheServer = () => {
-    categoriesFunc(value);
+    for (let i: number = 1; i < file.rows.length; i++) {
+      value.workTypes.push({ name: file.rows[i][0], price: file.rows[i][1] });
+    }
+    value.workTypes.shift();
+    categoriesFuncPrice(value);
     setFile(null);
   };
 
@@ -31,6 +39,9 @@ const CategoriesPrice: React.FC = ({ categoriesFunc }: any) => {
       });
     });
   };
+  useEffect(() => {
+    categoriesFunc();
+  }, [categories]);
 
   return (
     <div className={styles.categoriesPrice}>
@@ -38,17 +49,23 @@ const CategoriesPrice: React.FC = ({ categoriesFunc }: any) => {
       <div className={styles.categoriesPriceHeader}>{`${t('categoriesPrice.header')}`}</div>
       <div className={styles.categoriesPriceFileLoader}>
         <input type="file" onChange={fileHandler} />
+        <select name="cat" id="categ">
+          <option value="1" onChange={(e: any) => setCategoria(e.target.value)}>{`${t('messagePrice')}`}</option>
+          {categories ? categories.map((item: {id: number, name: string}) => (
+            <option value={item.id} disabled>{item.name}</option>
+          )) : null}
+        </select>
       </div>
       {
         file
-            && file.rows.map((item:{0: any, 1: any}) => (
-              <div className={styles.categoriesPriceBox} key={item[1]}>
-                <p className={styles.categoriesPriceP}>
-                  <span>{item[0]}</span>
-                  <span>{item[1]}</span>
-                </p>
-              </div>
-            ))
+        && file.rows.map((item:{0: any, 1: any}) => (
+          <div className={styles.categoriesPriceBox} key={item[1]}>
+            <p className={styles.categoriesPriceP}>
+              <span>{item[0]}</span>
+              <span>{item[1]}</span>
+            </p>
+          </div>
+        ))
       }
       <div className={styles.categoriesPriceButtonBox}>
         {file
@@ -67,10 +84,10 @@ const CategoriesPrice: React.FC = ({ categoriesFunc }: any) => {
 };
 
 const mapStateToProps = ({ categories }: any) => ({
-  loading: categories.loading,
+  categories: categories.categories,
 });
 
 export default connect(
   () => mapStateToProps,
-  { categoriesFunc: categoriesPrice },
+  { categoriesFuncPrice: categoriesPrice, categoriesFunc: categories },
 )(CategoriesPrice);

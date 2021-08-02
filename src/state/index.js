@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 import reducer from './modules';
 import API from './api';
 import logIn from './modules/login/index';
-import { USER_LOGIN, USER_PASS, USER_TOKEN } from '../storageKeys';
+import { USER_CODE, USER_PHONE, USER_TOKEN } from '../storageKeys';
 
 // eslint-disable-next-line complexity
 export default function createStore(preloadedState) {
@@ -39,11 +39,11 @@ export default function createStore(preloadedState) {
           const { status } = error.response;
           if (status === 401 && INTERNET_RETRY_COUNTER < 3) {
             INTERNET_RETRY_COUNTER += 1;
-            const login = await localStorage.getItem(USER_LOGIN);
-            const pass = await localStorage.getItem(USER_PASS);
+            const phoneNumber = await localStorage.getItem(USER_PHONE);
+            const verificationCode = await localStorage.getItem(USER_CODE);
 
-            if (login && pass) {
-              return dispatch(logIn({ login, password: pass }))
+            if (phoneNumber && verificationCode) {
+              return dispatch(logIn({ phoneNumber, verificationCode }))
                 .then(async () => {
                   const newToken = await localStorage.getItem(USER_TOKEN);
                   const { config } = error;

@@ -21,7 +21,7 @@ const CategoriesList = ({ loading, categoriesFunc, categories }) => {
     categoriesFunc();
   }, [categoriesFunc]);
 
-  const pagesCount = Math.ceil(categories.length / cardsPerPage);
+  const pagesCount = Math.ceil(categories ? categories.length / cardsPerPage : 1);
 
   const handleChange = (event, value) => {
     setPage(value);
