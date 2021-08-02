@@ -16,7 +16,7 @@ interface IProps {
 const LoginFormTelephone: React.FC<IProps> = ({ loginTelephoneFunc, loginFunc }:IProps) => {
   const [phone, setPhone] = useState('');
   const [code, setCode] = useState('');
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(!!localStorage.getItem(USER_TOKEN));
   const [isSendSms, setIsSendSms] = useState(false);
   const [isWaitForInputSms, setSsWaitForInputSms] = useState(true);
 

@@ -41,7 +41,7 @@ const CategoriesPrice: React.FC = ({ categoriesFuncPrice, categoriesFunc, catego
   };
   useEffect(() => {
     categoriesFunc();
-  }, [categories]);
+  }, []);
 
   return (
     <div className={styles.categoriesPrice}>
@@ -49,10 +49,10 @@ const CategoriesPrice: React.FC = ({ categoriesFuncPrice, categoriesFunc, catego
       <div className={styles.categoriesPriceHeader}>{`${t('categoriesPrice.header')}`}</div>
       <div className={styles.categoriesPriceFileLoader}>
         <input type="file" onChange={fileHandler} />
-        <select name="cat" id="categ">
+        <select name="categoria" id="categoria">
           <option value="1" onChange={(e: any) => setCategoria(e.target.value)}>{`${t('messagePrice')}`}</option>
           {categories ? categories.map((item: {id: number, name: string}) => (
-            <option value={item.id} disabled>{item.name}</option>
+            <option key={item.id} value={item.id}>{item.name}</option>
           )) : null}
         </select>
       </div>
