@@ -70,6 +70,11 @@ export default {
       },
     },
   },
+  loginByMobile: {
+    sms: 'Смс код:',
+    phone: 'Номер телефона:',
+    sendSms: 'Отправить смс',
+  },
   categoriesPrice: {
     header: 'Для отображения данных загрузите файл',
   },

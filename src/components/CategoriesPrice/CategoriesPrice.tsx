@@ -8,33 +8,46 @@ import { categoriesPrice } from '../../state/modules/categoriesPrice/action';
 import t from '../../translations/i18n';
 import { categories } from '../../state/modules/categories/action';
 
-const CategoriesPrice: React.FC = ({ categoriesFuncPrice, categoriesFunc, categories }: any) => {
+interface IProps {
+  categoriesFuncPrice:(value: {}) => {};
+  categoriesFunc:() => {};
+  categories: any;
+}
+
+const CategoriesPrice: React.FC<IProps> = ({
+  categoriesFuncPrice,
+  categoriesFunc, categories,
+}: IProps) => {
   const [file, setFile] = useState<any>(null);
-  const [categoria, setCategoria] = useState<number>(6);
+  const [categoriesArray, setCategoriesArray] = useState<number>(6);
   const value: any = {
-    parentWorkTypeId: categoria,
+    parentWorkTypeId: categoriesArray,
     workTypes: [
       {
         name: '',
-        price: 0,
+        defaultPrice: 0,
       },
     ],
   };
   const sendToTheServer = () => {
-    for (let i: number = 1; i < file.rows.length; i++) {
-      value.workTypes.push({ name: file.rows[i][0], price: file.rows[i][1] });
+    for (let i: number = 1; i < file.rows.length; i += 1) {
+      value.workTypes.push({ name: file.rows[i][0], defaultPrice: file.rows[i][1] });
     }
     value.workTypes.shift();
     categoriesFuncPrice(value);
+    window.location.reload();
   };
-  const selectHendler = (e: any) => {
-    setCategoria(+e.target.value);
+  const selectHandler = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+    setCategoriesArray(+e.target.value);
   };
 
-  const fileHandler = (e:any) => {
+  const fileHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    if (!e.target.files) {
+      return;
+    }
     const fileObj = e.target.files[0];
 
-    ExcelRenderer(fileObj, (err:any, resp:any) => {
+    ExcelRenderer(fileObj, (err:string, resp: {cols: string, rows: string}) => {
       setFile({
         cols: resp.cols,
         rows: resp.rows,
@@ -51,7 +64,7 @@ const CategoriesPrice: React.FC = ({ categoriesFuncPrice, categoriesFunc, catego
       <div className={styles.categoriesPriceHeader}>{`${t('categoriesPrice.header')}`}</div>
       <div className={styles.categoriesPriceFileLoader}>
         <input type="file" onChange={fileHandler} />
-        <select name="categoria" id="categoria" onChange={selectHendler}>
+        <select name="categories" id="categories" onChange={selectHandler}>
           <option value="1">{`${t('messagePrice')}`}</option>
           {categories ? categories.map((item: {id: number, name: string}) => (
             <option key={item.id} value={item.id}>{item.name}</option>
@@ -60,7 +73,7 @@ const CategoriesPrice: React.FC = ({ categoriesFuncPrice, categoriesFunc, catego
       </div>
       {
         file
-        && file.rows.map((item:{0: any, 1: any}) => (
+        && file.rows.map((item:{0: string, 1: string}) => (
           <div className={styles.categoriesPriceBox} key={item[1]}>
             <p className={styles.categoriesPriceP}>
               <span>{item[0]}</span>

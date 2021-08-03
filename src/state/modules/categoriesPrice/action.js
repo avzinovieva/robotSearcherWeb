@@ -11,7 +11,7 @@ export const categoriesPrice = (categories) => ({
     request: {
       method: 'post',
       url: '/admin/add/categories',
-      data: { name: categories.name, defaultPrice: categories.defaultPrice },
+      data: categories,
     },
   },
 });

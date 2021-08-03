@@ -6,7 +6,6 @@ import API from './api';
 import logIn from './modules/login/index';
 import { USER_CODE, USER_PHONE, USER_TOKEN } from '../storageKeys';
 
-// eslint-disable-next-line complexity
 export default function createStore(preloadedState) {
   let INTERNET_RETRY_COUNTER = 0;
 
@@ -16,7 +15,6 @@ export default function createStore(preloadedState) {
     },
   };
 
-  // eslint-disable-next-line no-underscore-dangle
   const composeWithDevTools = global.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   const interceptors = {
     request: [

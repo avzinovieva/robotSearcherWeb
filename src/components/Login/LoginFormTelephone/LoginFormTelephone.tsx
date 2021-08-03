@@ -9,8 +9,8 @@ import arrowLeft from '../../../img/arrowLeft.svg';
 import t from '../../../translations/i18n';
 
 interface IProps {
-    loginTelephoneFunc: any;
-    loginFunc: any;
+    loginTelephoneFunc: (phone: string) => {};
+    loginFunc: (phone: string, code: string) => {};
 }
 
 const LoginFormTelephone: React.FC<IProps> = ({ loginTelephoneFunc, loginFunc }:IProps) => {
@@ -20,7 +20,7 @@ const LoginFormTelephone: React.FC<IProps> = ({ loginTelephoneFunc, loginFunc }:
   const [isSendSms, setIsSendSms] = useState(false);
   const [isWaitForInputSms, setSsWaitForInputSms] = useState(true);
 
-  const numberHandler = (e: any) => {
+  const numberHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPhone(e.target.value);
   };
 
@@ -40,7 +40,7 @@ const LoginFormTelephone: React.FC<IProps> = ({ loginTelephoneFunc, loginFunc }:
       setIsLogged(true);
     }
   };
-  const codeHandler = (e: any) => {
+  const codeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCode(e.target.value);
   };
   const returnToSms = () => {
@@ -69,7 +69,7 @@ const LoginFormTelephone: React.FC<IProps> = ({ loginTelephoneFunc, loginFunc }:
   );
 };
 
-const mapStateToProps = ({ login }: any) => ({
+const mapStateToProps = ({ login }: { login : { loading: boolean} }) => ({
   loading: login.loading,
 });
 
