@@ -26,7 +26,6 @@ const CategoriesPrice: React.FC = ({ categoriesFuncPrice, categoriesFunc, catego
     }
     value.workTypes.shift();
     categoriesFuncPrice(value);
-    console.log(value);
   };
   const selectHendler = (e: any) => {
     setCategoria(+e.target.value);
