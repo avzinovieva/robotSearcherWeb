@@ -10,9 +10,9 @@ import { categories } from '../../state/modules/categories/action';
 
 const CategoriesPrice: React.FC = ({ categoriesFuncPrice, categoriesFunc, categories }: any) => {
   const [file, setFile] = useState<any>(null);
-  const [categoria, setCategoria] = useState(1);
+  const [categoria, setCategoria] = useState<number>(6);
   const value: any = {
-    parentWorkTypeId: { categoria },
+    parentWorkTypeId: categoria,
     workTypes: [
       {
         name: '',
@@ -26,7 +26,10 @@ const CategoriesPrice: React.FC = ({ categoriesFuncPrice, categoriesFunc, catego
     }
     value.workTypes.shift();
     categoriesFuncPrice(value);
-    setFile(null);
+    console.log(value);
+  };
+  const selectHendler = (e: any) => {
+    setCategoria(+e.target.value);
   };
 
   const fileHandler = (e:any) => {
@@ -49,8 +52,8 @@ const CategoriesPrice: React.FC = ({ categoriesFuncPrice, categoriesFunc, catego
       <div className={styles.categoriesPriceHeader}>{`${t('categoriesPrice.header')}`}</div>
       <div className={styles.categoriesPriceFileLoader}>
         <input type="file" onChange={fileHandler} />
-        <select name="categoria" id="categoria">
-          <option value="1" onChange={(e: any) => setCategoria(e.target.value)}>{`${t('messagePrice')}`}</option>
+        <select name="categoria" id="categoria" onChange={selectHendler}>
+          <option value="1">{`${t('messagePrice')}`}</option>
           {categories ? categories.map((item: {id: number, name: string}) => (
             <option key={item.id} value={item.id}>{item.name}</option>
           )) : null}
