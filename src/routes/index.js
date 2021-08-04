@@ -13,6 +13,7 @@ import LandingMaster from '../components/LandingMaster/LandingMaster';
 import Landing from '../components/Landing/Landing';
 import CouponActivation from '../components/CuponActivation';
 import WorkTypesDetails from '../components/WorkTypesDetails/WorkTypesDetails';
+import CategoriesPrice from '../components/CategoriesPrice/CategoriesPrice';
 
 const Routes = () => (
   <Switch>
@@ -20,6 +21,7 @@ const Routes = () => (
     <Route path="/login" render={() => <Login />} />
     <Route path="/orderList" render={() => <OrderList />} />
     <Route path="/categories" render={() => <CategoriesList />} />
+    <Route path="/categoriesPrice" render={() => <CategoriesPrice />} />
     <Route path="/masters" render={() => <MastersList />} />
     <Route path="/mastersRequests" render={() => <MastersRequestsTab />} />
     <Route path="/landing" render={() => <LandingMaster />} />

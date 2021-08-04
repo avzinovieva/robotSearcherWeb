@@ -13,6 +13,7 @@ export default {
       modalWindowInputPrice: 'Ціна за роботу',
     },
     topBar: {
+      categoriesPrice: 'Прайс лист категорій',
       exitButton: 'Вийти',
       categories: 'Категорії',
       orders: 'Замовлення',
@@ -69,6 +70,11 @@ export default {
       },
     },
   },
+  loginByMobile: {
+    sms: 'Смс код:',
+    phone: 'Номер телефону:',
+    sendSms: 'Відправити смс',
+  },
   login: {
     hello: 'Привіт!',
     text: 'Увійдіть у свій акаунт і починайте працювати з нами',
@@ -79,6 +85,9 @@ export default {
     forgotPassword: 'Забули пароль?',
     rememberMe: 'Запам\'ятати мене',
     error: 'Неправильний логін або пароль',
+  },
+  categoriesPrice: {
+    header: 'Для відображення данних завантажте файл',
   },
   landingCustomer: {
     banner: {

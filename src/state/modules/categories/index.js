@@ -31,9 +31,8 @@ const actionHandlers = {
 
 };
 
-// eslint-disable-next-line require-jsdoc
 export default function reducer(state = initialState, action = {}) {
-  const {type} = action;
+  const { type } = action;
   const actionHandler = actionHandlers[type];
   if (actionHandler) {
     return actionHandler(state, action);

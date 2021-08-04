@@ -16,7 +16,6 @@ const appReducer = (state = initialState, action) => {
   }
 };
 
-export const setInitializeApp = () => ({type: SET_INITIALIZE_APP});
-
+export const setInitializeApp = () => ({ type: SET_INITIALIZE_APP });
 
 export default appReducer;

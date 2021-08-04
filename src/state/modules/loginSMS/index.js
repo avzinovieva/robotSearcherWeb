@@ -1,31 +1,28 @@
-import { USER_TOKEN } from '../../../storageKeys';
+import { USER_SMS } from '../../../storageKeys';
 
-export const LOGIN = 'login/LOGIN';
-export const LOGIN_SUCCESS = 'login/LOGIN_SUCCESS';
-export const LOGIN_FAIL = 'login/LOGIN_FAIL';
+export const LOGIN_SMS = 'loginSms/LOGIN_SMS';
+export const LOGIN_SMS_SUCCESS = 'loginSms/LOGIN_SMS_SUCCESS';
+export const LOGIN_SMS_FAIL = 'loginSms/LOGIN_SMS_FAIL';
 
 const initialState = {
   loading: false,
-  phoneNumber: '',
-  verificationCode: '',
 };
 
 const actionHandlers = {
-  [LOGIN](state) {
+  [LOGIN_SMS](state) {
     return {
       ...state,
       loading: true,
     };
   },
-  [LOGIN_SUCCESS](state, action) {
-    localStorage.setItem(USER_TOKEN, action.payload.data.access_token);
+  [LOGIN_SMS_SUCCESS](state, action) {
+    localStorage.setItem(USER_SMS, action.payload);
     return {
       ...state,
       loading: false,
     };
   },
-  [LOGIN_FAIL](state, action) {
-    localStorage.removeItem(USER_TOKEN);
+  [LOGIN_SMS_FAIL](state, action) {
     return {
       ...state,
       loading: false,

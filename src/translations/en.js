@@ -4,6 +4,11 @@ export default {
   loading: {
     header: 'Loading',
   },
+  loginByMobile: {
+    sms: 'Code from sms:',
+    phone: 'Phone number:',
+    sendSms: 'Send sms',
+  },
   ordersList: {
     header: 'OrderList',
     inputSearchPlaceholder: 'Order id',
@@ -35,7 +40,9 @@ export default {
   modalWindow: {
     button: 'Save',
   },
+  messagePrice: 'Choose please the categories',
   topBar: {
+    categoriesPrice: 'Categories Price',
     exitButton: 'Log out',
     categories: 'Categories',
     orders: 'Orders',
@@ -50,6 +57,9 @@ export default {
       edit: 'Edit',
       workTypesButtonName: 'Work types',
     },
+  },
+  categoriesPrice: {
+    header: 'To display the data, add the file',
   },
   workTypesDetails: {
     header: 'Work types',

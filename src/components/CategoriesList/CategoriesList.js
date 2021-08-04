@@ -10,7 +10,6 @@ import PaginationBar from '../Pagination/Pagination';
 import { categories } from '../../state/modules/categories/action';
 import styles from './CategoriesList.module.scss';
 import InputSearch from '../OrderList/InputSearch/InputSearch';
-import { USER_TOKEN } from '../../storageKeys';
 import CheckAccess from '../Utils/CheckAccess';
 
 const CategoriesList = ({ loading, categoriesFunc, categories }) => {
@@ -22,7 +21,7 @@ const CategoriesList = ({ loading, categoriesFunc, categories }) => {
     categoriesFunc();
   }, [categoriesFunc]);
 
-  const pagesCount = Math.ceil(categories.length / cardsPerPage);
+  const pagesCount = Math.ceil(categories ? categories.length / cardsPerPage : 1);
 
   const handleChange = (event, value) => {
     setPage(value);

@@ -32,6 +32,7 @@ export default {
       button: 'Сохранить',
     },
     topBar: {
+      categoriesPrice: 'Прайс лист категорий',
       exitButton: 'Выйти',
       categories: 'Категории',
       orders: 'Заказы',
@@ -68,6 +69,14 @@ export default {
         required: 'Поле обязательное',
       },
     },
+  },
+  loginByMobile: {
+    sms: 'Смс код:',
+    phone: 'Номер телефона:',
+    sendSms: 'Отправить смс',
+  },
+  categoriesPrice: {
+    header: 'Для отображения данных загрузите файл',
   },
   login: {
     hello: 'Привет!',

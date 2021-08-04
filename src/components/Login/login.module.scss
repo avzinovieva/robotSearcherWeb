@@ -2,10 +2,15 @@
 
 .block {
   position: relative;
-  width: 50%;
+  width: 50vw;
   height: 100vh;
   background: $title_color;
   overflow: hidden;
+}
+.loginBox2{
+  position: absolute;
+  right: 12vw;
+  top: 40vh;
 }
 
 .figureOne {
@@ -104,7 +109,7 @@
   left: 0;
   overflow: hidden;
   height: 100vh;
-  width: 50%;
+  width: 50vw;
 }
 
 
