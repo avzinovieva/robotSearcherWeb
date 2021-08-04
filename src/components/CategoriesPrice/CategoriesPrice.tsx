@@ -11,7 +11,7 @@ import { categories } from '../../state/modules/categories/action';
 interface IProps {
   categoriesFuncPrice:(value: {}) => {};
   categoriesFunc:() => {};
-  categories: any;
+  categories: {id: number, name: string}[];
 }
 
 const CategoriesPrice: React.FC<IProps> = ({
@@ -98,7 +98,7 @@ const CategoriesPrice: React.FC<IProps> = ({
   );
 };
 
-const mapStateToProps = ({ categories }: any) => ({
+const mapStateToProps = (categories: {categories: {id: number, name: string}[]}) => ({
   categories: categories.categories,
 });
 
