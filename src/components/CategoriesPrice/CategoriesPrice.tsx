@@ -98,7 +98,7 @@ const CategoriesPrice: React.FC<IProps> = ({
   );
 };
 
-const mapStateToProps = (categories: {categories: {id: number, name: string}[]}) => ({
+const mapStateToProps = ({ categories }: any) => ({
   categories: categories.categories,
 });
 
