@@ -5,7 +5,7 @@ import mastersRequestsJson
   from '../components/MastersRequestsTab/mastersRequests.json';
 
 const API = axios.create({
-  baseURL: 'https://cors-anywhere.herokuapp.com/138.68.71.188/v1',
+  baseURL: 'https://api-fixe.com/v1',
 
   headers: {
     Authorization: 'Bearer todo',
