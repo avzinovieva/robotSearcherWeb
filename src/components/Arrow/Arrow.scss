@@ -1,0 +1,17 @@
+.slide-arrow {
+    color:rgba(#00234C, 1);
+	cursor: pointer;
+    font-size: 7rem;
+    font-weight: 100;
+  
+  
+    &.right {
+        right: 1rem;
+        margin-left: 1.5rem;
+        
+    }
+    &.left {
+        left: 1rem;
+        margin-right: 1.5rem;
+    }
+}

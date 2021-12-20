@@ -5,7 +5,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import TopBar from '../TopBar/TopBar';
 import t from '../../translations/i18n';
 import WorkTypeCardsArray from './WorkTypeCards/WorkTypeCardsArray';
-import Footer from '../Footer/Footer';
+import Footer from '../FooterAdmin/Footer';
 import { workTypes } from '../../state/modules/workTypes/action';
 import PaginationBar from '../Pagination/Pagination';
 import ModalWindow from './ModalWindow/ModalWindow';

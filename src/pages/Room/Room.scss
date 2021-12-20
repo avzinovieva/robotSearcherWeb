@@ -1,0 +1,19 @@
+.room-container{
+    background-color: #f5f5f5;
+     .room{  
+         height: 100vh;
+        display: grid;
+        grid-template-columns:repeat(12,1fr);
+     
+        }
+}
+
+@media screen and (max-width:1250px) {
+    .room-container{
+        .room{
+            height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

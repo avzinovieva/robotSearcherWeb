@@ -5,7 +5,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import t from '../../translations/i18n';
 import TopBar from '../TopBar/TopBar';
 import Cards from './Cards/Cards';
-import Footer from '../Footer/Footer';
+import Footer from '../FooterAdmin/Footer';
 import PaginationBar from '../Pagination/Pagination';
 import { categories } from '../../state/modules/categories/action';
 import styles from './CategoriesList.module.scss';

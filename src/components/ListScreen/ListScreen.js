@@ -4,7 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import TopBar from '../TopBar/TopBar';
 import PaginationBar from '../Pagination/Pagination';
 import InputSearch from '../OrderList/InputSearch/InputSearch';
-import Footer from '../Footer/Footer';
+import Footer from '../FooterAdmin/Footer';
 import ListTile from '../ListTile/ListTile';
 import ListTileDescriptionsHeader from '../ListTile/ListTileDescriptionsHeader';
 import Popup from '../ManageMasterModal/ManageMasterModal';

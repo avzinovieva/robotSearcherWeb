@@ -1,0 +1,40 @@
+.LoginPage {
+    background-color: #1c1c1c;
+    background-image: url('/src/utils/land2.jpg');
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+.LoginInput{
+    width: 400px;
+    height: 40px;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+}
+
+.LoginButton{
+    margin: 20px auto;
+    width: 400px;
+    height: 40px;
+    background: cornflowerblue;
+    border: none;
+    color: white;
+}
+
+p{
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 14px;
+}
+
+p:hover{
+    text-decoration : underline;
+    color: cornflowerblue;
+    cursor: pointer;
+}
